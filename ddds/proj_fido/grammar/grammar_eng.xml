@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<grammar>
+
+  <action name="top">
+    <one-of>
+      <item>main menu</item>
+      <item>top</item>
+      <item>beginning</item>
+      <item>cancel</item>
+      <item>forget it</item>
+      <item>never mind</item>
+      <item>abort</item>
+    </one-of>
+  </action>
+
+  <action name="up">
+    <one-of>
+      <item>up</item>
+      <item>back</item>
+      <item>go back</item>
+    </one-of>
+  </action>
+
+  <action name="get_dog">
+    <one-of>
+      <item>I want help with finding out what dog to get</item>
+      <item>I want help with deciding what dog to get</item>
+      <item>Please help me decide what dog to get</item>
+    </one-of>
+  </action>
+
+  <!-- Obs! Preliminary; format of questions are tricky. For example, some questions are better raised as negated. Should there be p-scores for every predicate (e.g. ps_trainability)? Note e.g. quantification: how important is it for you that your dog has much energy? STRATEGY: 1 Formulate natural questions for every predicate; 2 Construe an interpretor for every predicate. -->
+
+  <answer speaker="system" predicate="what_dog_to_get">
+    You should get a <slot predicate="what_dog_to_get"/>
+  </answer>
+
+  <question speaker="system" predicate="pf_trainability" type="wh_question">
+    To what degree should your dog be trainable
+  </question>
+
+  <question speaker="system" predicate="pf_shedding" type="wh_question">
+    To what degree should your dog shed
+  </question>
+
+  <question speaker="system" predicate="pf_energy" type="wh_question">
+    To what degree should your dog have enery
+  </question>
+
+  <question speaker="system" predicate="pf_barking" type="wh_question">
+    To what degree should your dog be bark
+  </question>
+
+  <question speaker="system" predicate="pf_protectiveness" type="wh_question">
+    To what degree should your dog be protective
+  </question>
+
+  <individual name="0">
+    <one-of>
+      <item>to no degree</item>
+    </one-of>
+  </individual>
+
+  <individual name="1">
+    <one-of>
+      <item>to a very low degree</item>
+    </one-of>
+  </individual>
+
+  <individual name="2">
+    <one-of>
+      <item>to a low degree</item>
+    </one-of>
+  </individual>  
+
+  <individual name="3">
+    <one-of>
+      <item>to some degree</item>
+    </one-of>
+  </individual>   
+
+  <individual name="4">
+    <one-of>
+      <item>to a high degree</item>
+    </one-of>
+  </individual>  
+
+  <individual name="5">
+    <one-of>
+      <item>to a very high degree</item>
+    </one-of>
+  </individual> 
+
+</grammar>

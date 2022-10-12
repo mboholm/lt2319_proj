@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<service_interface>
+  <query name="what_dog_to_get">
+    <parameters>
+      <parameter predicate="pf_trainability" format="value" optional="true"/>
+      <parameter predicate="pf_shedding" format="value" optional="true"/>
+      <parameter predicate="pf_energy" format="value" optional="true"/>
+      <parameter predicate="pf_barking" format="value" optional="true"/>
+      <parameter predicate="pf_protectiveness" format="value" optional="true"/>
+    </parameters>
+    <target>
+      <http endpoint="http://ddds-http-service/select_dog"/>
+    </target>
+  </query>
+
+  <!-- What is the entity recognizer supposed to recognize in my case? I am not sure I need one ... Prefernce scores are not dynamic ... -->
+  <!-- <entity_recognizer name="XxxRecognizer">
+    <target>
+      <http endpoint="http://ddds-http-service/X_recognizer"/>
+    </target>
+  </entity_recognizer> -->
+</service_interface>

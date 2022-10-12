@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ontology name="ProjFidoOntology">
+
+  <sort name="dog" dynamic="true"/>
+  <sort name="p_score"/>
+  
+  <!-- (Dis)Preferred Features -->
+  <prediate name="pf_trainability" sort="p_score"/>
+  <prediate name="pf_shedding" sort="p_score"/>
+  <prediate name="pf_energy" sort="p_score"/>
+  <prediate name="pf_barking" sort="p_score"/>
+  <prediate name="pf_protectiveness" sort="p_score"/>
+
+  <predicate name="what_dog_to_get" sort="dog"/>
+
+  <individual name="0" sort="p_score"/>
+  <individual name="1" sort="p_score"/>
+  <individual name="2" sort="p_score"/>
+  <individual name="3" sort="p_score"/>
+  <individual name="4" sort="p_score"/>
+  <individual name="5" sort="p_score"/>  
+
+</ontology>

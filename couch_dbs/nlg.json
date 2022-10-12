@@ -1,0 +1,10 @@
+[
+    {
+        "match": "some(semantic_expression_of_a_move)",
+        "utterance": "some utterance"
+    },
+    {
+        "match": "another(semantic_expression_of_a_move)",
+        "utterance": "another utterance"
+    }
+]

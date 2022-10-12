@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<domain name="ProjFidoDomain" is_super_domain="true">
+  <goal type="perform" action="top">
+    <plan>
+      <forget_all/>
+      <findout type="goal"/>
+    </plan>
+  </goal>
+
+  <goal type="perform" action="get_dog">
+  	<plan>
+      <findout type="wh_question" predicate="what_dog_to_get"/>
+      <invoke_service_query predicate="what_dog_to_get" type="wh_question"/>
+  	</plan>
+  </goal>
+  
+  <parameters question_type="wh_question" predicate="what_dog_to_get" graphical_type="list" incremental="true">
+    <ask_feature predicate="pf_trainability"/>
+    <ask_feature predicate="pf_shedding"/>
+    <ask_feature predicate="pf_energy"/>
+    <ask_feature predicate="pf_barking"/>
+    <ask_feature predicate="pf_protectiveness"/>
+  </parameters>   
+
+</domain>
