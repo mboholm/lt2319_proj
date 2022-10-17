@@ -10,16 +10,38 @@
   <goal type="perform" action="get_dog">
   	<plan>
       <findout type="wh_question" predicate="what_dog_to_get"/>
-      <invoke_service_query predicate="what_dog_to_get" type="wh_question"/>
+      <invoke_service_action name="DummyAction" postconfirm="true"/>
   	</plan>
   </goal>
+
+  <!-- make a goal for zero_hit_action -->
+
+  <!-- make a goal for too many hits -->
   
-  <parameters question_type="wh_question" predicate="what_dog_to_get" graphical_type="list" incremental="true">
+  <parameters question_type="wh_question" predicate="what_dog_to_get" graphical_type="list" incremental="true" max_spoken_alts="5" source="service">
     <ask_feature predicate="pf_trainability"/>
     <ask_feature predicate="pf_shedding"/>
     <ask_feature predicate="pf_energy"/>
     <ask_feature predicate="pf_barking"/>
     <ask_feature predicate="pf_protectiveness"/>
-  </parameters>   
+  </parameters> 
+
+
+  <goal type="resolve" question_type="wh_question" predicate="describe_dog">
+    <plan>
+      <findout type="wh_question" predicate="what_dog_to_describe"/>
+      <invoke_service_query predicate="describe_dog" type="wh_question"/>
+    </plan>
+  </goal>
+
+  <goal type="resolve" question_type="wh_question" predicate="compare">
+    <plan>
+      <findout type="wh_question" predicate="target_dog"/>
+      <findout type="wh_question" predicate="compare_with"/>
+      <findout type="wh_question" predicate="feature_of_comparison"/>
+      <invoke_service_query predicate="compare" type="wh_question"/>
+    </plan>
+  </goal>
+
 
 </domain>

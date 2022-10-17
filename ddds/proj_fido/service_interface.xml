@@ -1,5 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <service_interface>
+
+  
+  <action name="DummyAction">
+    <parameters>
+      <parameter predicate="what_dog_to_get" format="value"/>
+    </parameters>
+    <failure_reasons/>
+    <target>
+      <http endpoint="http://ddds-http-service/dummy_action"/>
+    </target>
+  </action>
+  
+
   <query name="what_dog_to_get">
     <parameters>
       <parameter predicate="pf_trainability" format="value" optional="true"/>
@@ -13,10 +26,25 @@
     </target>
   </query>
 
-  <!-- What is the entity recognizer supposed to recognize in my case? I am not sure I need one ... Prefernce scores are not dynamic ... -->
-  <!-- <entity_recognizer name="XxxRecognizer">
+  <query name="describe_dog">
+    <parameters>
+      <parameter predicate="what_dog_to_describe" format="grammar_entry"/>
+    </parameters>
     <target>
-      <http endpoint="http://ddds-http-service/X_recognizer"/>
+      <http endpoint="http://ddds-http-service/dog_describer"/>
     </target>
-  </entity_recognizer> -->
+  </query>
+
+  <query name="compare">
+    <parameters>
+      <parameter predicate="target_dog" format="grammar_entry"/>
+      <parameter predicate="compare_with" format="grammar_entry"/>
+      <parameter predicate="feature_of_comparison" format="value"/>
+    </parameters>
+    <target>
+      <http endpoint="http://ddds-http-service/dog_comparator"/>
+    </target>
+  </query>
+
+
 </service_interface>

@@ -1,13 +1,91 @@
 --- main menu
 S> What would you like to do?
 
---- artificial, incremental
+--- artificial, 2 level unique
 S> What would you like to do?
 U> I want help with deciding what dog to get
 S> To what degree should your dog be trainable?
 U> to a high degree
 S> To what degree should your dog shed?
 U> to a very high degree
-S> To what degree should your dog have enery?
-U> to a high degree
 S> You should get a Bernese Mountain Dog
+
+--- artificial, 5 level unique
+S> What would you like to do?
+U> I want help with deciding what dog to get
+S> To what degree should your dog be trainable?
+U> to a very high degree
+S> To what degree should your dog shed?
+U> to some degree
+S> To what degree should your dog have energy?
+U> to some degree
+S> To what degree should your dog bark?
+U> to a very low degree
+S> To what degree should your dog be protective?
+U> to a very high degree
+S> You should get a Rottweiler
+
+--- artifical, 5 level set
+S> What would you like to do?
+U> I want help with deciding what dog to get
+S> To what degree should your dog be trainable?
+U> to some degree
+S> To what degree should your dog shed?
+U> to a very low degree
+S> To what degree should your dog have energy?
+U> to a high degree
+S> To what degree should your dog bark?
+U> to some degree
+S> To what degree should your dog be protective?
+U> to a low degree
+S> Perhaps you should have one of the following dogs : Barbado da Terceira, Bichon Frise or Bolognese?
+U> Bolognese
+S> You should get a Bolognese
+
+--- artifical, 5 level set decribe dog
+S> What would you like to do?
+U> I want help with deciding what dog to get
+S> To what degree should your dog be trainable?
+U> to some degree
+S> To what degree should your dog shed?
+U> to a very low degree
+S> To what degree should your dog have energy?
+U> to a high degree
+S> To what degree should your dog bark?
+U> to some degree
+S> To what degree should your dog be protective?
+U> to a low degree
+S> Perhaps you should have one of the following dogs : Barbado da Terceira, Bichon Frise or Bolognese?
+U> Tell me about Bolognese
+S> Bolognese is a dog which is easy to train. It sheds very litte. It is high in energy and barks to some extent. It is somewhat not protective. It is good with children.
+U> 
+S> Returning to I want help with finding out what dog to get. Perhaps you should have one of the following dogs : Barbado da Terceira, Bichon Frise or Bolognese?
+U> Then Bolognese
+S> You should get a Bolognese
+
+--- artifical, 5 level set compare dogs incremental
+S> What would you like to do?
+U> I want help with deciding what dog to get
+S> To what degree should your dog be trainable?
+U> to some degree
+S> To what degree should your dog shed?
+U> to a very low degree
+S> To what degree should your dog have energy?
+U> to a high degree
+S> To what degree should your dog bark?
+U> to some degree
+S> To what degree should your dog be protective?
+U> to a low degree
+S> Perhaps you should have one of the following dogs : Barbado da Terceira, Bichon Frise or Bolognese?
+U> Can you help me compare the dogs?
+S> What dogs do you want to compare?
+U> Barbado da Terceira and Bolognese
+S> With regard to what feature do you want to compare those dogs?
+U> barking
+S> bla bla bla
+U> 
+S> Returning to I want help with finding out what dog to get. Perhaps you should have one of the following dogs : Barbado da Terceira, Bichon Frise or Bolognese?
+U> ja da ja da ja da
+S> You should get a DOG
+
+

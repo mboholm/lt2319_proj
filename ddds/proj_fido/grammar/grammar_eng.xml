@@ -21,20 +21,143 @@
     </one-of>
   </action>
 
+
+
+
+<!-- USER MOVES -->
+<!-- Main sequence -->
   <action name="get_dog">
     <one-of>
       <item>I want help with finding out what dog to get</item>
       <item>I want help with deciding what dog to get</item>
-      <item>Please help me decide what dog to get</item>
+      <item>Help me decide what dog to get</item>
+      <item>Get dog</item>
     </one-of>
   </action>
 
-  <!-- Obs! Preliminary; format of questions are tricky. For example, some questions are better raised as negated. Should there be p-scores for every predicate (e.g. ps_trainability)? Note e.g. quantification: how important is it for you that your dog has much energy? STRATEGY: 1 Formulate natural questions for every predicate; 2 Construe an interpretor for every predicate. -->
 
-  <answer speaker="system" predicate="what_dog_to_get">
-    You should get a <slot predicate="what_dog_to_get"/>
+  <individual name="zero">
+    <one-of>
+      <item>to no degree</item>
+      <item>zero</item>
+    </one-of>
+  </individual>
+
+  <individual name="one">
+    <one-of>
+      <item>to a very low degree</item>
+      <item>one</item>
+    </one-of>
+  </individual>
+
+  <individual name="two">
+    <one-of>
+      <item>to a low degree</item>
+      <item>two</item>
+    </one-of>
+  </individual>  
+
+  <individual name="three">
+    <one-of>
+      <item>to some degree</item>
+      <item>three</item>
+    </one-of>
+  </individual>   
+
+  <individual name="four">
+    <one-of>
+      <item>to a high degree</item>
+      <item>four</item>
+    </one-of>
+  </individual>  
+
+  <individual name="five">
+    <one-of>
+      <item>to a very high degree</item>
+      <item>five</item>
+    </one-of>
+  </individual>
+
+
+<!-- Sub-sequence: describe -->
+  <question speaker="user" predicate="describe_dog" type="wh_question">
+    <one-of>
+      <item>Tell me about <slot predicate="what_dog_to_describe"/></item>
+      <item>Descibe <slot predicate="what_dog_to_describe"/> to me</item>
+      <item>I want to kow more about these dogs</item>
+      <item>Tell me</item>
+    </one-of>
+  </question>
+
+
+<!-- Sub-sequence: compare -->
+  <question speaker="user" predicate="compare" type="wh_question">
+    <one-of>
+      <item>Can you help me compare the dogs</item>
+      <item>Compare <slot predicate="target_dog"/> with <slot predicate="compare_with"/> with respect to <slot predicate="comp_feature"/></item>
+      <item>How does <slot predicate="target_dog"/> compare with <slot predicate="compare_with"/></item>
+    </one-of>
+  </question>
+
+  <individual name="comp_trainability">
+    <one-of>
+      <item>trainability</item>
+      <item>how trainable they are</item>
+    </one-of>
+  </individual> 
+
+  <individual name="comp_shedding">
+    <one-of>
+      <item>shedding</item>
+      <item>how much they shed</item>
+    </one-of>
+  </individual>  
+
+  <individual name="comp_energy">
+    <one-of>
+      <item>energy</item>
+      <item>how much energy they have</item>
+    </one-of>
+  </individual>
+
+  <individual name="comp_barking">
+    <one-of>
+      <item>barking</item>
+      <item>how much they bark</item>
+    </one-of>
+  </individual>   
+
+  <individual name="comp_protectiveness">
+    <one-of>
+      <item>protectiveness</item>
+      <item>how protective they are</item>
+    </one-of>
+  </individual>  
+
+  <individual name="comp_good_with_children">
+    <one-of>
+      <item>how good they are with children</item>
+    </one-of>
+  </individual> 
+
+
+<!-- Answers -->
+  <answer speaker="user">
+    <one-of>
+      <item>Then <slot predicate="what_dog_to_get"/></item>
+      <item><slot predicate="target_dog"/> with <slot predicate="compare_with"/></item>
+      <item><slot predicate="target_dog"/> and <slot predicate="compare_with"/></item>
+      <item><slot predicate="target_dog"/> with <slot predicate="compare_with"/> with regard to <slot predicate="comp_feature"/></item>
+      <item><slot predicate="target_dog"/> and <slot predicate="compare_with"/> with regard to <slot predicate="comp_feature"/></item>
+    </one-of>
   </answer>
 
+
+
+<!-- SYSTEM MOVES -->
+<!-- Main sequence -->
+
+  <!-- Consider: "From a scale zero to five (one to six) ..." -->
   <question speaker="system" predicate="pf_trainability" type="wh_question">
     To what degree should your dog be trainable
   </question>
@@ -44,51 +167,45 @@
   </question>
 
   <question speaker="system" predicate="pf_energy" type="wh_question">
-    To what degree should your dog have enery
+    To what degree should your dog have energy
   </question>
 
   <question speaker="system" predicate="pf_barking" type="wh_question">
-    To what degree should your dog be bark
+    To what degree should your dog bark
   </question>
 
   <question speaker="system" predicate="pf_protectiveness" type="wh_question">
     To what degree should your dog be protective
   </question>
 
-  <individual name="0">
-    <one-of>
-      <item>to no degree</item>
-    </one-of>
-  </individual>
 
-  <individual name="1">
-    <one-of>
-      <item>to a very low degree</item>
-    </one-of>
-  </individual>
+  <question speaker="system" predicate="what_dog_to_get" type="wh_question">Perhaps you should have one of the following dogs</question>
 
-  <individual name="2">
-    <one-of>
-      <item>to a low degree</item>
-    </one-of>
-  </individual>  
+  
+  <report action="DummyAction" status="ended">
+    You should get a <slot predicate="what_dog_to_get"/>
+  </report>
 
-  <individual name="3">
-    <one-of>
-      <item>to some degree</item>
-    </one-of>
-  </individual>   
 
-  <individual name="4">
-    <one-of>
-      <item>to a high degree</item>
-    </one-of>
-  </individual>  
+<!-- Sub-sequence: describe -->
+  <question speaker="system" predicate="what_dog_to_describe" type="wh_question">
+    What dog
+  </question>
 
-  <individual name="5">
-    <one-of>
-      <item>to a very high degree</item>
-    </one-of>
-  </individual> 
+
+
+<!-- Sub-sequence: compare -->
+  <question speaker="system" predicate="target_dog" type="wh_question">
+    What dogs do you want to compare 
+  </question>  
+
+  <question speaker="system" predicate="compare_with" type="wh_question">
+    What dog do you want to compare <slot predicate="target_dog"/> with
+  </question> 
+
+  <question speaker="system" predicate="feature_of_comparison" type="wh_question">
+    With regard to what feature do you want to compare those dogs
+  </question> 
+
 
 </grammar>
