@@ -2,13 +2,13 @@
 <service_interface>
 
   
-  <action name="DummyAction">
+  <action name="SuggestDog">
     <parameters>
       <parameter predicate="what_dog_to_get" format="value"/>
     </parameters>
     <failure_reasons/>
     <target>
-      <http endpoint="http://ddds-http-service/dummy_action"/>
+      <http endpoint="http://ddds-http-service/suggest_dog"/>
     </target>
   </action>
   

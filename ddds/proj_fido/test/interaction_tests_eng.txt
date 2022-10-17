@@ -63,6 +63,29 @@ S> Returning to I want help with finding out what dog to get. Perhaps you should
 U> Then Bolognese
 S> You should get a Bolognese
 
+--- artifical, 5 level set describe 2 dogs
+S> What would you like to do?
+U> I want help with deciding what dog to get
+S> To what degree should your dog be trainable?
+U> to some degree
+S> To what degree should your dog shed?
+U> to a very low degree
+S> To what degree should your dog have energy?
+U> to a high degree
+S> To what degree should your dog bark?
+U> to some degree
+S> To what degree should your dog be protective?
+U> to a low degree
+S> Perhaps you should have one of the following dogs : Barbado da Terceira, Bichon Frise or Bolognese?
+U> Tell me about Bolognese
+S> Bolognese is a dog which is easy to train. It sheds very litte. It is high in energy and barks to some extent. It is somewhat not protective. It is good with children.
+U> Tell me about Bichon Frise
+S> Bichon Frise is a dog which is quite easy to train. It sheds very litte. It is high in energy and barks to some extent. It is somewhat not protective. It is extremly good with children.
+U> 
+S> Returning to I want help with finding out what dog to get. Perhaps you should have one of the following dogs : Barbado da Terceira, Bichon Frise or Bolognese?
+U> Bichon Frise
+S> You should get a Bichon Frise
+
 --- artifical, 5 level set compare dogs incremental
 S> What would you like to do?
 U> I want help with deciding what dog to get
@@ -77,15 +100,31 @@ U> to some degree
 S> To what degree should your dog be protective?
 U> to a low degree
 S> Perhaps you should have one of the following dogs : Barbado da Terceira, Bichon Frise or Bolognese?
-U> Can you help me compare the dogs?
+U> Can you help me compare the dogs
 S> What dogs do you want to compare?
 U> Barbado da Terceira and Bolognese
 S> With regard to what feature do you want to compare those dogs?
 U> barking
-S> bla bla bla
+S> Barbado da Terceira barks more than Bolognese.
 U> 
 S> Returning to I want help with finding out what dog to get. Perhaps you should have one of the following dogs : Barbado da Terceira, Bichon Frise or Bolognese?
-U> ja da ja da ja da
-S> You should get a DOG
+U> I think I will get a Bolognese then
+S> You should get a Bolognese
+
+--- artificial, no dog
+S> What would you like to do?
+U> I want help with deciding what dog to get
+S> To what degree should your dog be trainable?
+U> two
+S> To what degree should your dog shed?
+U> two
+S> To what degree should your dog have energy?
+U> five
+S> Unfortunately there is no dog matching that profile
+
+
+
+--- MUPP
+
 
 

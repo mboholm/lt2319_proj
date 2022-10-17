@@ -10,7 +10,7 @@
   <goal type="perform" action="get_dog">
   	<plan>
       <findout type="wh_question" predicate="what_dog_to_get"/>
-      <invoke_service_action name="DummyAction" postconfirm="true"/>
+      <invoke_service_action name="SuggestDog" postconfirm="true"/>
   	</plan>
   </goal>
 
@@ -18,7 +18,7 @@
 
   <!-- make a goal for too many hits -->
   
-  <parameters question_type="wh_question" predicate="what_dog_to_get" graphical_type="list" incremental="true" max_spoken_alts="5" source="service">
+  <parameters question_type="wh_question" predicate="what_dog_to_get" graphical_type="list" incremental="true" max_spoken_alts="5" source="service" on_zero_hits_action="solve_zero">
     <ask_feature predicate="pf_trainability"/>
     <ask_feature predicate="pf_shedding"/>
     <ask_feature predicate="pf_energy"/>
@@ -42,6 +42,22 @@
       <invoke_service_query predicate="compare" type="wh_question"/>
     </plan>
   </goal>
+
+  <goal type="perform" action="solve_zero">
+    <plan>
+
+      <signal_action_failure reason="failure_reason"/>
+
+
+
+      <inform>
+        <proposition predicate="explain_failure" value="no_hits"/>
+      </inform>
+      <!-- Do something -->
+
+
+    </plan>
+  </goal>  
 
 
 </domain>

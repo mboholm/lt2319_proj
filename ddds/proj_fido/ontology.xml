@@ -6,9 +6,12 @@
   <sort name="description" dynamic="true"/>
   <sort name="comparison" dynamic="true"/>
   <sort name="comp_feature"/>
+  <sort name="explanation"/>
   
 
   <action name="get_dog"/>
+
+  <action name="solve_zero"/>
 
   <!-- (Dis)Preferred Features (pf) for incremental search-->
   <predicate name="pf_trainability" sort="p_score"/>
@@ -31,6 +34,9 @@
   <predicate name="feature_of_comparison" sort="comp_feature"/>
 
 
+  <predicate name="explain_failure" sort="explanation"/>
+
+
   <individual name="zero" sort="p_score"/>
   <individual name="one" sort="p_score"/>
   <individual name="two" sort="p_score"/>
@@ -44,6 +50,9 @@
   <individual name="comp_barking" sort="comp_feature"/>
   <individual name="comp_protectiveness" sort="comp_feature"/>
   <individual name="comp_good_with_children" sort="comp_feature"/>   
+
+
+  <individual name="no_hits" sort="explanation"/>
 
 
 </ontology>

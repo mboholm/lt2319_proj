@@ -157,6 +157,8 @@ def validator_response(is_valid):
 #run = 0
 filtered_dogs = set()
 phase = None
+descr_id = 1
+comp_id  = 1
 
 with open("db_combined_n177.json", "r") as json_file:
     DOGS = json.load(json_file)
@@ -257,6 +259,7 @@ def create_value(ds): # ds=dog string
     ds = ds.replace("’", "")
     ds = ds.replace("é", "e")
     ds = ds.lower()
+    #ds = ds.capitalize()
     return ds
 
 def interpretation(value):
@@ -274,24 +277,26 @@ def interpretation(value):
 
 def filter_dogs(scores, db=DOGS):
 
-	# OBS! Should return ALL dogs in zero phase. There is code for such a funcion in "resolve" directory (version) of project
-
-    hits=set()
     scores = [(feat, score) for feat, score in scores if score != None]
-    for i, (feature, score) in enumerate(scores):
-        score_meaning = interpretation(score)
-        if i == 0:
-            hits.update([dog["name"] for dog in db if dog[feature] in score_meaning])
 
-        else:
-            new_dogs = [dog["name"] for dog in db if dog[feature] in score_meaning]
-            hits = hits.intersection(new_dogs)
-    
-    return hits
+    if scores == []:
+        return set([dog["name"] for dog in db])
+    else:
+        hits=set()
+        for i, (feature, score) in enumerate(scores):
+            score_meaning = interpretation(score)
+            if i == 0:
+                hits.update([dog["name"] for dog in db if dog[feature] in score_meaning])
 
-@app.route("/dummy_action", methods=['POST'])
-def dummy_action():
-    print(">>> Dummy Action")
+            else:
+                new_dogs = [dog["name"] for dog in db if dog[feature] in score_meaning]
+                hits = hits.intersection(new_dogs)
+        
+        return hits
+
+@app.route("/suggest_dog", methods=['POST'])
+def suggest_dog():
+    print(">>> Suggest Dog Action")
     try:
         #payload = request.get_json()
         #selected_contact = payload["request"]["parameters"]["selected_contact"]["value"]
@@ -319,22 +324,6 @@ def successful_action_response():
     )
     return response
 
-@app.route("/dog_describer", methods=['POST'])
-def dog_describer():
-
-	try:
-		payload = request.get_json()
-		my_dog = payload["request"]["parameters"]["what_dog_to_describe"]["grammar_entry"]
-		data_entry = [dog for dog in DOGS if dog["name"] == my_dog][0]
-		content = json2content(data_entry)
-		#c_value = create_value(content)
-		c_value = my_dog+"_description"
-
-		return query_response(c_value, content)
-	except BaseException as exception:
-		return error_response(message=str(exception)) 
-
-
 def query_response(value, grammar_entry):
     response_template = environment.from_string("""
     {
@@ -359,6 +348,24 @@ def query_response(value, grammar_entry):
     )
     return response
 
+@app.route("/dog_describer", methods=['POST'])
+def dog_describer():
+	global descr_id
+
+	try:
+		payload = request.get_json()
+		my_dog = payload["request"]["parameters"]["what_dog_to_describe"]["grammar_entry"]
+		data_entry = [dog for dog in DOGS if dog["name"] == my_dog][0]
+		content = json2content(data_entry)
+		c_value = "description_"+str(descr_id)
+		descr_id += 1
+		#c_value = my_dog+"_description" # This one also works! Why?
+
+		return query_response(c_value, content)
+	except BaseException as exception:
+		return error_response(message=str(exception)) 
+
+
 #core_features = ["trainability", "shedding", "energy", "barking", "protectiveness", "good_with_children"]
 
 def json2content(json):
@@ -377,18 +384,23 @@ def json2content(json):
 
 @app.route("/dog_comparator", methods=['POST'])
 def dog_comparator():
+	global comp_id
 
 	try:
 		payload = request.get_json()
 		target = payload["request"]["parameters"]["target_dog"]["grammar_entry"]
 		compare_with = payload["request"]["parameters"]["compare_with"]["grammar_entry"]
-		feature = payload["request"]["parameters"]["comp_feature"]["value"]
+		feature = payload["request"]["parameters"]["feature_of_comparison"]["value"]
 		feature = feature.replace("comp_", "")
 
 		compare_str = get_comparison(target, compare_with, feature)
 
+		c_value = "comparison_"+str(comp_id)
+		comp_id += 1
+
 		#c_value = create_value(content)
-		c_value = f"{target}_{compare_with}_comparison"
+		#c_value = f"{create_value(target)}_{create_value(compare_with)}_comparison"
+
 
 		return query_response(c_value, compare_str)
 	except BaseException as exception:
@@ -396,8 +408,8 @@ def dog_comparator():
 
 def get_comparison(target, compare_with, feature):
 
-	trg_value = int([dog[feature] for dog in DOGS if dog["name"] == target])
-	lm_value  = int([dog[feature] for dog in DOGS if dog["name"] == compare_with])
+	trg_value = int([dog[feature] for dog in DOGS if dog["name"] == target][0])
+	lm_value  = int([dog[feature] for dog in DOGS if dog["name"] == compare_with][0])
 
 	if trg_value-lm_value == 0:
 		evaluation = "zero"
@@ -440,7 +452,7 @@ def get_comparison(target, compare_with, feature):
 		}
 	}
 
-	comparison = f"{target_dog} {semantics[feature][evaluation]} {compare_with}"
+	comparison = f"{target} {semantics[feature][evaluation]} {compare_with}"
 
 	return comparison
 

@@ -145,6 +145,7 @@
   <answer speaker="user">
     <one-of>
       <item>Then <slot predicate="what_dog_to_get"/></item>
+      <item>I think I will get a <slot predicate="what_dog_to_get"/> then</item>
       <item><slot predicate="target_dog"/> with <slot predicate="compare_with"/></item>
       <item><slot predicate="target_dog"/> and <slot predicate="compare_with"/></item>
       <item><slot predicate="target_dog"/> with <slot predicate="compare_with"/> with regard to <slot predicate="comp_feature"/></item>
@@ -182,7 +183,7 @@
   <question speaker="system" predicate="what_dog_to_get" type="wh_question">Perhaps you should have one of the following dogs</question>
 
   
-  <report action="DummyAction" status="ended">
+  <report action="SuggestDog" status="ended">
     You should get a <slot predicate="what_dog_to_get"/>
   </report>
 
@@ -191,6 +192,12 @@
   <question speaker="system" predicate="what_dog_to_describe" type="wh_question">
     What dog
   </question>
+
+  <!--
+  <answer speaker="system" predicate="describe_dog">
+    <slot predicate="describe_dog"/>
+  </answer>
+  -->
 
 
 
@@ -206,6 +213,18 @@
   <question speaker="system" predicate="feature_of_comparison" type="wh_question">
     With regard to what feature do you want to compare those dogs
   </question> 
+
+  <!--
+  <answer speaker="system" predicate="compare">
+    <slot predicate="compare"/>
+  </answer>
+  -->
+
+<!-- Zero hits -->
+  <individual name="no_hits">Unfortunately there is no dog matching that profile</individual>  
+
+  <report action="SuggestDog" status="failed" reason="no-hits">Unfortunately there is no dog matching that profile</report>
+
 
 
 </grammar>
