@@ -22,12 +22,10 @@
   </action>
 
 
-
-
-<!-- USER MOVES -->
-<!-- Main sequence -->
+<!-- ACTIONS -->
   <action name="get_dog">
     <one-of>
+      <item>Find dog</item>
       <item>I want help with finding out what dog to get</item>
       <item>I want help with deciding what dog to get</item>
       <item>Help me decide what dog to get</item>
@@ -35,9 +33,23 @@
     </one-of>
   </action>
 
+  <action name="solve_zero">Solve zero hits situation</action>
+  <action name="solve_overflow">solve overflow</action>
 
+
+<!-- ALL SPEAKERS -->
+<question type="wh_question" speaker="all" predicate="compare">compare dogs</question>
+<question type="wh_question" speaker="all" predicate="describe_dog">describe dog</question>
+<question type="wh_question" speaker="all" predicate="most_dog">tell most dog</question>
+<question type="wh_question" speaker="all" predicate="least_dog">tell least dog</question>
+
+
+
+<!-- USER MOVES -->
+<!-- Main sequence -->
   <individual name="zero">
     <one-of>
+      <item>the lowest value</item>
       <item>to no degree</item>
       <item>zero</item>
     </one-of>
@@ -75,6 +87,7 @@
     <one-of>
       <item>to a very high degree</item>
       <item>five</item>
+      <item>the highest value</item>
     </one-of>
   </individual>
 
@@ -86,6 +99,7 @@
       <item>Descibe <slot predicate="what_dog_to_describe"/> to me</item>
       <item>I want to kow more about these dogs</item>
       <item>Tell me</item>
+      <item>Describe</item>
     </one-of>
   </question>
 
@@ -94,51 +108,85 @@
   <question speaker="user" predicate="compare" type="wh_question">
     <one-of>
       <item>Can you help me compare the dogs</item>
-      <item>Compare <slot predicate="target_dog"/> with <slot predicate="compare_with"/> with respect to <slot predicate="comp_feature"/></item>
+      <item>Compare <slot predicate="target_dog"/> with <slot predicate="compare_with"/> with respect to <slot predicate="feature_of_comparison"/></item>
       <item>How does <slot predicate="target_dog"/> compare with <slot predicate="compare_with"/></item>
+      <item>Compare</item>
     </one-of>
   </question>
 
-  <individual name="comp_trainability">
+  <individual name="trainability">
     <one-of>
       <item>trainability</item>
       <item>how trainable they are</item>
+      <item>to train</item>
+      <item>trainable</item>
     </one-of>
   </individual> 
 
-  <individual name="comp_shedding">
+  <individual name="shedding">
     <one-of>
       <item>shedding</item>
       <item>how much they shed</item>
+      <item>sheds</item>
     </one-of>
   </individual>  
 
-  <individual name="comp_energy">
+  <individual name="energy">
     <one-of>
       <item>energy</item>
       <item>how much energy they have</item>
     </one-of>
   </individual>
 
-  <individual name="comp_barking">
+  <individual name="barking">
     <one-of>
       <item>barking</item>
       <item>how much they bark</item>
+      <item>barks</item>
     </one-of>
   </individual>   
 
-  <individual name="comp_protectiveness">
+  <individual name="protectiveness">
     <one-of>
       <item>protectiveness</item>
       <item>how protective they are</item>
+      <item>protective</item>
     </one-of>
   </individual>  
 
-  <individual name="comp_good_with_children">
+  <individual name="good_with_children">
     <one-of>
       <item>how good they are with children</item>
+      <item>good with children</item>
     </one-of>
   </individual> 
+
+<!-- Sub-sequence: find dog most F -->
+  <question speaker="user" predicate="most_dog" type="wh_question">
+    <one-of>
+      <item>Of these which <slot predicate="feature_of_most"/> most</item>
+      <item>Of these which is the most <slot predicate="feature_of_most"/></item>
+      <item>Of these which has most <slot predicate="feature_of_most"/></item>      
+      <item>Which of these <slot predicate="feature_of_most"/> most</item>
+      <item>Which of these is the most <slot predicate="feature_of_most"/></item>
+      <item>Which of these has most <slot predicate="feature_of_most"/></item>
+      <item>get most</item>
+    </one-of>
+  </question>
+  <!-- Problems for english: which of these is best best with children -->
+
+<!-- Sub-sequence: find dog least F -->
+  <question speaker="user" predicate="least_dog" type="wh_question">
+    <one-of>
+      <item>Of these which <slot predicate="feature_of_least"/> least</item>
+      <item>Of these which is the least <slot predicate="feature_of_least"/></item>
+      <item>Of these which has least <slot predicate="feature_of_least"/></item>
+      <item>Which of these <slot predicate="feature_of_least"/> least</item>
+      <item>Which of these is the least <slot predicate="feature_of_least"/></item>
+      <item>Which of these has least <slot predicate="feature_of_least"/></item>
+      <item>get least</item>
+    </one-of>
+  </question>
 
 
 <!-- Answers -->
@@ -148,8 +196,8 @@
       <item>I think I will get a <slot predicate="what_dog_to_get"/> then</item>
       <item><slot predicate="target_dog"/> with <slot predicate="compare_with"/></item>
       <item><slot predicate="target_dog"/> and <slot predicate="compare_with"/></item>
-      <item><slot predicate="target_dog"/> with <slot predicate="compare_with"/> with regard to <slot predicate="comp_feature"/></item>
-      <item><slot predicate="target_dog"/> and <slot predicate="compare_with"/> with regard to <slot predicate="comp_feature"/></item>
+      <item><slot predicate="target_dog"/> with <slot predicate="compare_with"/> with regard to <slot predicate="feature_of_comparison"/></item>
+      <item><slot predicate="target_dog"/> and <slot predicate="compare_with"/> with regard to <slot predicate="feature_of_comparison"/></item>
     </one-of>
   </answer>
 
@@ -157,26 +205,27 @@
 
 <!-- SYSTEM MOVES -->
 <!-- Main sequence -->
-
   <!-- Consider: "From a scale zero to five (one to six) ..." -->
+  <individual name="procedure">Great! I will ask you a couple of questions to figure out what dog that might fit your preferences. First question </individual> 
+
   <question speaker="system" predicate="pf_trainability" type="wh_question">
-    To what degree should your dog be trainable
+    On a scale from zero to five, to what degree should your dog be trainable
   </question>
 
   <question speaker="system" predicate="pf_shedding" type="wh_question">
-    To what degree should your dog shed
+    On a scale from zero to five, to what degree should your dog shed
   </question>
 
   <question speaker="system" predicate="pf_energy" type="wh_question">
-    To what degree should your dog have energy
+    On a scale from zero to five, to what degree should your dog have energy
   </question>
 
   <question speaker="system" predicate="pf_barking" type="wh_question">
-    To what degree should your dog bark
+    On a scale from zero to five, to what degree should your dog bark
   </question>
 
   <question speaker="system" predicate="pf_protectiveness" type="wh_question">
-    To what degree should your dog be protective
+    On a scale from zero to five, to what degree should your dog be protective
   </question>
 
 
@@ -199,8 +248,6 @@
   </answer>
   -->
 
-
-
 <!-- Sub-sequence: compare -->
   <question speaker="system" predicate="target_dog" type="wh_question">
     What dogs do you want to compare 
@@ -220,11 +267,23 @@
   </answer>
   -->
 
+<!-- Sub-sequence: find dog most F -->
+  <question speaker="system" predicate="feature_of_most" type="wh_question">
+    What feature 
+  </question> 
+
+
+
+<!-- Sub-sequence: find dog least F -->
+  <question speaker="system" predicate="feature_of_least" type="wh_question">
+    What feature 
+  </question> 
+
+
 <!-- Zero hits -->
-  <individual name="no_hits">Unfortunately there is no dog matching that profile</individual>  
-
-  <report action="SuggestDog" status="failed" reason="no-hits">Unfortunately there is no dog matching that profile</report>
-
+  <individual name="no_hits">Unfortunately there is no dog matching that profile</individual>
+<!-- Too many hits -->
+  <individual name="too_many_hits">Oops! There are very many dogs matching that profile. Voff voff!</individual>  
 
 
 </grammar>

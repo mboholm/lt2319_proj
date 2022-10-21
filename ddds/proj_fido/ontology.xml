@@ -5,13 +5,16 @@
   <sort name="p_score"/>
   <sort name="description" dynamic="true"/>
   <sort name="comparison" dynamic="true"/>
-  <sort name="comp_feature"/>
+  <sort name="feature"/>
+
   <sort name="explanation"/>
   
 
   <action name="get_dog"/>
 
   <action name="solve_zero"/>
+
+  <action name="solve_overflow"/>
 
   <!-- (Dis)Preferred Features (pf) for incremental search-->
   <predicate name="pf_trainability" sort="p_score"/>
@@ -31,10 +34,15 @@
   <predicate name="compare" sort="comparison"/>
   <predicate name="target_dog" sort="dog"/>
   <predicate name="compare_with" sort="dog"/>
-  <predicate name="feature_of_comparison" sort="comp_feature"/>
+  <predicate name="feature_of_comparison" sort="feature"/>
+  <predicate name="most_dog" sort="dog"/>
+  <predicate name="feature_of_most" sort="feature"/>
+  <predicate name="least_dog" sort="dog"/>
+  <predicate name="feature_of_least" sort="feature"/>
 
-
-  <predicate name="explain_failure" sort="explanation"/>
+  <predicate name="explain_no_hits" sort="explanation"/>
+  <predicate name="explain_too_many_hits" sort="explanation"/>
+  <predicate name="explain_procedure" sort="explanation"/>
 
 
   <individual name="zero" sort="p_score"/>
@@ -44,15 +52,16 @@
   <individual name="four" sort="p_score"/>
   <individual name="five" sort="p_score"/>
 
-  <individual name="comp_trainability" sort="comp_feature"/>
-  <individual name="comp_shedding" sort="comp_feature"/>  
-  <individual name="comp_energy" sort="comp_feature"/>
-  <individual name="comp_barking" sort="comp_feature"/>
-  <individual name="comp_protectiveness" sort="comp_feature"/>
-  <individual name="comp_good_with_children" sort="comp_feature"/>   
+  <individual name="trainability" sort="feature"/>
+  <individual name="shedding" sort="feature"/>  
+  <individual name="energy" sort="feature"/>
+  <individual name="barking" sort="feature"/>
+  <individual name="protectiveness" sort="feature"/>
+  <individual name="good_with_children" sort="feature"/>   
 
 
+  <individual name="procedure" sort="explanation"/>
   <individual name="no_hits" sort="explanation"/>
-
+  <individual name="too_many_hits" sort="explanation"/>
 
 </ontology>

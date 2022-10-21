@@ -9,23 +9,21 @@
 
   <goal type="perform" action="get_dog">
   	<plan>
+      <inform>
+        <proposition predicate="explain_procedure" value="procedure"/>
+      </inform>
       <findout type="wh_question" predicate="what_dog_to_get"/>
       <invoke_service_action name="SuggestDog" postconfirm="true"/>
   	</plan>
   </goal>
-
-  <!-- make a goal for zero_hit_action -->
-
-  <!-- make a goal for too many hits -->
   
-  <parameters question_type="wh_question" predicate="what_dog_to_get" graphical_type="list" incremental="true" max_spoken_alts="5" source="service" on_zero_hits_action="solve_zero">
+  <parameters question_type="wh_question" predicate="what_dog_to_get" graphical_type="list" incremental="true" max_spoken_alts="5" source="service" on_zero_hits_action="solve_zero" on_too_many_hits_action="solve_overflow">
     <ask_feature predicate="pf_trainability"/>
     <ask_feature predicate="pf_shedding"/>
     <ask_feature predicate="pf_energy"/>
     <ask_feature predicate="pf_barking"/>
     <ask_feature predicate="pf_protectiveness"/>
   </parameters> 
-
 
   <goal type="resolve" question_type="wh_question" predicate="describe_dog">
     <plan>
@@ -43,21 +41,36 @@
     </plan>
   </goal>
 
+  <goal type="resolve" question_type="wh_question" predicate="most_dog">
+    <plan>
+      <findout type="wh_question" predicate="feature_of_most"/>
+      <invoke_service_query predicate="most_dog" type="wh_question"/>
+    </plan>
+  </goal>
+
+  <goal type="resolve" question_type="wh_question" predicate="least_dog">
+    <plan>
+      <findout type="wh_question" predicate="feature_of_least"/>
+      <invoke_service_query predicate="least_dog" type="wh_question"/>
+    </plan>
+  </goal>
+
   <goal type="perform" action="solve_zero">
     <plan>
-
-      <signal_action_failure reason="failure_reason"/>
-
-
-
       <inform>
-        <proposition predicate="explain_failure" value="no_hits"/>
+        <proposition predicate="explain_no_hits" value="no_hits"/>
       </inform>
-      <!-- Do something -->
+      <signal_action_completion postconfirm="false"/>
+    </plan>
+  </goal> 
 
-
+  <goal type="perform" action="solve_overflow">
+    <plan>
+      <inform>
+        <proposition predicate="explain_too_many_hits" value="too_many_hits"/>
+      </inform>
+      <signal_action_completion postconfirm="false"/>
     </plan>
   </goal>  
-
 
 </domain>

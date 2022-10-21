@@ -4,39 +4,39 @@ S> What would you like to do?
 --- artificial, 2 level unique
 S> What would you like to do?
 U> I want help with deciding what dog to get
-S> To what degree should your dog be trainable?
+S> Great! I will ask you a couple of questions to figure out what dog that might fit your preferences. First question. On a scale from zero to five, to what degree should your dog be trainable?
 U> to a high degree
-S> To what degree should your dog shed?
+S> On a scale from zero to five, to what degree should your dog shed?
 U> to a very high degree
 S> You should get a Bernese Mountain Dog
 
 --- artificial, 5 level unique
 S> What would you like to do?
 U> I want help with deciding what dog to get
-S> To what degree should your dog be trainable?
+S> Great! I will ask you a couple of questions to figure out what dog that might fit your preferences. First question. On a scale from zero to five, to what degree should your dog be trainable?
 U> to a very high degree
-S> To what degree should your dog shed?
+S> On a scale from zero to five, to what degree should your dog shed?
 U> to some degree
-S> To what degree should your dog have energy?
+S> On a scale from zero to five, to what degree should your dog have energy?
 U> to some degree
-S> To what degree should your dog bark?
+S> On a scale from zero to five, to what degree should your dog bark?
 U> to a very low degree
-S> To what degree should your dog be protective?
+S> On a scale from zero to five, to what degree should your dog be protective?
 U> to a very high degree
 S> You should get a Rottweiler
 
 --- artifical, 5 level set
 S> What would you like to do?
 U> I want help with deciding what dog to get
-S> To what degree should your dog be trainable?
+S> Great! I will ask you a couple of questions to figure out what dog that might fit your preferences. First question. On a scale from zero to five, to what degree should your dog be trainable?
 U> to some degree
-S> To what degree should your dog shed?
+S> On a scale from zero to five, to what degree should your dog shed?
 U> to a very low degree
-S> To what degree should your dog have energy?
+S> On a scale from zero to five, to what degree should your dog have energy?
 U> to a high degree
-S> To what degree should your dog bark?
+S> On a scale from zero to five, to what degree should your dog bark?
 U> to some degree
-S> To what degree should your dog be protective?
+S> On a scale from zero to five, to what degree should your dog be protective?
 U> to a low degree
 S> Perhaps you should have one of the following dogs : Barbado da Terceira, Bichon Frise or Bolognese?
 U> Bolognese
@@ -45,36 +45,36 @@ S> You should get a Bolognese
 --- artifical, 5 level set decribe dog
 S> What would you like to do?
 U> I want help with deciding what dog to get
-S> To what degree should your dog be trainable?
+S> Great! I will ask you a couple of questions to figure out what dog that might fit your preferences. First question. On a scale from zero to five, to what degree should your dog be trainable?
 U> to some degree
-S> To what degree should your dog shed?
+S> On a scale from zero to five, to what degree should your dog shed?
 U> to a very low degree
-S> To what degree should your dog have energy?
+S> On a scale from zero to five, to what degree should your dog have energy?
 U> to a high degree
-S> To what degree should your dog bark?
+S> On a scale from zero to five, to what degree should your dog bark?
 U> to some degree
-S> To what degree should your dog be protective?
+S> On a scale from zero to five, to what degree should your dog be protective?
 U> to a low degree
 S> Perhaps you should have one of the following dogs : Barbado da Terceira, Bichon Frise or Bolognese?
 U> Tell me about Bolognese
 S> Bolognese is a dog which is easy to train. It sheds very litte. It is high in energy and barks to some extent. It is somewhat not protective. It is good with children.
 U> 
-S> Returning to I want help with finding out what dog to get. Perhaps you should have one of the following dogs : Barbado da Terceira, Bichon Frise or Bolognese?
+S> Returning to Find dog. Perhaps you should have one of the following dogs : Barbado da Terceira, Bichon Frise or Bolognese?
 U> Then Bolognese
 S> You should get a Bolognese
 
 --- artifical, 5 level set describe 2 dogs
 S> What would you like to do?
 U> I want help with deciding what dog to get
-S> To what degree should your dog be trainable?
+S> Great! I will ask you a couple of questions to figure out what dog that might fit your preferences. First question. On a scale from zero to five, to what degree should your dog be trainable?
 U> to some degree
-S> To what degree should your dog shed?
+S> On a scale from zero to five, to what degree should your dog shed?
 U> to a very low degree
-S> To what degree should your dog have energy?
+S> On a scale from zero to five, to what degree should your dog have energy?
 U> to a high degree
-S> To what degree should your dog bark?
+S> On a scale from zero to five, to what degree should your dog bark?
 U> to some degree
-S> To what degree should your dog be protective?
+S> On a scale from zero to five, to what degree should your dog be protective?
 U> to a low degree
 S> Perhaps you should have one of the following dogs : Barbado da Terceira, Bichon Frise or Bolognese?
 U> Tell me about Bolognese
@@ -82,22 +82,22 @@ S> Bolognese is a dog which is easy to train. It sheds very litte. It is high in
 U> Tell me about Bichon Frise
 S> Bichon Frise is a dog which is quite easy to train. It sheds very litte. It is high in energy and barks to some extent. It is somewhat not protective. It is extremly good with children.
 U> 
-S> Returning to I want help with finding out what dog to get. Perhaps you should have one of the following dogs : Barbado da Terceira, Bichon Frise or Bolognese?
+S> Returning to Find dog. Perhaps you should have one of the following dogs : Barbado da Terceira, Bichon Frise or Bolognese?
 U> Bichon Frise
 S> You should get a Bichon Frise
 
 --- artifical, 5 level set compare dogs incremental
 S> What would you like to do?
 U> I want help with deciding what dog to get
-S> To what degree should your dog be trainable?
+S> Great! I will ask you a couple of questions to figure out what dog that might fit your preferences. First question. On a scale from zero to five, to what degree should your dog be trainable?
 U> to some degree
-S> To what degree should your dog shed?
+S> On a scale from zero to five, to what degree should your dog shed?
 U> to a very low degree
-S> To what degree should your dog have energy?
+S> On a scale from zero to five, to what degree should your dog have energy?
 U> to a high degree
-S> To what degree should your dog bark?
+S> On a scale from zero to five, to what degree should your dog bark?
 U> to some degree
-S> To what degree should your dog be protective?
+S> On a scale from zero to five, to what degree should your dog be protective?
 U> to a low degree
 S> Perhaps you should have one of the following dogs : Barbado da Terceira, Bichon Frise or Bolognese?
 U> Can you help me compare the dogs
@@ -107,20 +107,64 @@ S> With regard to what feature do you want to compare those dogs?
 U> barking
 S> Barbado da Terceira barks more than Bolognese.
 U> 
-S> Returning to I want help with finding out what dog to get. Perhaps you should have one of the following dogs : Barbado da Terceira, Bichon Frise or Bolognese?
+S> Returning to Find dog. Perhaps you should have one of the following dogs : Barbado da Terceira, Bichon Frise or Bolognese?
 U> I think I will get a Bolognese then
 S> You should get a Bolognese
 
---- artificial, no dog
+--- artifical, 5 level set tell least 
 S> What would you like to do?
 U> I want help with deciding what dog to get
-S> To what degree should your dog be trainable?
-U> two
-S> To what degree should your dog shed?
-U> two
-S> To what degree should your dog have energy?
+S> Great! I will ask you a couple of questions to figure out what dog that might fit your preferences. First question. On a scale from zero to five, to what degree should your dog be trainable?
+U> to some degree
+S> On a scale from zero to five, to what degree should your dog shed?
+U> to a very low degree
+S> On a scale from zero to five, to what degree should your dog have energy?
+U> to a high degree
+S> On a scale from zero to five, to what degree should your dog bark?
+U> to some degree
+S> On a scale from zero to five, to what degree should your dog be protective?
+U> to a low degree
+S> Perhaps you should have one of the following dogs : Barbado da Terceira, Bichon Frise or Bolognese?
+U> Of these which is the least protective
+S> The least protective dog is Barbado da Terceira.
+U>
+S> Returning to Find dog. Perhaps you should have one of the following dogs : Barbado da Terceira, Bichon Frise or Bolognese?
+U> I think I will get a Barbado da Terceira then
+S> You should get a Barbado da Terceira
+
+--- artifical, 5 level set tell most 
+S> What would you like to do?
+U> I want help with deciding what dog to get
+S> Great! I will ask you a couple of questions to figure out what dog that might fit your preferences. First question. On a scale from zero to five, to what degree should your dog be trainable?
+U> four
+S> On a scale from zero to five, to what degree should your dog shed?
+U> three
+S> On a scale from zero to five, to what degree should your dog have energy?
+U> three
+S> On a scale from zero to five, to what degree should your dog bark?
+U> one
+S> On a scale from zero to five, to what degree should your dog be protective?
 U> five
-S> Unfortunately there is no dog matching that profile
+S> Perhaps you should have one of the following dogs : Bullmastiff, Hovawart or Rottweiler?
+U> Of these which has most energy
+S> The dog with most energy is Bullmastiff.
+U>
+S> Returning to Find dog. Perhaps you should have one of the following dogs : Bullmastiff, Hovawart or Rottweiler?
+U> I think I will get a Bullmastiff then
+S> You should get a Bullmastiff
+
+--- artificial, no dog incomplete
+S> What would you like to do?
+U> I want help with deciding what dog to get
+S> Great! I will ask you a couple of questions to figure out what dog that might fit your preferences. First question. On a scale from zero to five, to what degree should your dog be trainable?
+U> two
+S> On a scale from zero to five, to what degree should your dog shed?
+U> two
+S> On a scale from zero to five, to what degree should your dog have energy?
+U> five
+S> 
+U> 
+S> Unfortunately there is no dog matching that profile.
 
 
 

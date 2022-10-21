@@ -46,5 +46,23 @@
     </target>
   </query>
 
+  <query name="most_dog">
+    <parameters>
+      <parameter predicate="feature_of_most" format="grammar_entry"/>
+    </parameters>
+    <target>
+      <http endpoint="http://ddds-http-service/most_dog_finder"/>
+    </target>
+  </query>
+
+  <query name="least_dog">
+    <parameters>
+      <parameter predicate="feature_of_least" format="grammar_entry"/>
+    </parameters>
+    <target>
+      <http endpoint="http://ddds-http-service/least_dog_finder"/>
+    </target>
+  </query>
+
 
 </service_interface>
