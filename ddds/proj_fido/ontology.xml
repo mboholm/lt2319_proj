@@ -9,7 +9,6 @@
 
   <sort name="explanation"/>
   
-
   <action name="get_dog"/>
 
   <action name="solve_zero"/>

@@ -7,6 +7,8 @@ import json
 from flask import Flask, request
 from jinja2 import Environment
 
+import requests
+
 app = Flask(__name__)
 environment = Environment()
 
@@ -46,8 +48,8 @@ comp_id  = 1
 most_id  = 1
 least_id = 1
 
-db_MODE="local"
-#db_MODE="API"
+db_MODE ="local"
+#db_MODE, key =("API", "y/8wPVH8PeOyZ9PESLNkwA==CONqFeR0sz7fX2qA")
 
 ########################
 
@@ -65,23 +67,27 @@ def select_dog():
     global filtered_dogs
 
     try:
-        payload = request.get_json()
+        # payload = request.get_json()
 
-        trainability_dict = payload["request"]["parameters"]["pf_trainability"]
-        shedding_dict = payload["request"]["parameters"]["pf_shedding"]
-        energy_dict = payload["request"]["parameters"]["pf_energy"]
-        barking_dict = payload["request"]["parameters"]["pf_barking"]
-        protectiveness_dict = payload["request"]["parameters"]["pf_protectiveness"]
+        # trainability_dict = payload["request"]["parameters"]["pf_trainability"]
+        # shedding_dict = payload["request"]["parameters"]["pf_shedding"]
+        # energy_dict = payload["request"]["parameters"]["pf_energy"]
+        # barking_dict = payload["request"]["parameters"]["pf_barking"]
+        # protectiveness_dict = payload["request"]["parameters"]["pf_protectiveness"]
 
-        trainability_score = trainability_dict["value"] if trainability_dict else None
-        shedding_score = shedding_dict["value"] if shedding_dict else None
-        energy_score = energy_dict["value"] if energy_dict else None
-        barking_score = barking_dict["value"] if barking_dict else None
-        protectiveness_score = protectiveness_dict["value"] if protectiveness_dict else None
+        # trainability_score = trainability_dict["value"] if trainability_dict else None
+        # shedding_score = shedding_dict["value"] if shedding_dict else None
+        # energy_score = energy_dict["value"] if energy_dict else None
+        # barking_score = barking_dict["value"] if barking_dict else None
+        # protectiveness_score = protectiveness_dict["value"] if protectiveness_dict else None
 
-        scores = [("trainability", trainability_score), ("shedding", shedding_score), ("energy", energy_score), ("barking", barking_score), ("protectiveness", protectiveness_score)]
-        build_up = [feature for feature, score in scores if score != None]
+        # scores = [("trainability", trainability_score), ("shedding", shedding_score), ("energy", energy_score), ("barking", barking_score), ("protectiveness", protectiveness_score)]
+        # build_up = [feature for feature, score in scores if score != None]
         
+        print(">>> Selected Dog", "PHASE:", phase)
+
+        scores, build_up = interpret_ask_features(request.get_json())
+
         if len(build_up) > 0:
             phase = build_up [-1]
 
@@ -100,6 +106,40 @@ def select_dog():
         return selected_dog_response(result)
     except BaseException as exception:
         return error_response(message=str(exception))
+
+
+def interpret_ask_features(payload, where_to_look="request"):
+    """ Gets scores of features to select R_set from the payload.
+    """
+    #payload = request.get_json()
+
+    #print(payload)
+
+    if where_to_look == "request":
+        level1 = "request"
+        level2 = "parameters"
+    if where_to_look == "context":
+        level1 = "context"
+        level2 = "facts"
+
+    trainability_dict = payload[level1][level2]["pf_trainability"]
+    shedding_dict = payload[level1][level2]["pf_shedding"]
+    energy_dict = payload[level1][level2]["pf_energy"]
+    barking_dict = payload[level1][level2]["pf_barking"]
+    protectiveness_dict = payload[level1][level2]["pf_protectiveness"]
+
+    trainability_score = trainability_dict["value"] if trainability_dict else None
+    shedding_score = shedding_dict["value"] if shedding_dict else None
+    energy_score = energy_dict["value"] if energy_dict else None
+    barking_score = barking_dict["value"] if barking_dict else None
+    protectiveness_score = protectiveness_dict["value"] if protectiveness_dict else None
+
+    scores = [("trainability", trainability_score), ("shedding", shedding_score), ("energy", energy_score), ("barking", barking_score), ("protectiveness", protectiveness_score)]
+    build_up = [feature for feature, score in scores if score != None]
+
+    return scores, build_up
+
+
 
 def selected_dog_response(results):
     print(">>> Selected Dog Response")
@@ -224,22 +264,55 @@ def go_lden_retriever(dog2feature="name", name=None, feature2dog=None, multiple_
 
     if database == "local":
         if multiple_conditions != None: # gets the dog names (list) of dogs having a value on param feature2dog that is in param multiple_conditions 
-            print("GT1")
             dogs_in_the_yard = [dog["name"] for dog in DOGS if dog[feature2dog] in multiple_conditions] 
 
         if dog2feature == None: # gets the dict/json for the dog named by param name (single element of list) 
-            (print("GT2"))
             dogs_in_the_yard = [dog for dog in DOGS if dog["name"] == name] 
 
         if name == None and feature2dog==None: # gets all dog names in the database; NOT POSSIBLE FOR API
-            print("GT3")
             dogs_in_the_yard = [dog["name"] for dog in DOGS]
 
         if dog2feature != None and name != None: # gets the score for a feature defined by param dog2feature of a dog named by param name
-            print("GT4")
             dogs_in_the_yard = [dog[dog2feature] for dog in DOGS if dog["name"] == name]
 
+    if database == "API":
+        if multiple_conditions != None: # gets the dog names (list) of dogs having a value on param feature2dog that is in param multiple_conditions 
+            #dogs_in_the_yard = [dog["name"] for dog in DOGS if dog[feature2dog] in multiple_conditions]
+            doggy_bag = []
+            for value in multiple_conditions:
+            	hits = get_dog_by_feature(feature2dog, value)
+            	if hits != None:
+                    doggy_bag.extend(hits)
+            dogs_in_the_yard = [dog["name"] for dog in doggy_bag]
+
+        if dog2feature == None: # gets the dict/json for the dog named by param name (single element of list) 
+            #dogs_in_the_yard = [dog for dog in DOGS if dog["name"] == name]
+            dogs_in_the_yard = get_dog_by_feature("name", name)
+
+        if name == None and feature2dog==None: # gets all dog names in the database; NOT POSSIBLE FOR API
+            dogs_in_the_yard = ["Afghan Hound", "Airedale Terrier", "and_other_dogs"]
+
+        if dog2feature != None and name != None: # gets the score for a feature defined by param dog2feature of a dog named by param name
+            #dogs_in_the_yard = [dog[dog2feature] for dog in DOGS if dog["name"] == name]
+            dogs_in_the_yard = [dog[dog2feature] for dog in get_dog_by_feature("name", name)]
+
     return dogs_in_the_yard
+
+def get_dog_by_feature(feature, value):
+    """ Identifies a dog by its name (API).
+    """
+    api_url = f"https://api.api-ninjas.com/v1/dogs?{feature}={value}"
+    try:
+        response = requests.get(api_url, headers={'X-Api-Key': key})
+        print("@ API:", response, api_url)
+    except:
+        print("Mamma mu")
+
+    if response.status_code == requests.codes.ok:
+        return response.json()
+    else:
+        print("Error:", response.status_code, response.text)
+        return []
 
 
 @app.route("/suggest_dog", methods=['POST'])
@@ -416,7 +489,10 @@ def most_dog_finder():
     try:
         payload = request.get_json()
         feature = payload["request"]["parameters"]["feature_of_most"]["value"]
-        most = get_top(feature, "most") # a list
+        scores, _ = interpret_ask_features(payload, where_to_look="context")
+        remaining_dogs = filter_dogs(scores)
+        #least = get_top(feature, "least", remaining_dogs)
+        most = get_top(feature, "most", remaining_dogs) # a list
         most_str = say_top(most, feature, "most")
         c_value = "most_dog_"+str(most_id)
         most_id += 1
@@ -435,7 +511,9 @@ def least_dog_finder():
     try:
         payload = request.get_json()
         feature = payload["request"]["parameters"]["feature_of_least"]["value"]
-        least = get_top(feature, "least")
+        scores, _ = interpret_ask_features(payload, where_to_look="context")
+        remaining_dogs = filter_dogs(scores)
+        least = get_top(feature, "least", remaining_dogs)
         least_str = say_top(least, feature, "least")
         c_value = "least_dog_"+str(least_id)
         least_id += 1
@@ -445,7 +523,7 @@ def least_dog_finder():
         return error_response(message=str(exception))
 
 
-def get_top(feature, mode, R_set = None):
+def get_top(feature, mode, R_set):
     """ Gets the dog(s) with the highest/lowest value of some feature.
 
     param mode     If "most", finds dog(s) with the highest value
@@ -454,9 +532,10 @@ def get_top(feature, mode, R_set = None):
     NOTE: the function considers only the R_set (filtered_dogs), not all dogs in the database (DOGS or API). 
     """
     
-    print("¥", "FOR DEBUGGING -- Length 'filtered_dogs':", len(filtered_dogs))
+    #print("¥", "FOR DEBUGGING -- Length 'filtered_dogs':", len(filtered_dogs))
+    print("¥", "FOR DEBUGGING -- Length 'R_set':", len(R_set))
 
-    R_set = list(filtered_dogs)
+    R_set = list(R_set)
 
     first_dog = R_set[0]
     top_dog = set()

@@ -51,42 +51,45 @@
     <one-of>
       <item>the lowest value</item>
       <item>to no degree</item>
-      <item>zero</item>
+      <item>minus three</item>
     </one-of>
   </individual>
 
   <individual name="one">
     <one-of>
       <item>to a very low degree</item>
-      <item>one</item>
+      <item>minus two</item>
     </one-of>
   </individual>
 
   <individual name="two">
     <one-of>
       <item>to a low degree</item>
-      <item>two</item>
+      <item>minus one</item>
     </one-of>
   </individual>  
 
   <individual name="three">
     <one-of>
       <item>to some degree</item>
-      <item>three</item>
+      <item>one</item>
+      <item>plus one</item>
     </one-of>
   </individual>   
 
   <individual name="four">
     <one-of>
       <item>to a high degree</item>
-      <item>four</item>
+      <item>two</item>
+      <item>plus two</item>
     </one-of>
   </individual>  
 
   <individual name="five">
     <one-of>
       <item>to a very high degree</item>
-      <item>five</item>
+      <item>three</item>
+      <item>plus three</item>
       <item>the highest value</item>
     </one-of>
   </individual>
@@ -206,26 +209,26 @@
 <!-- SYSTEM MOVES -->
 <!-- Main sequence -->
   <!-- Consider: "From a scale zero to five (one to six) ..." -->
-  <individual name="procedure">Great! I will ask you a couple of questions to figure out what dog that might fit your preferences. First question </individual> 
+  <individual name="procedure">Great! I will ask you a couple of questions to figure out what dog that might fit your preferences. Please answer from a scale from minus three to plus three, but not zero. First question </individual> 
 
   <question speaker="system" predicate="pf_trainability" type="wh_question">
-    On a scale from zero to five, to what degree should your dog be trainable
+    To what degree should your dog be trainable
   </question>
 
   <question speaker="system" predicate="pf_shedding" type="wh_question">
-    On a scale from zero to five, to what degree should your dog shed
+    To what degree should your dog shed
   </question>
 
   <question speaker="system" predicate="pf_energy" type="wh_question">
-    On a scale from zero to five, to what degree should your dog have energy
+    To what degree should your dog have energy
   </question>
 
   <question speaker="system" predicate="pf_barking" type="wh_question">
-    On a scale from zero to five, to what degree should your dog bark
+    To what degree should your dog bark
   </question>
 
   <question speaker="system" predicate="pf_protectiveness" type="wh_question">
-    On a scale from zero to five, to what degree should your dog be protective
+    To what degree should your dog be protective
   </question>
 
 
@@ -281,9 +284,9 @@
 
 
 <!-- Zero hits -->
-  <individual name="no_hits">Unfortunately there is no dog matching that profile</individual>
+  <individual name="no_hits">Unfortunately there is no dog matching that profile. Let us start from the beginning</individual>
 <!-- Too many hits -->
-  <individual name="too_many_hits">Oops! There are very many dogs matching that profile. Voff voff!</individual>  
+  <individual name="too_many_hits">Oops! There are too many dogs matching that profile. Let us start from the beginning</individual>  
 
 
 </grammar>
