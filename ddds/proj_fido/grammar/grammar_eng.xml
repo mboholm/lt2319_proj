@@ -173,6 +173,7 @@
       <item>Which of these <slot predicate="feature_of_most"/> most</item>
       <item>Which of these is the most <slot predicate="feature_of_most"/></item>
       <item>Which of these has most <slot predicate="feature_of_most"/></item>
+      <item>Which <slot predicate="feature_of_most"/> most</item>
       <item>get most</item>
     </one-of>
   </question>
@@ -187,6 +188,7 @@
       <item>Which of these <slot predicate="feature_of_least"/> least</item>
       <item>Which of these is the least <slot predicate="feature_of_least"/></item>
       <item>Which of these has least <slot predicate="feature_of_least"/></item>
+      <item>Which <slot predicate="feature_of_least"/> least</item>
       <item>get least</item>
     </one-of>
   </question>
@@ -232,7 +234,7 @@
   </question>
 
 
-  <question speaker="system" predicate="what_dog_to_get" type="wh_question">Perhaps you should have one of the following dogs</question>
+  <question speaker="system" predicate="what_dog_to_get" type="wh_question">There is more than one dog matching those preferences</question>
 
   
   <report action="SuggestDog" status="ended">

@@ -48,8 +48,10 @@ comp_id  = 1
 most_id  = 1
 least_id = 1
 
-db_MODE ="local"
-#db_MODE, key =("API", "y/8wPVH8PeOyZ9PESLNkwA==CONqFeR0sz7fX2qA")
+#db_MODE ="local"
+db_MODE, key =("API", "y/8wPVH8PeOyZ9PESLNkwA==CONqFeR0sz7fX2qA")
+
+NUMBER_INTERPRETATION = "strict"
 
 ########################
 
@@ -235,7 +237,8 @@ def filter_dogs(scores):
     else:
         hits=set()
         for i, (feature, score) in enumerate(scores):
-            score_meaning = interpretation(score)
+            #score_meaning = interpretation(score)
+            score_meaning = interpretation(score, mode=NUMBER_INTERPRETATION)
             if i == 0:
                 #hits.update([dog["name"] for dog in DOGS if dog[feature] in score_meaning])
                 hits.update(go_lden_retriever(feature2dog=feature, multiple_conditions=score_meaning))

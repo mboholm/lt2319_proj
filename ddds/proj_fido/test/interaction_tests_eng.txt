@@ -38,7 +38,7 @@ S> To what degree should your dog bark?
 U> one
 S> To what degree should your dog be protective?
 U> minus one
-S> Perhaps you should have one of the following dogs : Barbado da Terceira, Bichon Frise or Bolognese?
+S> There is more than one dog matching those preferences : Barbado da Terceira, Bichon Frise or Bolognese?
 U> Bolognese
 S> You should get a Bolognese
 
@@ -55,11 +55,11 @@ S> To what degree should your dog bark?
 U> one
 S> To what degree should your dog be protective?
 U> minus one
-S> Perhaps you should have one of the following dogs : Barbado da Terceira, Bichon Frise or Bolognese?
+S> There is more than one dog matching those preferences : Barbado da Terceira, Bichon Frise or Bolognese?
 U> Tell me about Bolognese
 S> Bolognese is a dog which is easy to train. It sheds very litte. It is high in energy and barks to some extent. It is somewhat not protective. It is good with children.
 U> 
-S> Returning to Find dog. Perhaps you should have one of the following dogs : Barbado da Terceira, Bichon Frise or Bolognese?
+S> Returning to Find dog. There is more than one dog matching those preferences : Barbado da Terceira, Bichon Frise or Bolognese?
 U> Then Bolognese
 S> You should get a Bolognese
 
@@ -76,13 +76,13 @@ S> To what degree should your dog bark?
 U> one
 S> To what degree should your dog be protective?
 U> minus one
-S> Perhaps you should have one of the following dogs : Barbado da Terceira, Bichon Frise or Bolognese?
+S> There is more than one dog matching those preferences : Barbado da Terceira, Bichon Frise or Bolognese?
 U> Tell me about Bolognese
 S> Bolognese is a dog which is easy to train. It sheds very litte. It is high in energy and barks to some extent. It is somewhat not protective. It is good with children.
 U> Tell me about Bichon Frise
 S> Bichon Frise is a dog which is quite easy to train. It sheds very litte. It is high in energy and barks to some extent. It is somewhat not protective. It is extremly good with children.
 U> 
-S> Returning to Find dog. Perhaps you should have one of the following dogs : Barbado da Terceira, Bichon Frise or Bolognese?
+S> Returning to Find dog. There is more than one dog matching those preferences : Barbado da Terceira, Bichon Frise or Bolognese?
 U> Bichon Frise
 S> You should get a Bichon Frise
 
@@ -99,7 +99,7 @@ S> To what degree should your dog bark?
 U> one
 S> To what degree should your dog be protective?
 U> minus one
-S> Perhaps you should have one of the following dogs : Barbado da Terceira, Bichon Frise or Bolognese?
+S> There is more than one dog matching those preferences : Barbado da Terceira, Bichon Frise or Bolognese?
 U> Can you help me compare the dogs
 S> What dogs do you want to compare?
 U> Barbado da Terceira and Bolognese
@@ -107,7 +107,7 @@ S> With regard to what feature do you want to compare those dogs?
 U> barking
 S> Barbado da Terceira barks more than Bolognese.
 U> 
-S> Returning to Find dog. Perhaps you should have one of the following dogs : Barbado da Terceira, Bichon Frise or Bolognese?
+S> Returning to Find dog. There is more than one dog matching those preferences : Barbado da Terceira, Bichon Frise or Bolognese?
 U> I think I will get a Bolognese then
 S> You should get a Bolognese
 
@@ -124,11 +124,11 @@ S> To what degree should your dog bark?
 U> one
 S> To what degree should your dog be protective?
 U> minus one
-S> Perhaps you should have one of the following dogs : Barbado da Terceira, Bichon Frise or Bolognese?
+S> There is more than one dog matching those preferences : Barbado da Terceira, Bichon Frise or Bolognese?
 U> Of these which is the least protective
 S> The least protective dog is Barbado da Terceira.
 U>
-S> Returning to Find dog. Perhaps you should have one of the following dogs : Barbado da Terceira, Bichon Frise or Bolognese?
+S> Returning to Find dog. There is more than one dog matching those preferences : Barbado da Terceira, Bichon Frise or Bolognese?
 U> I think I will get a Barbado da Terceira then
 S> You should get a Barbado da Terceira
 
@@ -145,11 +145,11 @@ S> To what degree should your dog bark?
 U> minus two
 S> To what degree should your dog be protective?
 U> three
-S> Perhaps you should have one of the following dogs : Bullmastiff, Hovawart or Rottweiler?
+S> There is more than one dog matching those preferences : Bullmastiff, Hovawart or Rottweiler?
 U> Of these which has most energy
 S> The dog with most energy is Bullmastiff.
 U>
-S> Returning to Find dog. Perhaps you should have one of the following dogs : Bullmastiff, Hovawart or Rottweiler?
+S> Returning to Find dog. There is more than one dog matching those preferences : Bullmastiff, Hovawart or Rottweiler?
 U> I think I will get a Bullmastiff then
 S> You should get a Bullmastiff
 
