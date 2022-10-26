@@ -72,18 +72,8 @@
       <inform>
         <proposition predicate="explain_too_many_hits" value="too_many_hits"/>
       </inform>
-
-      <!--
-      <invoke_service_action name="TargetDogs" postconfirm="true"/>    // This will not fill in any predicate 
-      <invoke_service_query predicate="dogs_reconsidered" type="wh_question"/>   // This will require a predicate to find out
-      -->
-
-      <!-- Modify preference profile  --> 
-
       <signal_action_completion postconfirm="false"/>
     </plan>
-
-    <!-- Note that if the idea is to return to the attempt of suggesting a dog, the postplan for forget_all cannot be there -->
     <postplan>
       <forget_all/>
     </postplan>

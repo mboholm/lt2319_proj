@@ -48,10 +48,11 @@ comp_id  = 1
 most_id  = 1
 least_id = 1
 
-#db_MODE ="local"
-db_MODE, key =("API", "y/8wPVH8PeOyZ9PESLNkwA==CONqFeR0sz7fX2qA")
+db_MODE = "local"
+#db_MODE, key =("API", "y/8wPVH8PeOyZ9PESLNkwA==CONqFeR0sz7fX2qA")
 
-NUMBER_INTERPRETATION = "strict"
+#NUMBER_INTERPRETATION = "strict"
+NUMBER_INTERPRETATION = "graded_bipolar"
 
 ########################
 
@@ -184,6 +185,8 @@ def create_value(ds):
     #ds = ds.capitalize()
     return ds
 
+translation = {word:no for word, no in zip(["zero", "one", "two", "three", "four", "five"], [0,1,2,3,4,5])}
+
 def interpretation(value, mode="graded_bipolar", preferred=None):
     """ Takes a preference score for a feature (answer from the user) and returns an interpretation of that score
         with regard to how the score should be interpreted for including dogs from the database.
@@ -194,8 +197,6 @@ def interpretation(value, mode="graded_bipolar", preferred=None):
         strict
         importance
     """
-
-    translation = {word:no for word, no in zip(["zero", "one", "two", "three", "four", "five"], [0,1,2,3,4,5])}
 
     value = translation[value]
 
@@ -234,6 +235,11 @@ def filter_dogs(scores):
         #return set([dog["name"] for dog in DOGS])
         return go_lden_retriever()
 
+    elif db_MODE == "API" and NUMBER_INTERPRETATION == "strict": 
+    #  In cases one uses the API and one interpret scores strictly (no ranges)
+    #  there is the possibility to make a direct API request for the parameters.
+        return direct_api_request(scores)
+
     else:
         hits=set()
         for i, (feature, score) in enumerate(scores):
@@ -250,6 +256,20 @@ def filter_dogs(scores):
         
         return hits
 
+def direct_api_request(scores):
+	""" Takes a set of scores for parameters, make a request at the dog API and returns a set of dogs.
+	"""
+	coda = []
+	for parameter, value in scores:
+		coda.append(f"{parameter}={translation[value]}")
+	api_url = f"https://api.api-ninjas.com/v1/dogs?" + "&".join(coda)
+	response = requests.get(api_url, headers={'X-Api-Key': key})
+
+	print("@ API:", response, api_url)
+
+	hits = set([dog["name"] for dog in response.json()])
+
+	return hits
 
 def go_lden_retriever(dog2feature="name", name=None, feature2dog=None, multiple_conditions=None, database=db_MODE):
     """ GO to (Local) Database ENtry RETRIEVER
@@ -305,11 +325,8 @@ def get_dog_by_feature(feature, value):
     """ Identifies a dog by its name (API).
     """
     api_url = f"https://api.api-ninjas.com/v1/dogs?{feature}={value}"
-    try:
-        response = requests.get(api_url, headers={'X-Api-Key': key})
-        print("@ API:", response, api_url)
-    except:
-        print("Mamma mu")
+    response = requests.get(api_url, headers={'X-Api-Key': key})
+    print("@ API:", response, api_url)
 
     if response.status_code == requests.codes.ok:
         return response.json()

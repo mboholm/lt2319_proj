@@ -26,10 +26,16 @@
   <action name="get_dog">
     <one-of>
       <item>Find dog</item>
-      <item>I want help with finding out what dog to get</item>
-      <item>I want help with deciding what dog to get</item>
+      <item>I want help with finding out which dog to get</item>
+      <item>I want help with deciding which dog to get</item>
       <item>Help me decide what dog to get</item>
+      <item>Can you help me find a dog</item>
+      <item>can you help me decide which dog to get</item>
       <item>Get dog</item>
+      <item>I would like help deciding which dog to buy</item>
+      <item>I want help with which dog to buy</item>
+      <item>which dog should I get</item>
+      <item>which dog breed should I get</item>
     </one-of>
   </action>
 
@@ -52,6 +58,9 @@
       <item>the lowest value</item>
       <item>to no degree</item>
       <item>minus three</item>
+      <item>minus 3</item>
+      <item>three on the negative side</item>
+      <item>3 on the negative side</item>
     </one-of>
   </individual>
 
@@ -59,38 +68,60 @@
     <one-of>
       <item>to a very low degree</item>
       <item>minus two</item>
+      <item>minus 2</item>
+      <item>two on the negative side</item>
+      <item>2 on the negative side</item>
     </one-of>
   </individual>
 
   <individual name="two">
     <one-of>
       <item>to a low degree</item>
+      <item>low degree</item>
       <item>minus one</item>
+      <item>minus 1</item>
+      <item>one on the negative side</item>
+      <item>1 on the negative side</item>
     </one-of>
   </individual>  
 
   <individual name="three">
     <one-of>
       <item>to some degree</item>
+      <item>some degree</item>
       <item>one</item>
       <item>plus one</item>
+      <item>1</item>
+      <item>plus 1</item>
+      <item>one on the positive side</item>
+      <item>1 on the positive side</item>
     </one-of>
   </individual>   
 
   <individual name="four">
     <one-of>
       <item>to a high degree</item>
+      <item>high degree</item>
       <item>two</item>
       <item>plus two</item>
+      <item>2</item>
+      <item>plus 2</item>
+      <item>two on the positive side</item>
+      <item>2 on the positive side</item>
     </one-of>
   </individual>  
 
   <individual name="five">
     <one-of>
       <item>to a very high degree</item>
+      <item>very high degree</item>
       <item>three</item>
       <item>plus three</item>
       <item>the highest value</item>
+      <item>3</item>
+      <item>plus 3</item>
+      <item>three on the positive side</item>
+      <item>3 on the positive side</item>
     </one-of>
   </individual>
 
@@ -99,10 +130,11 @@
   <question speaker="user" predicate="describe_dog" type="wh_question">
     <one-of>
       <item>Tell me about <slot predicate="what_dog_to_describe"/></item>
-      <item>Descibe <slot predicate="what_dog_to_describe"/> to me</item>
-      <item>I want to kow more about these dogs</item>
-      <item>Tell me</item>
-      <item>Describe</item>
+      <item>Describe <slot predicate="what_dog_to_describe"/> to me</item>
+      <item>I want to know more about those dogs</item>
+      <item>Can you tell me more about those dogs</item>
+      <item>Tell me more</item>
+      <item>Describe them</item>
     </one-of>
   </question>
 
@@ -114,6 +146,9 @@
       <item>Compare <slot predicate="target_dog"/> with <slot predicate="compare_with"/> with respect to <slot predicate="feature_of_comparison"/></item>
       <item>How does <slot predicate="target_dog"/> compare with <slot predicate="compare_with"/></item>
       <item>Compare</item>
+      <item>Help me compare those dogs</item>
+      <item>How do they compare</item>
+      <item>What is their differences</item>
     </one-of>
   </question>
 
@@ -123,6 +158,7 @@
       <item>how trainable they are</item>
       <item>to train</item>
       <item>trainable</item>
+      <item>train</item>
     </one-of>
   </individual> 
 
@@ -131,6 +167,7 @@
       <item>shedding</item>
       <item>how much they shed</item>
       <item>sheds</item>
+      <item>shed</item>
     </one-of>
   </individual>  
 
@@ -138,6 +175,7 @@
     <one-of>
       <item>energy</item>
       <item>how much energy they have</item>
+      <item>energetic</item>
     </one-of>
   </individual>
 
@@ -146,6 +184,7 @@
       <item>barking</item>
       <item>how much they bark</item>
       <item>barks</item>
+      <item>woof</item>
     </one-of>
   </individual>   
 
@@ -198,6 +237,9 @@
   <answer speaker="user">
     <one-of>
       <item>Then <slot predicate="what_dog_to_get"/></item>
+      <item><slot predicate="what_dog_to_get"/> then</item>
+      <item>It will be a <slot predicate="what_dog_to_get"/> for me</item>
+      <item>I will get a <slot predicate="what_dog_to_get"/></item>
       <item>I think I will get a <slot predicate="what_dog_to_get"/> then</item>
       <item><slot predicate="target_dog"/> with <slot predicate="compare_with"/></item>
       <item><slot predicate="target_dog"/> and <slot predicate="compare_with"/></item>

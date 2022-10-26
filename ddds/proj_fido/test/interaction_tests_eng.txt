@@ -3,7 +3,7 @@ S> What would you like to do?
 
 --- 2 level unique
 S> What would you like to do?
-U> I want help with deciding what dog to get
+U> I want help with deciding which dog to get
 S> Great! I will ask you a couple of questions to figure out what dog that might fit your preferences. Please answer from a scale from minus three to plus three, but not zero. First question. To what degree should your dog be trainable?
 U> two
 S> To what degree should your dog shed?
@@ -12,7 +12,7 @@ S> You should get a Bernese Mountain Dog
 
 --- 5 level unique
 S> What would you like to do?
-U> I want help with deciding what dog to get
+U> I want help with deciding which dog to get
 S> Great! I will ask you a couple of questions to figure out what dog that might fit your preferences. Please answer from a scale from minus three to plus three, but not zero. First question. To what degree should your dog be trainable?
 U> three
 S> To what degree should your dog shed?
@@ -27,7 +27,7 @@ S> You should get a Rottweiler
 
 --- 5 level set
 S> What would you like to do?
-U> I want help with deciding what dog to get
+U> I want help with deciding which dog to get
 S> Great! I will ask you a couple of questions to figure out what dog that might fit your preferences. Please answer from a scale from minus three to plus three, but not zero. First question. To what degree should your dog be trainable?
 U> one
 S> To what degree should your dog shed?
@@ -44,7 +44,7 @@ S> You should get a Bolognese
 
 --- 5 level set decribe dog
 S> What would you like to do?
-U> I want help with deciding what dog to get
+U> I want help with deciding which dog to get
 S> Great! I will ask you a couple of questions to figure out what dog that might fit your preferences. Please answer from a scale from minus three to plus three, but not zero. First question. To what degree should your dog be trainable?
 U> one
 S> To what degree should your dog shed?
@@ -65,7 +65,7 @@ S> You should get a Bolognese
 
 --- 5 level set describe 2 dogs
 S> What would you like to do?
-U> I want help with deciding what dog to get
+U> I want help with deciding which dog to get
 S> Great! I will ask you a couple of questions to figure out what dog that might fit your preferences. Please answer from a scale from minus three to plus three, but not zero. First question. To what degree should your dog be trainable?
 U> one
 S> To what degree should your dog shed?
@@ -88,7 +88,7 @@ S> You should get a Bichon Frise
 
 --- 5 level set compare dogs incremental
 S> What would you like to do?
-U> I want help with deciding what dog to get
+U> I want help with deciding which dog to get
 S> Great! I will ask you a couple of questions to figure out what dog that might fit your preferences. Please answer from a scale from minus three to plus three, but not zero. First question. To what degree should your dog be trainable?
 U> one
 S> To what degree should your dog shed?
@@ -113,7 +113,7 @@ S> You should get a Bolognese
 
 --- 5 level set tell least 
 S> What would you like to do?
-U> I want help with deciding what dog to get
+U> I want help with deciding which dog to get
 S> Great! I will ask you a couple of questions to figure out what dog that might fit your preferences. Please answer from a scale from minus three to plus three, but not zero. First question. To what degree should your dog be trainable?
 U> one
 S> To what degree should your dog shed?
@@ -134,7 +134,7 @@ S> You should get a Barbado da Terceira
 
 --- 5 level set tell most 
 S> What would you like to do?
-U> I want help with deciding what dog to get
+U> I want help with deciding which dog to get
 S> Great! I will ask you a couple of questions to figure out what dog that might fit your preferences. Please answer from a scale from minus three to plus three, but not zero. First question. To what degree should your dog be trainable?
 U> two
 S> To what degree should your dog shed?
@@ -156,7 +156,7 @@ S> You should get a Bullmastiff
 
 --- no hits no continuation
 S> What would you like to do?
-U> I want help with deciding what dog to get
+U> I want help with deciding which dog to get
 S> Great! I will ask you a couple of questions to figure out what dog that might fit your preferences. Please answer from a scale from minus three to plus three, but not zero. First question. To what degree should your dog be trainable?
 U> minus one
 S> To what degree should your dog shed?
@@ -168,9 +168,9 @@ U>
 S> Unfortunately there is no dog matching that profile. Let us start from the beginning.
 
 
---- 5 level set no continuation
+--- 5 level large set no continuation WITH ERROR
 S> What would you like to do?
-U> I want help with deciding what dog to get
+U> I want help with deciding which dog to get
 S> Great! I will ask you a couple of questions to figure out what dog that might fit your preferences. Please answer from a scale from minus three to plus three, but not zero. First question. To what degree should your dog be trainable?
 U> one
 S> To what degree should your dog shed?
@@ -181,6 +181,9 @@ S> To what degree should your dog bark?
 U> one
 S> To what degree should your dog be protective?
 U> three
+S> 
+U> what is next
+S> I heard you say what is next. I don't understand. Oops! There are too many dogs matching that profile. Let us start from the beginning.
 
 
 
