@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+
+<swedish>
+S: vad kan jag hjälpa dig med
+U: jag vill köpa en hund
+S: hur viktigt är det för dig på en skala mellan noll och fem att hunden kan tränas
+U: fem
+S: på en skala mellan noll och fem hur viktigt är det för dig eller hur mycket skall hunden fälla
+U: två
+S: på en skala mellan noll och fem hur mycket energi skall hunden ha
+U: fem
+S: då föreslår jag att du skaffar dig en barbado de terceira
+U: gärna
+</swedish>
+
+<english>
+A: What can I help you with?
+U: I want to buy a dog
+A: how important is it to you on a scale between zero and five that the dog can be trained
+U: five
+A: on a scale between zero and five how important is it to you or how much should the dog shed
+U: two
+A: on a scale between zero and five, how much energy should the dog have
+U: five
+A: then I suggest you get a barbado de terceira
+U: yes please
+</english>
+
+<distillation>
+A: What can I help you with?
+U: I want to buy a dog
+A: how important is it to you on a scale between zero and five that the dog can be trained
+U: five
+A: on a scale between zero and five how important is it to you or how much should the dog shed
+U: two
+A: on a scale between zero and five, how much energy should the dog have
+U: five
+A: then I suggest you get a barbado de terceira
+U: yes please
+</distillation>
+
+<final>
+A: What can I help you with?
+U: I want to buy a dog
+A: how important is it to you on a scale between zero and five that the dog can be trained
+U: five
+A: on a scale between zero and five how important is it to you or how much should the dog shed
+U: two
+A: on a scale between zero and five, how much energy should the dog have
+U: five
+A: then I suggest you get a barbado de terceira
+U: yes please
+</final>
+
+</root>

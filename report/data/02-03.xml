@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+
+<swedish>
+S: vad kan jag hjälpa dig med
+U: jag vill köpa en hund
+S: kul. i vilken. jag ska fråga dig några frågor och så ska vi se om vi kan hitta en hund som passar dina preferenser. var vänligen svara på en skala från minus tre till plus tre men inte noll
+U: mm
+S: första frågan. i vilken grad ska din hund vara träningsbar
+U: två
+S: i vilken grad skall din hund fälla
+U: minus ett
+S: i vilken grad skall din hund ha energi
+U: mm. ett
+S: i vilken grad skall din hund skälla
+U: har du inte frågat det redan
+S: eh. det tro jag inte
+U: mmm. minus ett
+S: i vilken grad skall din hund vara beskyddande
+U: minus ett. nej minus två
+S: ja. den hunden som passar dina preferenser är valpino italiano.
+U: mm
+</swedish>
+
+<english>
+A: What can I help you with?
+U: I want to buy a dog
+A: fun. in which. I'll ask you a few questions and then we'll see if we can find a dog that fits your preferences. please answer on a scale from minus three to plus three but not zero
+U: mm
+A: first question. to what degree should your dog be trainable
+U: two
+A: to what degree should your dog shed
+U: minus one
+A: to what degree should your dog have energy
+U: mm. one
+A: to what degree should your dog bark
+U: haven't you asked that already
+A: eh. I don't think so
+U: hmm. minus one
+A: to what degree should your dog be protective
+U: minus one. no minus two
+A: yes. the dog that fits your preferences is the valpino italiano.
+U: mm
+</english>
+
+<distillation>
+A: What can I help you with?
+U: I want to buy a dog
+A: <remove princip="neytrality">fun. </remove><remove princip="quantity-1">in which. </remove>I'll ask you a few questions and then we'll see if we can find a dog that fits your preferences. please answer on a scale from minus three to plus three but not zero
+U: mm
+A: first question. to what degree should your dog be trainable
+U: two
+A: to what degree should your dog shed
+U: minus one
+A: to what degree should your dog have energy
+U: mm. one
+A: to what degree should your dog bark
+U: haven't you asked that already
+A: <replace princip="memory" text="no">eh. I don't think so</replace>
+U: hmm. minus one
+A: to what degree should your dog be protective
+U: minus one. no minus two
+A: yes. the dog that fits your preferences is the valpino italiano.
+U: mm
+</distillation>
+
+<final>
+A: What can I help you with?
+U: I want to buy a dog
+A: I'll ask you a few questions and then we'll see if we can find a dog that fits your preferences. please answer on a scale from minus three to plus three but not zero
+U: mm
+A: first question. to what degree should your dog be trainable
+U: two
+A: to what degree should your dog shed
+U: minus one
+A: to what degree should your dog have energy
+U: mm. one
+A: to what degree should your dog bark
+U: haven't you asked that already
+A: no
+U: hmm. minus one
+A: to what degree should your dog be protective
+U: minus one. no minus two
+A: yes. the dog that fits your preferences is the valpino italiano.
+U: mm
+</final>
+
+
+</root>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+
+<swedish>
+S: vad kan jag hjälpa dig med
+U: jag skulle vilja köpa en hund
+S: okej. hur viktigt är det för dig att hunden går att träna på en skala mellan noll till fem
+U: två
+S: på en skala mellan noll och fem hur viktigt är det för dig att den fäller där noll är att den fäller mycket och fem att den fäller lite
+U: fem ehh tre
+S: hur viktigt är det för dig att hunden har energi. hur mycket energi ska hunden ha på en skala mellan noll och fem
+U: tre
+S: och på en skala mellan noll och fem hur mycket skall den skälla
+U: två
+S: på en skala mellan noll och fem hur beskyddande skall den vara
+U: två
+S: ja då rekommenderar jag en japanese akita
+</swedish>
+
+<english>
+A: What can I help you with?
+U: I would like to buy a dog
+A: okay. how important is it to you that the dog can be trained on a scale between zero and five
+U: two
+A: on a scale between zero and five how important is it to you that it sheds where zero is that it sheds a lot and five that it sheds a little
+U: five uhh three
+A: how important is it to you that the dog has energy. how much energy should the dog have on a scale between zero and five
+U: three
+A: and on a scale between zero and five how much should it bark
+U: two
+A: on a scale between zero and five, how protective should it be
+U: two
+A: yes then I recommend a Japanese Akita
+</english>
+
+<distillation>
+A: What can I help you with?
+U: I would like to buy a dog
+A: okay. how important is it to you that the dog can be trained on a scale between zero and five
+U: two
+A: on a scale between zero and five how important is it to you that it sheds where zero is that it sheds a lot and five that it sheds a little
+U: five uhh three
+A: how important is it to you that the dog has energy. how much energy should the dog have on a scale between zero and five
+U: three
+A: and on a scale between zero and five how much should it bark
+U: two
+A: on a scale between zero and five, how protective should it be
+U: two
+A: yes then I recommend a Japanese Akita
+</distillation>
+
+<final>
+A: What can I help you with?
+U: I would like to buy a dog
+A: okay. how important is it to you that the dog can be trained on a scale between zero and five
+U: two
+A: on a scale between zero and five how important is it to you that it sheds where zero is that it sheds a lot and five that it sheds a little
+U: five uhh three
+A: how important is it to you that the dog has energy. how much energy should the dog have on a scale between zero and five
+U: three
+A: and on a scale between zero and five how much should it bark
+U: two
+A: on a scale between zero and five, how protective should it be
+U: two
+A: yes then I recommend a Japanese Akita
+</final>
+
+</root>

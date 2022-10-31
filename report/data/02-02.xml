@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+
+<swedish>
+S: vad kan jag hjälpa dig med
+U: jag vill köpa en hund
+S: kul. då skall jag ställa några frågor till dig och så ska vi se om vi kan hitta en hund som passar dina preferenser. i vilken grad ska din hund vara träningsbar
+U: ganska hög grad
+S: i vilken grad skall din hund fälla
+U: spelar ingen roll
+S: nä men om du tänker att
+U: ganska låg
+S: i vilken grad skall din hund ha energi
+U: ganska hög
+S: är det som ganska hög
+U: hög
+S: i vilken grad skall din hund skälla
+U: lite. låg
+S: och i vilken grad skall din hund vara beskyddande
+U: ganska låg
+S: ja då rekommenderar jag en volpino italiano
+</swedish>
+
+<english>
+A: What can I help you with?
+U: I want to buy a dog
+A: fun. then I will ask you a few questions and then we will see if we can find a dog that suits your preferences. to what degree should your dog be trainable
+U: quite a high degree
+A: to what degree should your dog shed
+U: doesn't matter
+A: no, but if you think
+U: quite low
+A: to what degree should your dog have energy
+U: quite high
+A: It's that pretty high
+U: high
+A: to what degree should your dog bark
+U: a little. low
+A: and to what degree should your dog be protective
+U: quite low
+A: yes then I recommend a volpino italiano
+</english>
+
+<distillation>
+A: What can I help you with?
+U: I want to buy a dog
+A: <remove princip="neutrality">fun. </remove>then I will ask you a few questions and then we will see if we can find a dog that suits your preferences. to what degree should your dog be trainable
+U: quite a high degree
+A: to what degree should your dog shed
+U: doesn't matter
+A: no, but <replace princip="quantity-1" text="perhaps you try to answer me the best you can">if you think</replace>
+U: quite low
+A: to what degree should your dog have energy
+U: quite high
+<remove princip="limited-input-analysis">A: It's that pretty high</remove>
+<remove princip="coherence">U: high</remove>
+A: to what degree should your dog bark
+U: a little. low
+A: and to what degree should your dog be protective
+U: quite low
+A: yes then I recommend a volpino italiano
+</distillation>
+
+<final>
+A: What can I help you with?
+U: I want to buy a dog
+A: then I will ask you a few questions and then we will see if we can find a dog that suits your preferences. to what degree should your dog be trainable
+U: quite a high degree
+A: to what degree should your dog shed
+U: doesn't matter
+A: no, but perhaps you try to answer me the best you can
+U: quite low
+A: to what degree should your dog have energy
+U: quite high
+A: to what degree should your dog bark
+U: a little. low
+A: and to what degree should your dog be protective
+U: quite low
+A: yes then I recommend a volpino italiano
+</final>
+
+</root>

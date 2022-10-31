@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+
+<swedish>
+S: hej / hur kan jag hjälpa dig
+U: jag skulle vilja ha hjälp med att välja vilken hund jag skall köpa
+S: okej / har du funderat på vilka egenskaper som är viktigast
+U: ja / jag vill gärna ha en väldigt beskyddande hund som är lätt att träna
+S: okej / och hur skall den vara med / spelar den någon roll hur den är med barn
+U: det är inte så viktigt
+S: okej / och lekfullhet är det viktigt 
+U: det är inte heller så viktigt
+S: okej / då skulle jag föreslå en schäfer eller rottweiler 
+U: okej / hur skiljer sig då här två hundarna i hur lätta dom är att träna då
+S: ja schäfer är ju lättare att träna 
+U: okej 
+S: med rottweiler är mer beskyddande
+U: okej / vad svårt / finns det någon annan hund som har högt beskyddande och som är lätta att träna
+S: ja det skull då vara en boxer
+U: okej / och vad är det för livslängd på en boxer jämfört med dom andra två
+S: ja / boxer har lite kortare livslängd
+U: okej / det är ju lite tråkigt / hur lång livslängd har en schäfer då
+S: ja / den har lång livslängd
+U: okej / då kanske vi ska ha en schäfer då
+S: ja det låter bra
+</swedish>
+
+<english>
+S: hello / how can I help you
+U: I would like help choosing which dog to buy
+S: okay / have you thought about which qualities are most important
+U: yes / I would like a very protective dog that is easy to train
+S: okay / and how should it be with / does it matter how it is with children
+U: it's not that important
+S: okay / and playfulness is important
+U: it's not that important either
+S: okay / then I would suggest a german shepherd or rottweiler
+U: okay / how do these two dogs differ in how easy they are to train then
+S: yes / german shepherds are easier to train
+U: okay
+S: but rottweilers are more protective
+U: okay / how hard / is there any other dog that has high protectiveness and is easy to train
+S: yes / it would then be a boxer
+U: okay / and what is the lifespan of a boxer compared to the other two
+S: yes / boxers have a slightly shorter lifespan
+U: okay / it's a bit sad / how long does a german shepherd have then
+S: yes / it has a long life
+U: okay / then maybe we should have a german shepherd then
+S: yes that sounds good
+</english>
+
+<distillation>
+S: hello / how can I help you
+U: I would like help choosing which dog to buy
+S: okay / have you thought about which qualities <insert id="1" princip="syntax"> that</insert>are most important
+U: yes / I would like a very protective dog that is easy to train
+S: okay /<remove id="2" princip="syntax"> and how should it be with /</remove> does it matter how it is with children
+U: it's not that important
+S: okay /<remove id="3" princip="syntax"> and</remove> <insert id="4" princip="syntax">is </insert>playfulness<remove id="5" princip="syntax"> is</remove> important<insert id="6" princip="syntax"> for your dog</insert>
+U: it's not that important either
+S: okay / then I would suggest a german shepherd or rottweiler
+U: okay / how do these two dogs differ in how easy they are to train then
+S: yes / german shepherds are easier to train<insert id="7" princip="syntax"> than rottweilers</insert>
+U: okay
+S: but rottweilers are more protective
+U: okay / how hard / is there any other dog that has high protectiveness and is easy to train
+S: yes /<remove id="8" princip="syntax"> it would then be</remove> a boxer
+U: okay / and what is the lifespan of a boxer compared to the other two
+S: <remove id="9" princip="syntax">yes / </remove>boxers have a slightly shorter lifespan
+U: okay / it's a bit sad / how long does a german shepherd have then
+S: yes / it has <alternate id="10" princip="mapping" new_text="an expected life expectency of 12 years">a long life</alternate>
+U: okay / then maybe we should have a german shepherd then
+S: <alternate id="11" princip="neutrality" new_text="okay">yes that sounds good</alternate>
+</distillation>
+
+<final>
+S: hello / how can I help you
+U: I would like help choosing which dog to buy
+S: okay / have you thought about which qualities that are most important
+U: yes / I would like a very protective dog that is easy to train
+S: okay / does it matter how it is with children
+U: it's not that important
+S: okay / is playfulness important for your dog
+U: it's not that important either
+S: okay / then I would suggest a german shepherd or rottweiler
+U: okay / how do these two dogs differ in how easy they are to train then
+S: yes / german shepherds are easier to train than rottweilers
+U: okay
+S: but rottweilers are more protective
+U: okay / how hard / is there any other dog that has high protectiveness and is easy to train
+S: yes / a boxer
+U: okay / and what is the lifespan of a boxer compared to the other two
+S: boxers have a slightly shorter lifespan
+U: okay / it's a bit sad / how long does a german shepherd have then
+S: yes / it has an expected life expectency of 12 years
+U: okay / then maybe we should have a german shepherd then
+S: okay
+</final>
+
+</root>

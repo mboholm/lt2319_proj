@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+
+<swedish> 
+S: vad kan jag hjälpa dig med
+U: jag skulle vilja köpa en hund
+S: okej / har du funderat på vilken hund som du vill ha
+U: nej men jag har funderat på vissa egenskaper 
+S: aha / okej / vad tycker du är viktigt hos en hund då
+U: det är viktigt att den är bra med barn
+S: okej
+U: och att den är enkel att träna
+S: okej då kanske du skulle vara intresserad av en golden retriever
+U: ja det kan jag vara / men det är också viktigt att den inte dräglar 
+S: okej / då kanske man skulle överväga en schäfer istället 
+U: ja / om schäfern fäller mindre än en golden retriever
+S: ja men det gör den absolut 
+U: ja men då låter schäfer jättebra
+S: skulle du vara intressead av att jämföra schäfer med någon annan hund / exempelvis pudel
+U: nej pudel är jag inte intresserad av men jag skulle vilja jämföra den med en labrador
+S: okej / i vilket hänseende då
+U: eh / ja / att den skall vara bra med främlingar
+S: ja
+U: och att den inte är för beskyddande
+S: okej / då ska du absolut välja pudel
+U: okej / då tar vi en pudel
+S: okej / vad bra
+</swedish>
+
+<english>
+S: what can I help you with
+U: I would like to buy a dog
+S: okay / have you thought about which dog you want
+U: no / but I have been thinking about certain qualities
+S: aha / okay / what do you think is important for a dog then
+U: it is important that it is good with children
+S: okay
+U: and that it is easy to train
+S: okay then maybe you would be interested in a golden retriever
+U: yes I can be / but it is also important not to drool
+S: okay / then maybe you should consider a German Shepherd instead
+U: yes / if the german shepherd sheds less than a golden retriever
+S: yes / but it absolutely does
+U: yes / but then german shepherds sound great
+S: would you be interested in comparing german shepherds with any other dog / for example poodle
+U: no / poodle I am not interested in / but I would like to compare it with a labrador
+S: okay / in what way
+U: eh / yes / that it should be good with strangers
+S: yes
+U: and that it is not too protective
+S: okay / then you should definitely choose a poodle
+U: okay / then we'll take a poodle [laughing]
+S: okay / good
+</english>
+
+<distillation>
+S: what can I help you with
+U: I would like to buy a dog
+S: okay / have you thought about which dog you want
+U: no / but I have been thinking about certain qualities
+S: <remove id="1" princip="neutrality">aha / </remove>okay / what do you think is important for a dog<remove id="2" princip="syntax"> then</remove>
+U: it is important that it is good with children
+S: okay
+U: and that it is easy to train
+S: okay then maybe you would be interested in a golden retriever
+U: yes I can be / but it is also important not to drool
+S: okay / then maybe you should consider a German Shepherd instead
+U: yes / if the german shepherd sheds less than a golden retriever
+S: yes /<remove id="3" princip="neutrality"> but</remove> <alternate id="30" princip="syntax" new_text="german shepard">it</alternate><remove id="4" princip="neutrality"> absolutely</remove> <alternate id="40" princip="syntax" new_text="sheds less than a golden retriever">does</alternate>
+U: yes / but then german shepherds sound great
+S: would you be interested in comparing german shepherds with any other dog / for example poodle
+U: no / poodle I am not interested in / but I would like to compare it with a labrador
+S: okay / in what way<insert id="5" princip="syntax"> do you want to compare german shepard with labrador</insert>
+U: eh / yes / that it should be good with strangers
+S: yes
+U: and that it is not too protective
+S: okay / then you should<remove id="50" princip="neutrality"> definitely</remove> choose<alternate id="6" princip="volintariness" new_text="labrador"> a poodle</alternate>
+<!-- S here insist on poodles despite the fact that U above has declared no interest in poddles -->
+U: okay / then we'll take a<alternate id="7" princip="coherence" new_text="labrador"> poodle [laughing]</alternate>
+S: okay<remove id="8" princip="neutrality"> / good</remove>
+</distillation>
+
+<final>
+S: what can I help you with
+U: I would like to buy a dog
+S: okay / have you thought about which dog you want
+U: no / but I have been thinking about certain qualities
+S: okay / what do you think is important for a dog
+U: it is important that it is good with children
+S: okay
+U: and that it is easy to train
+S: okay then maybe you would be interested in a golden retriever
+U: yes I can be / but it is also important not to drool
+S: okay / then maybe you should consider a German Shepherd instead
+U: yes / if the german shepherd sheds less than a golden retriever
+S: yes / german shepard sheds less than a golden retrieve
+U: yes / but then german shepherds sound great
+S: would you be interested in comparing german shepherds with any other dog / for example poodle
+U: no / poodle I am not interested in / but I would like to compare it with a labrador
+S: okay / in what way do you want to compare german shepard with labrador
+U: eh / yes / that it should be good with strangers
+S: yes
+U: and that it is not too protective
+S: okay / then you should choose labrador
+U: okay / then we'll take a labrador
+S: okay
+</final>
+
+</root>

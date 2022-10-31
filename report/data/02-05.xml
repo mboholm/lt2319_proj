@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+
+
+<swedish>
+S: vad kan jag hjälpa dig med
+U: jag behöver hjälp med att välja en hund
+S: ja. kul. då kommer jag fråga dig några frågor för att försöka lista ut vilka preferenser du har för hundar för att kunna hitta en hund som passar dig då. och då får du gärna svara på en skala mellan minus tre och plus tre men inte noll
+U: ja
+S: okej. så första frågan då. i vilken grad skall din hund vara träningsbar. eller möjlig att träna
+U: ett
+S: ja. eh. okej. i vilken grad skall din hund fälla
+U: minus två
+S: ja. i vilken grad skall din hund ha energi
+U: ett
+S: ja. i vilken grad skall din hund skälla
+U: minus tre
+S: ah. det finns ingen hund då som har minus tre 
+U: okej. minus två då
+S: mm. ja. i vilken grad skall din hund vara beskyddande
+U: minus ett
+S: okej. då finns det tre hundar då som passar den profilen. en bergamasco sheepdog. en irish water spaniel. och en briard
+U: ja
+S: eh. skulle du vilja veta någonting mer om dom här hundarna
+U: ja
+S: som till exempel
+U: storlek
+S: oj. mm. det har jag lite svårt att få fram här just nu. men jag kan erbjuda dig. jag kan beskriva någon av dom här hundarna i detalj. jag kan jämföra dom i något avseende. i någon egenskap. 
+U: mm
+S: och jag kan också hitta den hunden som har har mest eller minst av någon av dom här egenskaperna
+U: just det. eh. men den här sista briarden skulle jag gärna vilja veta lite mer om
+S: okej. då kan vi se här då. då är det så här då att briard is a dog which is easy to train. it sheds very little. it is quite high in energy and barks very little. it's quite protective. it's good with children. 
+U: det låter ju fantastiskt för mina behov
+S: vill du ha en sådan då
+U: ja tack
+</swedish>
+
+<english>
+S: What can I help you with?
+U: I need help choosing a dog
+S: yes. nice. then I will ask you some questions to try to find out what preferences you have for dogs in order to find a dog that suits you. and then you are welcome to answer on a scale between minus three and plus three but not zero
+U: yes
+S: okay. so first question then. to what degree should your dog be trainable. or possible to train
+U: one
+S: yes. eh. okay. to what degree should your dog shed
+U: minus two
+S: yes. to what degree should your dog have energy
+U: one
+S: yes. to what degree should your dog bark
+U: minus three
+S: ah. there is no dog then that has minus three
+U: okay. minus two then
+S: mm. yes. to what degree should your dog be protective
+U: minus one
+S: okay. then there are three dogs that fit that profile. a Bergamasco sheepdog. an irish water spaniel. and a briard
+U: yes
+S: eh. would you like to know anything more about these dogs
+U: yes
+S: like for example
+U: size
+S: oops. hmm. I'm having a bit of a hard time getting that information here right now. but I can offer you. I can describe any of these dogs in detail. I can compare them in some respect. in some capacity.
+U: mm
+S: and I can also find the dog that has the most or least of any of these characteristics
+U: well. eh. but this last briard I would like to know a little more about
+S: okay. then we can see here then. then it is like this then that briard is a dog which is easy to train. it sheds very little. it is quite high in energy and barks very little. it's quite protective. it's good with children.
+U: that sounds fantastic for my needs
+S: do you want one then
+U: yes, thank you
+</english>
+
+<distillation>
+S: What can I help you with?
+U: I need help choosing a dog
+S: yes.<remove princip="neutrality"> nice.</remove> then I will ask you some questions to try to find out what preferences you have for dogs in order to find a dog that suits you. and then you are welcome to answer on a scale between minus three and plus three but not zero
+U: yes
+S: okay. so first question then. to what degree should your dog be trainable. or possible to train
+U: one
+S: <remove princip="quantity-1">yes. eh. </remove>okay. to what degree should your dog shed
+U: minus two
+S: yes. to what degree should your dog have energy
+U: one
+S: yes. to what degree should your dog bark
+U: minus three
+S: <remove princip="immediacy">uh. </remove>there is no dog then that has minus three
+U: okay. minus two then
+S: <remove princip="quantity-1">mm. </remove>yes. to what degree should your dog be protective
+U: minus one
+S: okay. then there are three dogs that fit that profile. a Bergamasco sheepdog. an irish water spaniel. and a briard
+U: yes
+S: <remove princip="immediacy">eh. </remove>would you like to know anything more about these dogs
+U: yes
+S: like for example
+U: size
+S: <remove princip="neutrality">oops. hmm. </remove>I'm having a bit of a hard time getting that information here right now. but I can offer you<insert princip="syntax"> the following</insert>. I can describe any of these dogs in detail. I can compare them in some respect.<remove princip="quantity1"> in some capacity.</remove>
+U: mm
+S: and I can also find the dog that has the most or least of any of these characteristics
+U: well. eh. but this last briard I would like to know a little more about
+S: okay. <remove princip="immediacy">then we can see here then. then it is like this then that </remove>briard is a dog which is easy to train. it sheds very little. it is quite high in energy and barks very little. it's quite protective. it's good with children.
+U: that sounds fantastic for my needs
+S: do you want one then
+U: yes, thank you
+</distillation>
+
+<final>
+S: What can I help you with?
+U: I need help choosing a dog
+S: yes. then I will ask you some questions to try to find out what preferences you have for dogs in order to find a dog that suits you. and then you are welcome to answer on a scale between minus three and plus three but not zero
+U: yes
+S: okay. so first question then. to what degree should your dog be trainable. or possible to train
+U: one
+S: okay. to what degree should your dog shed
+U: minus two
+S: yes. to what degree should your dog have energy
+U: one
+S: yes. to what degree should your dog bark
+U: minus three
+S: there is no dog then that has minus three
+U: okay. minus two then
+S: yes. to what degree should your dog be protective
+U: minus one
+S: okay. then there are three dogs that fit that profile. a Bergamasco sheepdog. an irish water spaniel. and a briard
+U: yes
+S: would you like to know anything more about these dogs
+U: yes
+S: like for example
+U: size
+S: I'm having a bit of a hard time getting that information here right now. but I can offer you the following. I can describe any of these dogs in detail. I can compare them in some respect.
+U: mm
+S: and I can also find the dog that has the most or least of any of these characteristics
+U: well. eh. but this last briard I would like to know a little more about
+S: okay. briard is a dog which is easy to train. it sheds very little. it is quite high in energy and barks very little. it's quite protective. it's good with children.
+U: that sounds fantastic for my needs
+S: do you want one then
+U: yes, thank you
+</final>
+
+</root>
+
+
+ 

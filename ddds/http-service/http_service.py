@@ -85,7 +85,7 @@ def select_dog():
         filtered_dogs = dogs
 
         print(">>> Selected Dog", "PHASE:", phase)
-        print("$", dogs)
+        print("R=", dogs)
 
         result = []
         for dog in sorted(list(dogs)):
@@ -390,6 +390,7 @@ def query_response(value, grammar_entry):
 
 @app.route("/dog_describer", methods=['POST'])
 def dog_describer():
+    print(">>> Dog Describer")
     global descr_id
 
     try:
@@ -428,16 +429,13 @@ def json2content(json):
 
 @app.route("/dog_comparator", methods=['POST'])
 def dog_comparator():
+    print(">>> Dog Comparator")
     """ For comparing dogs.
     """
     global comp_id
 
     try:
         payload = request.get_json()
-
-        print("£", payload)
-
-
 
         target = payload["request"]["parameters"]["target_dog"]["grammar_entry"]
         compare_with = payload["request"]["parameters"]["compare_with"]["grammar_entry"]
@@ -510,6 +508,7 @@ def get_comparison(target, compare_with, feature):
 
 @app.route("/most_dog_finder", methods=['POST'])
 def most_dog_finder():
+    print(">>> Most Dog Finder")    
     """ For telling which dog, **among the remaining ones**, that has the highest value of some feature.  
     """
     #global most_id
@@ -534,6 +533,7 @@ def most_dog_finder():
 
 @app.route("/least_dog_finder", methods=['POST'])
 def least_dog_finder():
+    print(">>> Least Dog Finder")    
     """ For telling which dog, **among the remaining ones**, that has the lowest value of some feature.  
     """
     #global least_id

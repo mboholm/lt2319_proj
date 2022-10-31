@@ -246,6 +246,8 @@
       <item><slot predicate="target_dog"/> and <slot predicate="compare_with"/></item>
       <item><slot predicate="target_dog"/> with <slot predicate="compare_with"/> with regard to <slot predicate="feature_of_comparison"/></item>
       <item><slot predicate="target_dog"/> and <slot predicate="compare_with"/> with regard to <slot predicate="feature_of_comparison"/></item>
+      <item><slot predicate="target_dog"/></item>
+      <item><slot predicate="compare_with"/></item>
     </one-of>
   </answer>
 
@@ -316,6 +318,11 @@
   <question speaker="system" predicate="feature_of_least" type="wh_question">
     What feature 
   </question> 
+
+
+  <answer speaker="system" predicate="describe_dog" type="wh_question">
+    <slot predicate="describe_dog"/>
+  </answer>
 
 
 <!-- Zero hits -->

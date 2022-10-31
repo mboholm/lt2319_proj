@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+
+<swedish>
+S: vad kan jag hjälpa dig med
+U: jag skulle vilja köpa en hund
+S: okej. på en skala mellan noll och fem hur viktigt är det för dig att hunden kan tränas
+U: fyra
+S: hur mycket skall hunden fälla på en skala mellan noll och fem
+U: fyra
+S: på en skala mellan noll och fem hur mycket energi skall hunden ha?
+U: noll
+S: ja. det finns ingen hund som fyller dom 
+U: tre då
+S: egenskaperna. ja. på en skala mellan noll och fem hur mycket skall hunden skälla
+U: skälla
+S: skälla ja
+U: eh. två
+S: okej. då föreslår jag att du skaffar en golden retriever
+U: yay
+</swedish>
+
+<english>
+A: What can I help you with?
+U: I would like to buy a dog
+A: okay. on a scale between zero and five how important is it to you that the dog can be trained
+U: four
+A: how much should the dog shed on a scale between zero and five
+U: four
+S: on a scale between zero and five, how much energy should the dog have?
+U: zero
+A: yes. there is no dog that fills those
+U: three then
+A: properties. yes. on a scale between zero and five how much should the dog bark
+U: bark
+A: bark yes
+U: uh. two
+A: okay. then I suggest you get a golden retriever
+U: yay
+</english>
+
+<distillation>
+A: What can I help you with?
+U: I would like to buy a dog
+A: okay. on a scale between zero and five how important is it to you that the dog can be trained
+U: four
+A: how much should the dog shed on a scale between zero and five
+U: four
+S: on a scale between zero and five, how much energy should the dog have?
+U: zero
+A: yes. there is no dog that fills those<insert princip="coherence"> properties</insert>
+U: three then
+A: <remove princip="coherence">properties. </remove>yes. on a scale between zero and five how much should the dog bark
+U: bark
+A: bark yes
+U: uh. two
+A: okay. then I suggest you get a golden retriever
+U: yay
+</distillation>
+
+<final>
+A: What can I help you with?
+U: I would like to buy a dog
+A: okay. on a scale between zero and five how important is it to you that the dog can be trained
+U: four
+A: how much should the dog shed on a scale between zero and five
+U: four
+S: on a scale between zero and five, how much energy should the dog have?
+U: zero
+A: yes. there is no dog that fills those properties
+U: three then
+A: yes. on a scale between zero and five how much should the dog bark
+U: bark
+A: bark yes
+U: uh. two
+A: okay. then I suggest you get a golden retriever
+U: yay
+</final>
+
+</root>

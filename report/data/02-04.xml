@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+
+<swedish>
+S: vad kan jag hjälpa dig med
+U: jag skulle vilja köpa en hund
+S: kul. jag kommer fråga dig ett anatal frågor så ska vi se om vi kan lista ut vilken hund som passar dina preferenser. vänligen svara på en skala från minus tre till plus tre men inte noll
+U: mm
+S: i vilken grad vill du att hunden skall vara träningsbar
+U: ett
+S: i vilken grad vill du att din hund skall fälla
+U: ett
+S: i vilken grad vill du att hunden skall ha energi
+U: ett
+S: i vilken grad vill du att hunden skall skälla
+U: två
+S: i vilken grad vill du att din hund ska vara beskyddande
+U: tre
+S: det finns sex hundar som matchar din preferens
+U: mm
+S: eh. kanske att vi ska se om vi kan hitta nånting mer om dom här hundarna då
+U: mm
+S: vill du veta något mer om dom här hundarna då. det är då Pembroke Welsh Corgi, Keeshond, west highland white terrier, norwegian elkhound, smooth fox terrier och minitature pinscher
+U: jag skulle vilja höra om Pembroke Welsh Corgi
+S: ja visst. Pembroke Welsh Corgi är en hund som är ganska enkel att träna. den fäller mycket. den har ganska hög energi och skäller mycket. den är väldigt beskyddande men är också bra med barn. 
+U: okej. finns det någon hund som skäller mindre
+S: just det. de hundar som skäller minst är Pembroke Welsh Corgi, norwegian elkhound och Keeshond
+U: kan jag få höra lite mer om Keeshond
+S: Keeshond är en hund som är väldigt enkel att träna. den fäller i viss utsträckning. den har väldigt hög energi och skäller mycket. och den är väldigt beskyddande. den är extremt bra med barn. 
+U: men det blir perfekt. tack
+S: tack
+</swedish>
+
+<english>
+S: What can I help you with?
+U: I would like to buy a dog
+S: fun. I will ask you a number of questions and we will see if we can figure out which dog suits your preferences. please answer on a scale from minus three to plus three but not zero
+U: mm
+S: to what degree do you want the dog to be trainable
+U: one
+S: to what degree do you want your dog that sheds
+U: one
+S: to what degree do you want the dog to have energy
+U: one
+S: to what degree do you want the dog that barks
+U: two
+S: to what degree do you want your dog to be protective
+U: three
+S: There are six dogs that match your preference
+U: mmm
+S: uh. maybe we should see if we can find anything more about these dogs then
+U: mm
+S: Do you want to know something more about these dogs? it is then Pembroke Welsh Corgi, Keeshond, west highland white terrier, norwegian elkhound, smooth fox terrier and miniature pinscher
+U: I would like to hear about the Pembroke Welsh Corgi
+S: yes of course. The Pembroke Welsh Corgi is a dog that is fairly easy to train. it sheds a lot. it has quite high energy and barks a lot. it is very protective but is also good with children.
+U: okay. is there any dog ​​that barks less
+S: well. the dogs that bark the least is the Pembroke Welsh Corgi, the Norwegian Elkhound and the Keeshond
+U: can I hear a little more about the Keeshond
+S: The Keeshond is a dog that is very easy to train. it sheds to some extent. it has very high energy and barks a lot. and it is very protective. it is extremely good with children.
+U: but that will be perfect. thanks
+S: thank you
+</english>
+
+<distillation>
+S: What can I help you with?
+U: I would like to buy a dog
+S: <remove princip="neutrality">fun. </remove>I will ask you a number of questions and we will see if we can figure out which dog suits your preferences. please answer on a scale from minus three to plus three but not zero
+U: mm
+S: to what degree do you want the dog to be trainable
+U: one
+S: to what degree do you want your dog that sheds
+U: one
+S: to what degree do you want the dog to have energy
+U: one
+S: to what degree do you want the dog that barks
+U: two
+S: to what degree do you want your dog to be protective
+U: three
+S: There are six dogs that match your preference
+U: mmm
+S: <remove princp="immediacy">uh. <remove>maybe we should see if we can find anything more about these dogs then
+U: mm
+S: Do you want to know something more about these dogs? it is<remove princip="quantity-1"> then<remove> Pembroke Welsh Corgi, Keeshond, west highland white terrier, norwegian elkhound, smooth fox terrier and miniature pinscher
+U: I would like to hear about the Pembroke Welsh Corgi
+S: yes of course. The Pembroke Welsh Corgi is a dog that is fairly easy to train. it sheds a lot. it has quite high energy and barks a lot. it is very protective but is also good with children.
+U: okay. is there any dog ​​that barks less
+S: well. the dogs that bark the least is the Pembroke Welsh Corgi, the Norwegian Elkhound and the Keeshond
+U: can I hear a little more about the Keeshond
+S: The Keeshond is a dog that is very easy to train. it sheds to some extent. it has very high energy and barks a lot. and it is very protective. it is extremely good with children.
+U: but that will be perfect. thanks
+S: thank you
+</distillation>
+
+<final>
+S: What can I help you with?
+U: I would like to buy a dog
+S: I will ask you a number of questions and we will see if we can figure out which dog suits your preferences. please answer on a scale from minus three to plus three but not zero
+U: mm
+S: to what degree do you want the dog to be trainable
+U: one
+S: to what degree do you want your dog that sheds
+U: one
+S: to what degree do you want the dog to have energy
+U: one
+S: to what degree do you want the dog that barks
+U: two
+S: to what degree do you want your dog to be protective
+U: three
+S: There are six dogs that match your preference
+U: mmm
+S: maybe we should see if we can find anything more about these dogs then
+U: mm
+S: Do you want to know something more about these dogs? it is Pembroke Welsh Corgi, Keeshond, west highland white terrier, norwegian elkhound, smooth fox terrier and miniature pinscher
+U: I would like to hear about the Pembroke Welsh Corgi
+S: yes of course. The Pembroke Welsh Corgi is a dog that is fairly easy to train. it sheds a lot. it has quite high energy and barks a lot. it is very protective but is also good with children.
+U: okay. is there any dog ​​that barks less
+S: well. the dogs that bark the least is the Pembroke Welsh Corgi, the Norwegian Elkhound and the Keeshond
+U: can I hear a little more about the Keeshond
+S: The Keeshond is a dog that is very easy to train. it sheds to some extent. it has very high energy and barks a lot. and it is very protective. it is extremely good with children.
+U: but that will be perfect. thanks
+S: thank you
+</final>
+
+</root>
