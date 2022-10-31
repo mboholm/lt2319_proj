@@ -6,13 +6,10 @@
   <sort name="description" dynamic="true"/>
   <sort name="comparison" dynamic="true"/>
   <sort name="feature"/>
-
   <sort name="explanation"/>
   
-  <action name="get_dog"/>
-
+  <action name="suggest_dog"/>
   <action name="solve_zero"/>
-
   <action name="solve_overflow"/>
 
   <!-- (Dis)Preferred Features (pf) for incremental search-->
@@ -27,21 +24,25 @@
   
   
   <predicate name="describe_dog" sort="description"/>
+  <!-- <predicate name="describe_dog" sort="string"/> -->
   <predicate name="what_dog_to_describe" sort="dog"/>
 
-
   <predicate name="compare" sort="comparison"/>
+  <!-- <predicate name="compare" sort="string"/> -->
   <predicate name="target_dog" sort="dog"/>
   <predicate name="compare_with" sort="dog"/>
   <predicate name="feature_of_comparison" sort="feature"/>
-  <predicate name="most_dog" sort="dog"/>
+
+  <predicate name="most_dog" sort="string"/>
   <predicate name="feature_of_most" sort="feature"/>
-  <predicate name="least_dog" sort="dog"/>
+  
+  <predicate name="least_dog" sort="string"/>
   <predicate name="feature_of_least" sort="feature"/>
 
   <predicate name="explain_no_hits" sort="explanation"/>
   <predicate name="explain_too_many_hits" sort="explanation"/>
   <predicate name="explain_procedure" sort="explanation"/>
+  <!-- <predicate name="explain_describe_compare" sort="explanation"/> -->
 
 
   <individual name="zero" sort="p_score"/>
@@ -62,5 +63,6 @@
   <individual name="procedure" sort="explanation"/>
   <individual name="no_hits" sort="explanation"/>
   <individual name="too_many_hits" sort="explanation"/>
+  <!-- <individual name="describe_compare" sort="explanation"/> -->
 
 </ontology>

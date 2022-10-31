@@ -64,5 +64,49 @@
     </target>
   </query>
 
+  <validator name="TrainabilityChecker">
+    <parameters>
+      <parameter predicate="pf_trainability" format="value"/>
+    </parameters>
+    <target>
+      <http endpoint="http://ddds-http-service/trainability_checker"/>
+    </target>
+  </validator>  
+
+  <validator name="SheddingChecker">
+    <parameters>
+      <parameter predicate="pf_shedding" format="value"/>
+    </parameters>
+    <target>
+      <http endpoint="http://ddds-http-service/shedding_checker"/>
+    </target>
+  </validator>  
+
+  <validator name="EnergyChecker">
+    <parameters>
+      <parameter predicate="pf_energy" format="value"/>
+    </parameters>
+    <target>
+      <http endpoint="http://ddds-http-service/energy_checker"/>
+    </target>
+  </validator>  
+
+  <validator name="BarkingChecker">
+    <parameters>
+      <parameter predicate="pf_barking" format="value"/>
+    </parameters>
+    <target>
+      <http endpoint="http://ddds-http-service/barking_checker"/>
+    </target>
+  </validator>  
+
+  <validator name="ProtectivenessChecker">
+    <parameters>
+      <parameter predicate="pf_protectiveness" format="value"/>
+    </parameters>
+    <target>
+      <http endpoint="http://ddds-http-service/protectiveness_checker"/>
+    </target>
+  </validator>  
 
 </service_interface>

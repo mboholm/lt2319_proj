@@ -2,8 +2,6 @@
 
 import json
 
-#import requests # MB
-
 from flask import Flask, request
 from jinja2 import Environment
 
@@ -20,41 +18,44 @@ def jsonfilter(value):
 environment.filters["json"] = jsonfilter
 
 
-def validator_response(is_valid):
-    response_template = environment.from_string("""
-    {
-      "status": "success",
-      "data": {
-        "version": "1.0",
-        "is_valid": {{is_valid|json}}
-      }
-    }
-    """)
-    payload = response_template.render(is_valid=is_valid)
-    response = app.response_class(
-        response=payload,
-        status=200,
-        mimetype='application/json'
-    )
-    return response
+
+############  GLOBAL VARIABLES  ##############
+# 1. Database mode
+""" Setting the database mode of the http-service. 
+    Set the variable `db_mode_is_API` to True to 
+    use API-Ninjas Dog API; set to False to use 
+    local database (db_combined_n177.json). 
+"""
+
+db_mode_is_API = False
+
+if db_mode_is_API:
+    db_MODE, key = ("API", "y/8wPVH8PeOyZ9PESLNkwA==CONqFeR0sz7fX2qA")
+    NUMBER_INTERPRETATION = "strict"
+else:
+    db_MODE = "local"
+    NUMBER_INTERPRETATION = "graded_bipolar"
 
 
-########################
+# 2. Utils
+""" A set of global variables used for 
+    print-outs to the http-service terminal
+    and for naming values of dynamic sorts.
+"""
 
 filtered_dogs = set()
 phase = None
+
+# For IDs of dynamic sorts
+#dog_id = 1
 descr_id = 1
 comp_id  = 1
-most_id  = 1
-least_id = 1
+#most_id  = 1
+#least_id = 1
 
-db_MODE = "local"
-#db_MODE, key =("API", "y/8wPVH8PeOyZ9PESLNkwA==CONqFeR0sz7fX2qA")
+#######################################
 
-#NUMBER_INTERPRETATION = "strict"
-NUMBER_INTERPRETATION = "graded_bipolar"
 
-########################
 
 if db_MODE == "local":
     with open("db_combined_n177.json", "r") as json_file:
@@ -68,24 +69,9 @@ def select_dog():
 
     global phase
     global filtered_dogs
+    #global dog_id
 
     try:
-        # payload = request.get_json()
-
-        # trainability_dict = payload["request"]["parameters"]["pf_trainability"]
-        # shedding_dict = payload["request"]["parameters"]["pf_shedding"]
-        # energy_dict = payload["request"]["parameters"]["pf_energy"]
-        # barking_dict = payload["request"]["parameters"]["pf_barking"]
-        # protectiveness_dict = payload["request"]["parameters"]["pf_protectiveness"]
-
-        # trainability_score = trainability_dict["value"] if trainability_dict else None
-        # shedding_score = shedding_dict["value"] if shedding_dict else None
-        # energy_score = energy_dict["value"] if energy_dict else None
-        # barking_score = barking_dict["value"] if barking_dict else None
-        # protectiveness_score = protectiveness_dict["value"] if protectiveness_dict else None
-
-        # scores = [("trainability", trainability_score), ("shedding", shedding_score), ("energy", energy_score), ("barking", barking_score), ("protectiveness", protectiveness_score)]
-        # build_up = [feature for feature, score in scores if score != None]
         
         print(">>> Selected Dog", "PHASE:", phase)
 
@@ -104,19 +90,38 @@ def select_dog():
         result = []
         for dog in sorted(list(dogs)):
             value = create_value(dog)
+            #value = "dog_" + str(dog_id)
+            #dog_id += 1
+
             result.append({"value": value, "sort": "dog", "grammar_entry": dog})
 
         return selected_dog_response(result)
     except BaseException as exception:
         return error_response(message=str(exception))
 
+def error_response(message):
+    response_template = environment.from_string("""
+    {
+      "status": "error",
+      "message": {{message|json}},
+      "data": {
+        "version": "1.0"
+      }
+    }
+    """)
+    payload = response_template.render(message=message)
+    response = app.response_class(
+        response=payload,
+        status=200,
+        mimetype='application/json'
+    )
+    return response
+
+
 
 def interpret_ask_features(payload, where_to_look="request"):
     """ Gets scores of features to select R_set from the payload.
     """
-    #payload = request.get_json()
-
-    #print(payload)
 
     if where_to_look == "request":
         level1 = "request"
@@ -195,7 +200,6 @@ def interpretation(value, mode="graded_bipolar", preferred=None):
         graded_bipolar
         acceptable_level (requires preferred = True, or preferred = False)
         strict
-        importance
     """
 
     value = translation[value]
@@ -218,9 +222,6 @@ def interpretation(value, mode="graded_bipolar", preferred=None):
     if mode=="strict":
         interpret = [value]
 
-    if mode=="importance":
-        # (On a scale from 0 to 5) To what extent is F important for you?
-        interpret = list(range(value, 6))
 
     return interpret
 
@@ -257,19 +258,19 @@ def filter_dogs(scores):
         return hits
 
 def direct_api_request(scores):
-	""" Takes a set of scores for parameters, make a request at the dog API and returns a set of dogs.
-	"""
-	coda = []
-	for parameter, value in scores:
-		coda.append(f"{parameter}={translation[value]}")
-	api_url = f"https://api.api-ninjas.com/v1/dogs?" + "&".join(coda)
-	response = requests.get(api_url, headers={'X-Api-Key': key})
+    """ Takes a set of scores for parameters, make a request at the dog API and returns a set of dogs.
+    """
+    coda = []
+    for parameter, value in scores:
+        coda.append(f"{parameter}={translation[value]}")
+    api_url = f"https://api.api-ninjas.com/v1/dogs?" + "&".join(coda)
+    response = requests.get(api_url, headers={'X-Api-Key': key})
 
-	print("@ API:", response, api_url)
+    print("@ API:", response, api_url)
 
-	hits = set([dog["name"] for dog in response.json()])
+    hits = set([dog["name"] for dog in response.json()])
 
-	return hits
+    return hits
 
 def go_lden_retriever(dog2feature="name", name=None, feature2dog=None, multiple_conditions=None, database=db_MODE):
     """ GO to (Local) Database ENtry RETRIEVER
@@ -303,8 +304,8 @@ def go_lden_retriever(dog2feature="name", name=None, feature2dog=None, multiple_
             #dogs_in_the_yard = [dog["name"] for dog in DOGS if dog[feature2dog] in multiple_conditions]
             doggy_bag = []
             for value in multiple_conditions:
-            	hits = get_dog_by_feature(feature2dog, value)
-            	if hits != None:
+                hits = get_dog_by_feature(feature2dog, value)
+                if hits != None:
                     doggy_bag.extend(hits)
             dogs_in_the_yard = [dog["name"] for dog in doggy_bag]
 
@@ -339,7 +340,7 @@ def get_dog_by_feature(feature, value):
 def suggest_dog():
     print(">>> Suggest Dog Action")
     try:
-        # Presently, does not do anything more tahn being activated
+        # Presently, does not do anything more than being activated
         return successful_action_response()
     except BaseException as exception:
         return error_response(message=str(exception))
@@ -401,6 +402,7 @@ def dog_describer():
         descr_id += 1
 
         return query_response(c_value, content)
+        #return query_response(value=content, grammar_entry=None)
     except BaseException as exception:
         return error_response(message=str(exception)) 
 
@@ -415,7 +417,7 @@ def json2content(json):
     # {name} is a dog which is {value_train} train. It sheds {value_shed}. It is {value_enery} in energy and barks {value}. It is {value_potect} protective. It is {} with children. 
 
     tr_scale = ["very hard to", "hard to", "quite hard", "easy", "quite easy", "very easy"]
-    sh_ba_scale = ["almost nothing", "very litte", "little", "to some extent", "much", "very much"]
+    sh_ba_scale = ["almost nothing", "very little", "little", "to some extent", "much", "very much"]
     en_scale = ["very low", "low", "quite low", "quite high", "high", "very high"]
     pr_scale = ["very much not", "quite not", "somewhat not", "somewhat", "quite", "very"]
     go_scale = ["extremly bad", "very bad", "bad", "good", "very good", "extremly good"]
@@ -432,6 +434,11 @@ def dog_comparator():
 
     try:
         payload = request.get_json()
+
+        print("£", payload)
+
+
+
         target = payload["request"]["parameters"]["target_dog"]["grammar_entry"]
         compare_with = payload["request"]["parameters"]["compare_with"]["grammar_entry"]
         feature = payload["request"]["parameters"]["feature_of_comparison"]["value"]
@@ -442,12 +449,13 @@ def dog_comparator():
         c_value = "comparison_"+str(comp_id)
         comp_id += 1
 
+        #return query_response(value=compare_str, grammar_entry=None)
         return query_response(c_value, compare_str)
     except BaseException as exception:
         return error_response(message=str(exception)) 
 
 def get_comparison(target, compare_with, feature):
-    """ BUilds a comparison-utterance.
+    """ Builds a comparison-utterance.
     """
 
     #trg_value = int([dog[feature] for dog in DOGS if dog["name"] == target][0])
@@ -504,7 +512,7 @@ def get_comparison(target, compare_with, feature):
 def most_dog_finder():
     """ For telling which dog, **among the remaining ones**, that has the highest value of some feature.  
     """
-    global most_id
+    #global most_id
 
     try:
         payload = request.get_json()
@@ -514,10 +522,12 @@ def most_dog_finder():
         #least = get_top(feature, "least", remaining_dogs)
         most = get_top(feature, "most", remaining_dogs) # a list
         most_str = say_top(most, feature, "most")
-        c_value = "most_dog_"+str(most_id)
-        most_id += 1
+        #c_value = "most_dog_"+str(most_id)
+        #most_id += 1
 
-        return query_response(c_value, most_str)
+        #return query_response(c_value, most_str)
+        return query_response(value=most_str, grammar_entry=None)
+
     except BaseException as exception:
         return error_response(message=str(exception))
 
@@ -526,7 +536,7 @@ def most_dog_finder():
 def least_dog_finder():
     """ For telling which dog, **among the remaining ones**, that has the lowest value of some feature.  
     """
-    global least_id
+    #global least_id
 
     try:
         payload = request.get_json()
@@ -535,10 +545,12 @@ def least_dog_finder():
         remaining_dogs = filter_dogs(scores)
         least = get_top(feature, "least", remaining_dogs)
         least_str = say_top(least, feature, "least")
-        c_value = "least_dog_"+str(least_id)
-        least_id += 1
+        #c_value = "least_dog_"+str(least_id)
+        #least_id += 1
 
-        return query_response(c_value, least_str)
+        #return query_response(c_value, least_str)
+        return query_response(value=least_str, grammar_entry=None)
+
     except BaseException as exception:
         return error_response(message=str(exception))
 
@@ -580,168 +592,133 @@ def get_top(feature, mode, R_set):
                 top_value = value                              
 
     top_dog = list(top_dog)
-    return top_dog
+
+    if sorted(R_set) == sorted(top_dog):
+        return None
+    else:
+        return top_dog
 
 def say_top(top, feature, pol):
     """ Builds an utterance for the top dog(s) found.
     """
 
-    template = {
-    "trainability": "The ___ trainable dog* & ", 
-    "shedding": "The dog* that shed? the ___ & ",
-    "energy": "The dog* with ___ energy & ",
-    "barking": "The dog* that bark? the ___ & ",  
-    "protectiveness": "The ___ protective dog* & ",  
-    "good_with_children": "The dog* that & ___ good with children & "
-    }
-
-    sent = template[feature]
-    if len(top) > 1: #plural
-        sent = sent.replace("*", "s")
-        sent = sent.replace("&", "are")
-        sent = sent.replace("?", "")
+    if top == None:
+        return f"Those dogs are the same with regard to {feature}"
     else:
-        sent = sent.replace("*", "")
-        sent = sent.replace("&", "is")
-        sent = sent.replace("?", "s")
 
-    sent = sent.replace("___", pol)
+        template = {
+        "trainability": "The ___ trainable dog* & ", 
+        "shedding": "The dog* that shed? the ___ & ",
+        "energy": "The dog* with ___ energy & ",
+        "barking": "The dog* that bark? the ___ & ",  
+        "protectiveness": "The ___ protective dog* & ",  
+        "good_with_children": "The dog* that & ___ good with children & "
+        }
 
-    sent = sent + ", ".join(top)
+        sent = template[feature]
+        if len(top) > 1: #plural
+            sent = sent.replace("*", "s")
+            sent = sent.replace("&", "are")
+            sent = sent.replace("?", "")
+        else:
+            sent = sent.replace("*", "")
+            sent = sent.replace("&", "is")
+            sent = sent.replace("?", "s")
 
-    return sent
+        sent = sent.replace("___", pol)
 
+        sent = sent + ", ".join(top)
 
-
-
-
-
-# @app.route("/give_dog_list", methods=['POST'])
-# def give_dog_list(max_len=4):
-#     try:
-#         #payload = request.get_json()
-
-#         GE_as_str = ", ".join(list(filtered_dogs)[:max_len])
-#         VL_as_str = "_".join([create_value(dog) for dog in filtered_dogs][:max_len])
-
-#         return query_response(VL_as_str, GE_as_str)
-#     except BaseException as exception:
-#         return error_response(message=str(exception))    
-
+        return sent
 
 
+@app.route("/trainability_checker", methods=['POST'])
+def trainability_checker():
+    """ Checks if ... is in the database"
+    """
+    if checker(request.get_json(), "pf_trainability"):
+        return validator_response(is_valid=True)
+    else:
+        return validator_response(is_valid=False)
+
+@app.route("/shedding_checker", methods=['POST'])
+def shedding_checker():
+    """ Checks if ... is in the database"
+    """
+    if checker(request.get_json(), "pf_shedding"):
+        return validator_response(is_valid=True)
+    else:
+        return validator_response(is_valid=False)
+
+@app.route("/energy_checker", methods=['POST'])
+def energy_checker():
+    """ Checks if ... is in the database"
+    """
+    if checker(request.get_json(), "pf_energy"):
+        return validator_response(is_valid=True)
+    else:
+        return validator_response(is_valid=False)
+
+@app.route("/barking_checker", methods=['POST'])
+def barking_checker():
+    """ Checks if ... is in the database"
+    """
+    if checker(request.get_json(), "pf_barking"):
+        return validator_response(is_valid=True)
+    else:
+        return validator_response(is_valid=False)
+
+@app.route("/protectiveness_checker", methods=['POST'])
+def protectiveness_checker():
+    """ Checks if ... is in the database"
+    """
+    if checker(request.get_json(), "pf_protectiveness"):
+        return validator_response(is_valid=True)
+    else:
+        return validator_response(is_valid=False)
+
+def checker(payload, check_feature):
+
+    facts = payload["context"]["facts"]
+    value_to_check = payload["request"]["parameters"][check_feature]["value"]
+    pf_features = ["pf_trainability", "pf_shedding", "pf_energy", "pf_barking", "pf_protectiveness"]
+    scores = []
+    for pf_feature in pf_features:
+        clean_feature = pf_feature[3:] # e.g. "trainability", not "pf_trainability"
+        if pf_feature in facts:
+            scores.append((clean_feature, facts[pf_feature]["value"]))
+        else:
+            if pf_feature == check_feature:
+                scores.append((clean_feature, value_to_check))
+            else:
+                scores.append((clean_feature, None))
+
+    remaining_dogs = filter_dogs(scores)
+
+    if len(remaining_dogs) == 0:
+        return False
+    else:
+        return True
 
 
-# def error_response(message):
-#     response_template = environment.from_string("""
-#     {
-#       "status": "error",
-#       "message": {{message|json}},
-#       "data": {
-#         "version": "1.0"
-#       }
-#     }
-#     """)
-#     payload = response_template.render(message=message)
-#     response = app.response_class(
-#         response=payload,
-#         status=200,
-#         mimetype='application/json'
-#     )
-#     return response
+def validator_response(is_valid):
+    response_template = environment.from_string("""
+    {
+      "status": "success",
+      "data": {
+        "version": "1.0",
+        "is_valid": {{is_valid|json}}
+      }
+    }
+    """)
+    payload = response_template.render(is_valid=is_valid)
+    response = app.response_class(
+        response=payload,
+        status=200,
+        mimetype='application/json'
+    )
+    return response
 
 
-# def query_response(value, grammar_entry):
-#     response_template = environment.from_string("""
-#     {
-#       "status": "success",
-#       "data": {
-#         "version": "1.1",
-#         "result": [
-#           {
-#             "value": {{value|json}},
-#             "confidence": 1.0,
-#             "grammar_entry": {{grammar_entry|json}}
-#           }
-#         ]
-#       }
-#     }
-#     """)
-#     payload = response_template.render(value=value, grammar_entry=grammar_entry)
-#     response = app.response_class(
-#         response=payload,
-#         status=200,
-#         mimetype='application/json'
-#     )
-#     return response
 
 
-# def multiple_query_response(results):
-#     response_template = environment.from_string("""
-#     {
-#       "status": "success",
-#       "data": {
-#         "version": "1.0",
-#         "result": [
-#         {% for result in results %}
-#           {
-#             "value": {{result.value|json}},
-#             "confidence": 1.0,
-#             "grammar_entry": {{result.grammar_entry|json}}
-#           }{{"," if not loop.last}}
-#         {% endfor %}
-#         ]
-#       }
-#     }
-#      """)
-#     payload = response_template.render(results=results)
-#     response = app.response_class(
-#         response=payload,
-#         status=200,
-#         mimetype='application/json'
-#     )
-#     return response
-
-# @app.route("/dummy_query_response", methods=['POST'])
-# def dummy_query_response():
-#     response_template = environment.from_string("""
-#     {
-#       "status": "success",
-#       "data": {
-#         "version": "1.1",
-#         "result": [
-#           {
-#             "value": "dummy",
-#             "confidence": 1.0,
-#             "grammar_entry": null
-#           }
-#         ]
-#       }
-#     }
-#      """)
-#     payload = response_template.render()
-#     response = app.response_class(
-#         response=payload,
-#         status=200,
-#         mimetype='application/json'
-#     )
-#     return response
-
-
-# @app.route("/action_success_response", methods=['POST'])
-# def action_success_response():
-#     response_template = environment.from_string("""
-#    {
-#      "status": "success",
-#      "data": {
-#        "version": "1.1"
-#      }
-#    }
-#    """)
-#     payload = response_template.render()
-#     response = app.response_class(
-#         response=payload,
-#         status=200,
-#         mimetype='application/json'
-#     )
-#     return response

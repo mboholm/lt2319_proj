@@ -1,0 +1,235 @@
+--- main menu
+S> What would you like to do?
+
+--- Succes, 2 steps
+S> What would you like to do?
+U> I want help with deciding which dog to get
+S> I would be happy to help you! I will ask you a couple of questions to figure out what dog that might fit your preferences. Please answer from a scale from minus three to plus three, but not zero. First question. To what degree should your dog be trainable?
+U> two
+S> To what degree should your dog shed?
+U> three
+S> You should get a Bernese Mountain Dog
+
+--- Success, 5 steps
+S> What would you like to do?
+U> I want help with deciding which dog to get
+S> I would be happy to help you! I will ask you a couple of questions to figure out what dog that might fit your preferences. Please answer from a scale from minus three to plus three, but not zero. First question. To what degree should your dog be trainable?
+U> three
+S> To what degree should your dog shed?
+U> one
+S> To what degree should your dog have energy?
+U> one
+S> To what degree should your dog bark?
+U> minus two
+S> To what degree should your dog be protective?
+U> three
+S> You should get a Rottweiler
+
+--- MOP, no inquiry
+S> What would you like to do?
+U> I want help with deciding which dog to get
+S> I would be happy to help you! I will ask you a couple of questions to figure out what dog that might fit your preferences. Please answer from a scale from minus three to plus three, but not zero. First question. To what degree should your dog be trainable?
+U> one
+S> To what degree should your dog shed?
+U> minus two
+S> To what degree should your dog have energy?
+U> two
+S> To what degree should your dog bark?
+U> one
+S> To what degree should your dog be protective?
+U> minus one
+S> There is more than one dog matching those preferences : Barbado da Terceira, Bichon Frise or Bolognese?
+U> Bolognese
+S> You should get a Bolognese
+
+--- MOP, decribe dog
+S> What would you like to do?
+U> I want help with deciding which dog to get
+S> I would be happy to help you! I will ask you a couple of questions to figure out what dog that might fit your preferences. Please answer from a scale from minus three to plus three, but not zero. First question. To what degree should your dog be trainable?
+U> one
+S> To what degree should your dog shed?
+U> minus two
+S> To what degree should your dog have energy?
+U> two
+S> To what degree should your dog bark?
+U> one
+S> To what degree should your dog be protective?
+U> minus one
+S> There is more than one dog matching those preferences : Barbado da Terceira, Bichon Frise or Bolognese?
+U> Tell me about Bolognese
+S> Bolognese is a dog which is easy to train. It sheds very little. It is high in energy and barks to some extent. It is somewhat not protective. It is good with children.
+U> 
+S> Returning to Find dog. There is more than one dog matching those preferences : Barbado da Terceira, Bichon Frise or Bolognese?
+U> Then Bolognese
+S> You should get a Bolognese
+
+--- MOP, describe 2 dogs
+S> What would you like to do?
+U> I want help with deciding which dog to get
+S> I would be happy to help you! I will ask you a couple of questions to figure out what dog that might fit your preferences. Please answer from a scale from minus three to plus three, but not zero. First question. To what degree should your dog be trainable?
+U> one
+S> To what degree should your dog shed?
+U> minus two
+S> To what degree should your dog have energy?
+U> two
+S> To what degree should your dog bark?
+U> one
+S> To what degree should your dog be protective?
+U> minus one
+S> There is more than one dog matching those preferences : Barbado da Terceira, Bichon Frise or Bolognese?
+U> Tell me about Bolognese
+S> Bolognese is a dog which is easy to train. It sheds very little. It is high in energy and barks to some extent. It is somewhat not protective. It is good with children.
+U> Tell me about Bichon Frise
+S> Bichon Frise is a dog which is quite easy to train. It sheds very little. It is high in energy and barks to some extent. It is somewhat not protective. It is extremly good with children.
+U> 
+S> Returning to Find dog. There is more than one dog matching those preferences : Barbado da Terceira, Bichon Frise or Bolognese?
+U> Bichon Frise
+S> You should get a Bichon Frise
+
+--- MOP, describe and compare
+S> What would you like to do?
+U> I want help with deciding which dog to get
+S> I would be happy to help you! I will ask you a couple of questions to figure out what dog that might fit your preferences. Please answer from a scale from minus three to plus three, but not zero. First question. To what degree should your dog be trainable?
+U> two
+S> To what degree should your dog shed?
+U> one
+S> To what degree should your dog have energy?
+U> one
+S> To what degree should your dog bark?
+U> minus two
+S> To what degree should your dog be protective?
+U> three
+S> There is more than one dog matching those preferences : Bullmastiff, Hovawart or Rottweiler?
+U> Can you help me compare the dogs
+S> What dogs do you want to compare?
+U> Hovawart
+S> What dog do you want to compare Hovawart with?
+U> Rottweiler
+S> With regard to what feature do you want to compare those dogs?
+U> trainability
+S> Hovawart is harder to train than Rottweiler.
+U> Of these which bark least
+S> Those dogs are the same with regard to barking.
+U> Tell me more about Rottweiler
+S> Rottweiler is a dog which is very easy to train. It sheds to some extent. It is quite high in energy and barks very little. It is very protective. It is good with children.
+U> Of these which has most energy
+S> The dog with most energy is Bullmastiff.
+U>
+S> Returning to Find dog. There is more than one dog matching those preferences : Bullmastiff, Hovawart or Rottweiler?
+U> I think I will get a Bullmastiff then
+S> You should get a Bullmastiff
+
+
+--- MOP, compare dogs incremental
+S> What would you like to do?
+U> I want help with deciding which dog to get
+S> I would be happy to help you! I will ask you a couple of questions to figure out what dog that might fit your preferences. Please answer from a scale from minus three to plus three, but not zero. First question. To what degree should your dog be trainable?
+U> one
+S> To what degree should your dog shed?
+U> minus two
+S> To what degree should your dog have energy?
+U> two
+S> To what degree should your dog bark?
+U> one
+S> To what degree should your dog be protective?
+U> minus one
+S> There is more than one dog matching those preferences : Barbado da Terceira, Bichon Frise or Bolognese?
+U> Can you help me compare the dogs
+S> What dogs do you want to compare?
+U> Barbado da Terceira and Bolognese
+S> With regard to what feature do you want to compare those dogs?
+U> barking
+S> Barbado da Terceira barks more than Bolognese.
+U> 
+S> Returning to Find dog. There is more than one dog matching those preferences : Barbado da Terceira, Bichon Frise or Bolognese?
+U> I think I will get a Bolognese then
+S> You should get a Bolognese
+
+--- MOP, tell least 
+S> What would you like to do?
+U> I want help with deciding which dog to get
+S> I would be happy to help you! I will ask you a couple of questions to figure out what dog that might fit your preferences. Please answer from a scale from minus three to plus three, but not zero. First question. To what degree should your dog be trainable?
+U> one
+S> To what degree should your dog shed?
+U> minus two
+S> To what degree should your dog have energy?
+U> two
+S> To what degree should your dog bark?
+U> one
+S> To what degree should your dog be protective?
+U> minus one
+S> There is more than one dog matching those preferences : Barbado da Terceira, Bichon Frise or Bolognese?
+U> Of these which is the least protective
+S> The least protective dog is Barbado da Terceira.
+U>
+S> Returning to Find dog. There is more than one dog matching those preferences : Barbado da Terceira, Bichon Frise or Bolognese?
+U> I think I will get a Barbado da Terceira then
+S> You should get a Barbado da Terceira
+
+--- MOP, tell most 
+S> What would you like to do?
+U> I want help with deciding which dog to get
+S> I would be happy to help you! I will ask you a couple of questions to figure out what dog that might fit your preferences. Please answer from a scale from minus three to plus three, but not zero. First question. To what degree should your dog be trainable?
+U> two
+S> To what degree should your dog shed?
+U> one
+S> To what degree should your dog have energy?
+U> one
+S> To what degree should your dog bark?
+U> minus two
+S> To what degree should your dog be protective?
+U> three
+S> There is more than one dog matching those preferences : Bullmastiff, Hovawart or Rottweiler?
+U> Of these which has most energy
+S> The dog with most energy is Bullmastiff.
+U>
+S> Returning to Find dog. There is more than one dog matching those preferences : Bullmastiff, Hovawart or Rottweiler?
+U> I think I will get a Bullmastiff then
+S> You should get a Bullmastiff
+
+
+--- UP, no continuation (ERROR: SHADOWED)
+S> What would you like to do?
+U> I want help with deciding which dog to get
+S> I would be happy to help you! I will ask you a couple of questions to figure out what dog that might fit your preferences. Please answer from a scale from minus three to plus three, but not zero. First question. To what degree should your dog be trainable?
+U> minus one
+S> To what degree should your dog shed?
+U> minus one
+S> To what degree should your dog have energy?
+U> three
+S> Unfortunately there is no dog matching that profile. Let us start from the beginning.
+
+
+--- POP, no continuation WITH ERROR
+S> What would you like to do?
+U> I want help with deciding which dog to get
+S> I would be happy to help you! I will ask you a couple of questions to figure out what dog that might fit your preferences. Please answer from a scale from minus three to plus three, but not zero. First question. To what degree should your dog be trainable?
+U> one
+S> To what degree should your dog shed?
+U> minus one
+S> To what degree should your dog have energy?
+U> one
+S> To what degree should your dog bark?
+U> one
+S> To what degree should your dog be protective?
+U> three
+S> Oops! There are too many dogs matching that profile. Let us start from the beginning.
+
+
+--- Anticipate UP, no dog validation
+S> What would you like to do?
+U> I want help with deciding which dog to get
+S> I would be happy to help you! I will ask you a couple of questions to figure out what dog that might fit your preferences. Please answer from a scale from minus three to plus three, but not zero. First question. To what degree should your dog be trainable?
+U> minus one
+S> To what degree should your dog shed?
+U> minus one
+S> To what degree should your dog have energy?
+U> minus one
+S> Given your previous preferences, there is no dog that fits that value for energy. To what degree should your dog have energy?
+U> one
+S> To what degree should your dog bark?
+U> one
+S> You should get a Afghan Hound
+U>
+S> Returning to main menu. What would you like to do?
+

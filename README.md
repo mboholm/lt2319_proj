@@ -1,5 +1,12 @@
-# Dialogue Systems 2 - ddd-orchestration
+# LT2319 Project
 
-Baseline orchestration files prepared for the Dialogue Systems 2 course in the Master in Language Technology of the University of Gothenburg.
+## Report
+Report, data and presentation can be found in `report`.
 
-Students can fork this repository (changing the name to the name of the project or lab) or download a zip copy.
+## Training RASA
+Training data was generated using `lookup-entries`:
+
+```tala generate rasa proj_fido eng --lookup-entries dog:dogs.csv > ../rasa_nlu/training-data-eng.yml```
+
+Before training, user answers related to comparison were edited: `predicate.None` was specified as `predicate.target_dog` and `predicate.compare_with`. 
+

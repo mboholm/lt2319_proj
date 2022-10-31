@@ -23,7 +23,7 @@
 
 
 <!-- ACTIONS -->
-  <action name="get_dog">
+  <action name="suggest_dog">
     <one-of>
       <item>Find dog</item>
       <item>I want help with finding out which dog to get</item>
@@ -130,6 +130,7 @@
   <question speaker="user" predicate="describe_dog" type="wh_question">
     <one-of>
       <item>Tell me about <slot predicate="what_dog_to_describe"/></item>
+      <item>Tell me more about <slot predicate="what_dog_to_describe"/></item>
       <item>Describe <slot predicate="what_dog_to_describe"/> to me</item>
       <item>I want to know more about those dogs</item>
       <item>Can you tell me more about those dogs</item>
@@ -184,6 +185,7 @@
       <item>barking</item>
       <item>how much they bark</item>
       <item>barks</item>
+      <item>bark</item>
       <item>woof</item>
     </one-of>
   </individual>   
@@ -216,7 +218,6 @@
       <item>get most</item>
     </one-of>
   </question>
-  <!-- Problems for english: which of these is best best with children -->
 
 <!-- Sub-sequence: find dog least F -->
   <question speaker="user" predicate="least_dog" type="wh_question">
@@ -253,7 +254,7 @@
 <!-- SYSTEM MOVES -->
 <!-- Main sequence -->
   <!-- Consider: "From a scale zero to five (one to six) ..." -->
-  <individual name="procedure">Great! I will ask you a couple of questions to figure out what dog that might fit your preferences. Please answer from a scale from minus three to plus three, but not zero. First question </individual> 
+  <individual name="procedure">I would be happy to help you! I will ask you a couple of questions to figure out what dog that might fit your preferences. Please answer from a scale from minus three to plus three, but not zero. First question </individual> 
 
   <question speaker="system" predicate="pf_trainability" type="wh_question">
     To what degree should your dog be trainable
@@ -276,24 +277,21 @@
   </question>
 
 
-  <question speaker="system" predicate="what_dog_to_get" type="wh_question">There is more than one dog matching those preferences</question>
+  <question speaker="system" predicate="what_dog_to_get" type="alt_question">There is more than one dog matching those preferences</question>
 
   
   <report action="SuggestDog" status="ended">
     You should get a <slot predicate="what_dog_to_get"/>
   </report>
 
+<!-- Describe & Compare -->
+  <!-- <individual name="describe_compare">I can help you describe and compare those dogs </individual> -->
+
 
 <!-- Sub-sequence: describe -->
   <question speaker="system" predicate="what_dog_to_describe" type="wh_question">
     What dog
   </question>
-
-  <!--
-  <answer speaker="system" predicate="describe_dog">
-    <slot predicate="describe_dog"/>
-  </answer>
-  -->
 
 <!-- Sub-sequence: compare -->
   <question speaker="system" predicate="target_dog" type="wh_question">
@@ -308,17 +306,10 @@
     With regard to what feature do you want to compare those dogs
   </question> 
 
-  <!--
-  <answer speaker="system" predicate="compare">
-    <slot predicate="compare"/>
-  </answer>
-  -->
-
 <!-- Sub-sequence: find dog most F -->
   <question speaker="system" predicate="feature_of_most" type="wh_question">
     What feature 
   </question> 
-
 
 
 <!-- Sub-sequence: find dog least F -->
@@ -332,5 +323,25 @@
 <!-- Too many hits -->
   <individual name="too_many_hits">Oops! There are too many dogs matching that profile. Let us start from the beginning</individual>  
 
+<!-- Validation -->
+  <validity name="TrainabilityChecker">
+    There is no dog that that fits that value for trainability.
+  </validity>
+
+  <validity name="SheddingChecker">
+    Given your previous preferences, there is no dog that fits that value for shedding.
+  </validity>  
+
+  <validity name="EnergyChecker">
+    Given your previous preferences, there is no dog that fits that value for energy.
+  </validity>  
+
+  <validity name="BarkingChecker">
+    Given your previous preferences, there is no dog that fits that value for barking.
+  </validity>  
+
+  <validity name="ProtectivenessChecker">
+    Given your previous preferences, there is no dog that fits value for protectiveness.
+  </validity>  
 
 </grammar>

@@ -1,7 +1,7 @@
 version: "2.0"
 
 nlu:
-- intent: action::get_dog
+- intent: action::suggest_dog
   examples: |
     - Find dog
     - I want help with finding out which dog to get
@@ -17,26 +17,36 @@ nlu:
 
 - intent: question::describe_dog
   examples: |
-    - Tell me about [Alpine Dachsbracke](sort.dog)
-    - Tell me about [Catalan Sheepdog](sort.dog)
-    - Tell me about [Cão de Castro Laboreiro](sort.dog)
-    - Tell me about [Keeshond](sort.dog)
-    - Tell me about [Majorca Shepherd Dog](sort.dog)
+    - Tell me about [Akita](sort.dog)
+    - Tell me about [Blue Lacy](sort.dog)
+    - Tell me about [Bouvier des Ardennes](sort.dog)
+    - Tell me about [Bulldog](sort.dog)
+    - Tell me about [Chongqing dog](sort.dog)
+    - Tell me about [Cimarrón Uruguayo](sort.dog)
+    - Tell me about [Indian pariah dog](sort.dog)
+    - Tell me about [Liangshan Dog](sort.dog)
     - Tell me about [Olde English Bulldogge](sort.dog)
-    - Tell me about [Perro de Presa Canario](sort.dog)
-    - Tell me about [Pshdar dog](sort.dog)
-    - Tell me about [Shar Pei](sort.dog)
-    - Tell me about [Thai Bangkaew Dog](sort.dog)
-    - Describe [Bakharwal dog](sort.dog) to me
-    - Describe [Chien Français Tricolore](sort.dog) to me
-    - Describe [Chow Chow](sort.dog) to me
-    - Describe [Finnish Hound](sort.dog) to me
-    - Describe [Mountain Feist](sort.dog) to me
-    - Describe [Petit Basset Griffon Vendéen](sort.dog) to me
-    - Describe [Stabyhoun](sort.dog) to me
-    - Describe [Taigan](sort.dog) to me
-    - Describe [Tamaskan Dog](sort.dog) to me
-    - Describe [Tosa](sort.dog) to me
+    - Tell me about [Soft-Coated Wheaten Terrier](sort.dog)
+    - Tell me more about [Border Collie](sort.dog)
+    - Tell me more about [Border Terrier](sort.dog)
+    - Tell me more about [Chesapeake Bay Retriever](sort.dog)
+    - Tell me more about [Dutch Shepherd](sort.dog)
+    - Tell me more about [Grand Anglo-Français Blanc et Noir](sort.dog)
+    - Tell me more about [Manchester Terrier](sort.dog)
+    - Tell me more about [Pekingese](sort.dog)
+    - Tell me more about [Pyrenean Mastiff](sort.dog)
+    - Tell me more about [Sinhala Hound](sort.dog)
+    - Tell me more about [Tazy](sort.dog)
+    - Describe [Bouvier des Flandres](sort.dog) to me
+    - Describe [Cantabrian Water Dog](sort.dog) to me
+    - Describe [Cesky Terrier](sort.dog) to me
+    - Describe [English Shepherd](sort.dog) to me
+    - Describe [Hanover Hound](sort.dog) to me
+    - Describe [Kars dog](sort.dog) to me
+    - Describe [Old English Sheepdog](sort.dog) to me
+    - Describe [Shiloh Shepherd dog](sort.dog) to me
+    - Describe [Slovenský kopov](sort.dog) to me
+    - Describe [Westphalian Dachsbracke](sort.dog) to me
     - I want to know more about those dogs
     - Can you tell me more about those dogs
     - Tell me more
@@ -45,26 +55,26 @@ nlu:
 - intent: question::compare
   examples: |
     - Can you help me compare the dogs
-    - Compare [Beagle-Harrier]{"entity": "sort.dog", "role": "predicate.None"} with [Majorca Shepherd Dog]{"entity": "sort.dog", "role": "predicate.None"} with respect to [barking]{"entity": "sort.feature", "value": "individual.barking"}
-    - Compare [Black and Tan Coonhound]{"entity": "sort.dog", "role": "predicate.None"} with [Australian Terrier]{"entity": "sort.dog", "role": "predicate.None"} with respect to [barking]{"entity": "sort.feature", "value": "individual.barking"}
-    - Compare [Buryat-Mongolian Wolfhound]{"entity": "sort.dog", "role": "predicate.None"} with [Chinook]{"entity": "sort.dog", "role": "predicate.None"} with respect to [shedding]{"entity": "sort.feature", "value": "individual.shedding"}
-    - Compare [Denmark Feist]{"entity": "sort.dog", "role": "predicate.None"} with [Molossus of Epirus]{"entity": "sort.dog", "role": "predicate.None"} with respect to [trainability]{"entity": "sort.feature", "value": "individual.trainability"}
-    - Compare [Miniature Schnauzer]{"entity": "sort.dog", "role": "predicate.None"} with [White Shepherd]{"entity": "sort.dog", "role": "predicate.None"} with respect to [shedding]{"entity": "sort.feature", "value": "individual.shedding"}
-    - Compare [Mountain Feist]{"entity": "sort.dog", "role": "predicate.None"} with [King Charles Spaniel]{"entity": "sort.dog", "role": "predicate.None"} with respect to [energy]{"entity": "sort.feature", "value": "individual.energy"}
-    - Compare [Norwegian Lundehund]{"entity": "sort.dog", "role": "predicate.None"} with [Slovak Rough-haired Pointer]{"entity": "sort.dog", "role": "predicate.None"} with respect to [energy]{"entity": "sort.feature", "value": "individual.energy"}
-    - Compare [Phu Quoc Ridgeback]{"entity": "sort.dog", "role": "predicate.None"} with [Griffon Bruxellois]{"entity": "sort.dog", "role": "predicate.None"} with respect to [energy]{"entity": "sort.feature", "value": "individual.energy"}
-    - Compare [Polish Hound]{"entity": "sort.dog", "role": "predicate.None"} with [Ratonero Valenciano]{"entity": "sort.dog", "role": "predicate.None"} with respect to [shedding]{"entity": "sort.feature", "value": "individual.shedding"}
-    - Compare [Stephens Stock]{"entity": "sort.dog", "role": "predicate.None"} with [Grand Basset Griffon Vendéen]{"entity": "sort.dog", "role": "predicate.None"} with respect to [trainability]{"entity": "sort.feature", "value": "individual.trainability"}
-    - How does [Aksaray Malaklisi]{"entity": "sort.dog", "role": "predicate.None"} compare with [Mountain Cur]{"entity": "sort.dog", "role": "predicate.None"}
-    - How does [Clumber Spaniel]{"entity": "sort.dog", "role": "predicate.None"} compare with [Pyrenean Mountain Dog]{"entity": "sort.dog", "role": "predicate.None"}
-    - How does [East-European Shepherd]{"entity": "sort.dog", "role": "predicate.None"} compare with [Cane di Oropa]{"entity": "sort.dog", "role": "predicate.None"}
-    - How does [Gull Terrier]{"entity": "sort.dog", "role": "predicate.None"} compare with [Rampur Greyhound]{"entity": "sort.dog", "role": "predicate.None"}
-    - How does [Jämthund]{"entity": "sort.dog", "role": "predicate.None"} compare with [Azawakh]{"entity": "sort.dog", "role": "predicate.None"}
-    - How does [Magyar agár]{"entity": "sort.dog", "role": "predicate.None"} compare with [Beagle]{"entity": "sort.dog", "role": "predicate.None"}
-    - How does [Podenco Valenciano]{"entity": "sort.dog", "role": "predicate.None"} compare with [Danish-Swedish Farmdog]{"entity": "sort.dog", "role": "predicate.None"}
-    - How does [Sporting Lucas Terrier]{"entity": "sort.dog", "role": "predicate.None"} compare with [Welsh Sheepdog]{"entity": "sort.dog", "role": "predicate.None"}
-    - How does [Staffordshire Bull Terrier]{"entity": "sort.dog", "role": "predicate.None"} compare with [Hamiltonstövare]{"entity": "sort.dog", "role": "predicate.None"}
-    - How does [Weimaraner]{"entity": "sort.dog", "role": "predicate.None"} compare with [German Shepherd]{"entity": "sort.dog", "role": "predicate.None"}
+    - Compare [German Pinscher]{"entity": "sort.dog", "role": "predicate.None"} with [Giant Schnauzer]{"entity": "sort.dog", "role": "predicate.None"} with respect to [protectiveness]{"entity": "sort.feature", "value": "individual.protectiveness"}
+    - Compare [Grand Anglo-Français Tricolore]{"entity": "sort.dog", "role": "predicate.None"} with [German Spitz]{"entity": "sort.dog", "role": "predicate.None"} with respect to [trainability]{"entity": "sort.feature", "value": "individual.trainability"}
+    - Compare [Griffon Nivernais]{"entity": "sort.dog", "role": "predicate.None"} with [Perro de Presa Canario]{"entity": "sort.dog", "role": "predicate.None"} with respect to [protectiveness]{"entity": "sort.feature", "value": "individual.protectiveness"}
+    - Compare [Icelandic Sheepdog]{"entity": "sort.dog", "role": "predicate.None"} with [Treeing Feist]{"entity": "sort.dog", "role": "predicate.None"} with respect to [barking]{"entity": "sort.feature", "value": "individual.barking"}
+    - Compare [Kai Ken]{"entity": "sort.dog", "role": "predicate.None"} with [Pachon Navarro]{"entity": "sort.dog", "role": "predicate.None"} with respect to [shedding]{"entity": "sort.feature", "value": "individual.shedding"}
+    - Compare [Kangal Shepherd Dog]{"entity": "sort.dog", "role": "predicate.None"} with [Campeiro Bulldog]{"entity": "sort.dog", "role": "predicate.None"} with respect to [trainability]{"entity": "sort.feature", "value": "individual.trainability"}
+    - Compare [Komondor]{"entity": "sort.dog", "role": "predicate.None"} with [Aksaray Malaklisi]{"entity": "sort.dog", "role": "predicate.None"} with respect to [how good they are with children]{"entity": "sort.feature", "value": "individual.good_with_children"}
+    - Compare [Segugio Italiano]{"entity": "sort.dog", "role": "predicate.None"} with [Saint-Usuge Spaniel]{"entity": "sort.dog", "role": "predicate.None"} with respect to [how good they are with children]{"entity": "sort.feature", "value": "individual.good_with_children"}
+    - Compare [Smooth Collie]{"entity": "sort.dog", "role": "predicate.None"} with [Pyrenean Sheepdog]{"entity": "sort.dog", "role": "predicate.None"} with respect to [protectiveness]{"entity": "sort.feature", "value": "individual.protectiveness"}
+    - Compare [Sporting Lucas Terrier]{"entity": "sort.dog", "role": "predicate.None"} with [Ryukyu Inu]{"entity": "sort.dog", "role": "predicate.None"} with respect to [barking]{"entity": "sort.feature", "value": "individual.barking"}
+    - How does [Appenzeller Sennenhund]{"entity": "sort.dog", "role": "predicate.None"} compare with [Sarabi dog]{"entity": "sort.dog", "role": "predicate.None"}
+    - How does [Armant]{"entity": "sort.dog", "role": "predicate.None"} compare with [Poitevin hound]{"entity": "sort.dog", "role": "predicate.None"}
+    - How does [Ca de Bou]{"entity": "sort.dog", "role": "predicate.None"} compare with [Saluki]{"entity": "sort.dog", "role": "predicate.None"}
+    - How does [Carolina Dog]{"entity": "sort.dog", "role": "predicate.None"} compare with [Bullmastiff]{"entity": "sort.dog", "role": "predicate.None"}
+    - How does [Cimarrón Uruguayo]{"entity": "sort.dog", "role": "predicate.None"} compare with [Ryukyu Inu]{"entity": "sort.dog", "role": "predicate.None"}
+    - How does [Croatian Sheepdog]{"entity": "sort.dog", "role": "predicate.None"} compare with [Kintamani]{"entity": "sort.dog", "role": "predicate.None"}
+    - How does [Leonberger]{"entity": "sort.dog", "role": "predicate.None"} compare with [Calupoh]{"entity": "sort.dog", "role": "predicate.None"}
+    - How does [Lupo Italiano]{"entity": "sort.dog", "role": "predicate.None"} compare with [Pont-Audemer Spaniel]{"entity": "sort.dog", "role": "predicate.None"}
+    - How does [Pyrenean Mastiff]{"entity": "sort.dog", "role": "predicate.None"} compare with [Cão de Castro Laboreiro]{"entity": "sort.dog", "role": "predicate.None"}
+    - How does [South Russian Ovcharka]{"entity": "sort.dog", "role": "predicate.None"} compare with [Grand Anglo-Français Blanc et Noir]{"entity": "sort.dog", "role": "predicate.None"}
     - Compare
     - Help me compare those dogs
     - How do they compare
@@ -72,56 +82,57 @@ nlu:
 
 - intent: question::most_dog
   examples: |
-    - Of these which [energetic]{"entity": "sort.feature", "value": "individual.energy"} most
+    - Of these which [bark]{"entity": "sort.feature", "value": "individual.barking"} most
+    - Of these which [barking]{"entity": "sort.feature", "value": "individual.barking"} most
+    - Of these which [barks]{"entity": "sort.feature", "value": "individual.barking"} most
     - Of these which [energy]{"entity": "sort.feature", "value": "individual.energy"} most
-    - Of these which [good with children]{"entity": "sort.feature", "value": "individual.good_with_children"} most
-    - Of these which [how good they are with children]{"entity": "sort.feature", "value": "individual.good_with_children"} most
-    - Of these which [how much energy they have]{"entity": "sort.feature", "value": "individual.energy"} most
-    - Of these which [how trainable they are]{"entity": "sort.feature", "value": "individual.trainability"} most
-    - Of these which [to train]{"entity": "sort.feature", "value": "individual.trainability"} most
-    - Of these which [train]{"entity": "sort.feature", "value": "individual.trainability"} most
-    - Of these which [trainability]{"entity": "sort.feature", "value": "individual.trainability"} most
-    - Of these which [trainable]{"entity": "sort.feature", "value": "individual.trainability"} most
-    - Of these which is the most [barking]{"entity": "sort.feature", "value": "individual.barking"}
-    - Of these which is the most [barks]{"entity": "sort.feature", "value": "individual.barking"}
+    - Of these which [how much they bark]{"entity": "sort.feature", "value": "individual.barking"} most
+    - Of these which [how much they shed]{"entity": "sort.feature", "value": "individual.shedding"} most
+    - Of these which [shed]{"entity": "sort.feature", "value": "individual.shedding"} most
+    - Of these which [shedding]{"entity": "sort.feature", "value": "individual.shedding"} most
+    - Of these which [sheds]{"entity": "sort.feature", "value": "individual.shedding"} most
+    - Of these which [woof]{"entity": "sort.feature", "value": "individual.barking"} most
     - Of these which is the most [energetic]{"entity": "sort.feature", "value": "individual.energy"}
     - Of these which is the most [energy]{"entity": "sort.feature", "value": "individual.energy"}
     - Of these which is the most [good with children]{"entity": "sort.feature", "value": "individual.good_with_children"}
     - Of these which is the most [how good they are with children]{"entity": "sort.feature", "value": "individual.good_with_children"}
     - Of these which is the most [how much energy they have]{"entity": "sort.feature", "value": "individual.energy"}
-    - Of these which is the most [how much they bark]{"entity": "sort.feature", "value": "individual.barking"}
-    - Of these which is the most [protectiveness]{"entity": "sort.feature", "value": "individual.protectiveness"}
-    - Of these which is the most [woof]{"entity": "sort.feature", "value": "individual.barking"}
+    - Of these which is the most [how trainable they are]{"entity": "sort.feature", "value": "individual.trainability"}
+    - Of these which is the most [to train]{"entity": "sort.feature", "value": "individual.trainability"}
+    - Of these which is the most [train]{"entity": "sort.feature", "value": "individual.trainability"}
+    - Of these which is the most [trainability]{"entity": "sort.feature", "value": "individual.trainability"}
+    - Of these which is the most [trainable]{"entity": "sort.feature", "value": "individual.trainability"}
+    - Of these which has most [bark]{"entity": "sort.feature", "value": "individual.barking"}
+    - Of these which has most [barking]{"entity": "sort.feature", "value": "individual.barking"}
+    - Of these which has most [barks]{"entity": "sort.feature", "value": "individual.barking"}
+    - Of these which has most [how much they bark]{"entity": "sort.feature", "value": "individual.barking"}
     - Of these which has most [how much they shed]{"entity": "sort.feature", "value": "individual.shedding"}
     - Of these which has most [how protective they are]{"entity": "sort.feature", "value": "individual.protectiveness"}
-    - Of these which has most [how trainable they are]{"entity": "sort.feature", "value": "individual.trainability"}
     - Of these which has most [protective]{"entity": "sort.feature", "value": "individual.protectiveness"}
     - Of these which has most [protectiveness]{"entity": "sort.feature", "value": "individual.protectiveness"}
-    - Of these which has most [shed]{"entity": "sort.feature", "value": "individual.shedding"}
     - Of these which has most [shedding]{"entity": "sort.feature", "value": "individual.shedding"}
-    - Of these which has most [sheds]{"entity": "sort.feature", "value": "individual.shedding"}
-    - Of these which has most [to train]{"entity": "sort.feature", "value": "individual.trainability"}
-    - Of these which has most [trainability]{"entity": "sort.feature", "value": "individual.trainability"}
-    - Which of these [energetic]{"entity": "sort.feature", "value": "individual.energy"} most
-    - Which of these [energy]{"entity": "sort.feature", "value": "individual.energy"} most
-    - Which of these [how much energy they have]{"entity": "sort.feature", "value": "individual.energy"} most
+    - Of these which has most [woof]{"entity": "sort.feature", "value": "individual.barking"}
+    - Which of these [good with children]{"entity": "sort.feature", "value": "individual.good_with_children"} most
+    - Which of these [how good they are with children]{"entity": "sort.feature", "value": "individual.good_with_children"} most
     - Which of these [how much they shed]{"entity": "sort.feature", "value": "individual.shedding"} most
     - Which of these [how trainable they are]{"entity": "sort.feature", "value": "individual.trainability"} most
+    - Which of these [shed]{"entity": "sort.feature", "value": "individual.shedding"} most
     - Which of these [shedding]{"entity": "sort.feature", "value": "individual.shedding"} most
+    - Which of these [sheds]{"entity": "sort.feature", "value": "individual.shedding"} most
     - Which of these [to train]{"entity": "sort.feature", "value": "individual.trainability"} most
-    - Which of these [train]{"entity": "sort.feature", "value": "individual.trainability"} most
     - Which of these [trainability]{"entity": "sort.feature", "value": "individual.trainability"} most
     - Which of these [trainable]{"entity": "sort.feature", "value": "individual.trainability"} most
-    - Which of these is the most [barking]{"entity": "sort.feature", "value": "individual.barking"}
-    - Which of these is the most [barks]{"entity": "sort.feature", "value": "individual.barking"}
+    - Which of these is the most [energetic]{"entity": "sort.feature", "value": "individual.energy"}
     - Which of these is the most [energy]{"entity": "sort.feature", "value": "individual.energy"}
-    - Which of these is the most [how much they bark]{"entity": "sort.feature", "value": "individual.barking"}
-    - Which of these is the most [how trainable they are]{"entity": "sort.feature", "value": "individual.trainability"}
-    - Which of these is the most [to train]{"entity": "sort.feature", "value": "individual.trainability"}
-    - Which of these is the most [train]{"entity": "sort.feature", "value": "individual.trainability"}
-    - Which of these is the most [trainability]{"entity": "sort.feature", "value": "individual.trainability"}
-    - Which of these is the most [trainable]{"entity": "sort.feature", "value": "individual.trainability"}
-    - Which of these is the most [woof]{"entity": "sort.feature", "value": "individual.barking"}
+    - Which of these is the most [how much energy they have]{"entity": "sort.feature", "value": "individual.energy"}
+    - Which of these is the most [how much they shed]{"entity": "sort.feature", "value": "individual.shedding"}
+    - Which of these is the most [how protective they are]{"entity": "sort.feature", "value": "individual.protectiveness"}
+    - Which of these is the most [protective]{"entity": "sort.feature", "value": "individual.protectiveness"}
+    - Which of these is the most [protectiveness]{"entity": "sort.feature", "value": "individual.protectiveness"}
+    - Which of these is the most [shed]{"entity": "sort.feature", "value": "individual.shedding"}
+    - Which of these is the most [shedding]{"entity": "sort.feature", "value": "individual.shedding"}
+    - Which of these is the most [sheds]{"entity": "sort.feature", "value": "individual.shedding"}
+    - Which of these has most [bark]{"entity": "sort.feature", "value": "individual.barking"}
     - Which of these has most [barking]{"entity": "sort.feature", "value": "individual.barking"}
     - Which of these has most [barks]{"entity": "sort.feature", "value": "individual.barking"}
     - Which of these has most [good with children]{"entity": "sort.feature", "value": "individual.good_with_children"}
@@ -130,107 +141,116 @@ nlu:
     - Which of these has most [how protective they are]{"entity": "sort.feature", "value": "individual.protectiveness"}
     - Which of these has most [protective]{"entity": "sort.feature", "value": "individual.protectiveness"}
     - Which of these has most [protectiveness]{"entity": "sort.feature", "value": "individual.protectiveness"}
-    - Which of these has most [trainability]{"entity": "sort.feature", "value": "individual.trainability"}
     - Which of these has most [woof]{"entity": "sort.feature", "value": "individual.barking"}
-    - Which [barking]{"entity": "sort.feature", "value": "individual.barking"} most
-    - Which [barks]{"entity": "sort.feature", "value": "individual.barking"} most
-    - Which [how much they bark]{"entity": "sort.feature", "value": "individual.barking"} most
-    - Which [how much they shed]{"entity": "sort.feature", "value": "individual.shedding"} most
+    - Which [energetic]{"entity": "sort.feature", "value": "individual.energy"} most
+    - Which [energy]{"entity": "sort.feature", "value": "individual.energy"} most
+    - Which [how much energy they have]{"entity": "sort.feature", "value": "individual.energy"} most
     - Which [how protective they are]{"entity": "sort.feature", "value": "individual.protectiveness"} most
+    - Which [how trainable they are]{"entity": "sort.feature", "value": "individual.trainability"} most
     - Which [protectiveness]{"entity": "sort.feature", "value": "individual.protectiveness"} most
-    - Which [shed]{"entity": "sort.feature", "value": "individual.shedding"} most
-    - Which [shedding]{"entity": "sort.feature", "value": "individual.shedding"} most
-    - Which [sheds]{"entity": "sort.feature", "value": "individual.shedding"} most
-    - Which [woof]{"entity": "sort.feature", "value": "individual.barking"} most
+    - Which [to train]{"entity": "sort.feature", "value": "individual.trainability"} most
+    - Which [train]{"entity": "sort.feature", "value": "individual.trainability"} most
+    - Which [trainability]{"entity": "sort.feature", "value": "individual.trainability"} most
+    - Which [trainable]{"entity": "sort.feature", "value": "individual.trainability"} most
     - get most
 
 - intent: question::least_dog
   examples: |
+    - Of these which [bark]{"entity": "sort.feature", "value": "individual.barking"} least
     - Of these which [barking]{"entity": "sort.feature", "value": "individual.barking"} least
     - Of these which [barks]{"entity": "sort.feature", "value": "individual.barking"} least
     - Of these which [energy]{"entity": "sort.feature", "value": "individual.energy"} least
     - Of these which [how much they bark]{"entity": "sort.feature", "value": "individual.barking"} least
-    - Of these which [how trainable they are]{"entity": "sort.feature", "value": "individual.trainability"} least
-    - Of these which [to train]{"entity": "sort.feature", "value": "individual.trainability"} least
-    - Of these which [train]{"entity": "sort.feature", "value": "individual.trainability"} least
-    - Of these which [trainability]{"entity": "sort.feature", "value": "individual.trainability"} least
-    - Of these which [trainable]{"entity": "sort.feature", "value": "individual.trainability"} least
+    - Of these which [how much they shed]{"entity": "sort.feature", "value": "individual.shedding"} least
+    - Of these which [shed]{"entity": "sort.feature", "value": "individual.shedding"} least
+    - Of these which [shedding]{"entity": "sort.feature", "value": "individual.shedding"} least
+    - Of these which [sheds]{"entity": "sort.feature", "value": "individual.shedding"} least
     - Of these which [woof]{"entity": "sort.feature", "value": "individual.barking"} least
     - Of these which is the least [energy]{"entity": "sort.feature", "value": "individual.energy"}
-    - Of these which is the least [how much energy they have]{"entity": "sort.feature", "value": "individual.energy"}
+    - Of these which is the least [good with children]{"entity": "sort.feature", "value": "individual.good_with_children"}
+    - Of these which is the least [how good they are with children]{"entity": "sort.feature", "value": "individual.good_with_children"}
+    - Of these which is the least [how much they shed]{"entity": "sort.feature", "value": "individual.shedding"}
     - Of these which is the least [how protective they are]{"entity": "sort.feature", "value": "individual.protectiveness"}
-    - Of these which is the least [how trainable they are]{"entity": "sort.feature", "value": "individual.trainability"}
     - Of these which is the least [protective]{"entity": "sort.feature", "value": "individual.protectiveness"}
     - Of these which is the least [protectiveness]{"entity": "sort.feature", "value": "individual.protectiveness"}
-    - Of these which is the least [to train]{"entity": "sort.feature", "value": "individual.trainability"}
-    - Of these which is the least [train]{"entity": "sort.feature", "value": "individual.trainability"}
-    - Of these which is the least [trainability]{"entity": "sort.feature", "value": "individual.trainability"}
-    - Of these which is the least [trainable]{"entity": "sort.feature", "value": "individual.trainability"}
+    - Of these which is the least [shed]{"entity": "sort.feature", "value": "individual.shedding"}
+    - Of these which is the least [shedding]{"entity": "sort.feature", "value": "individual.shedding"}
+    - Of these which is the least [sheds]{"entity": "sort.feature", "value": "individual.shedding"}
     - Of these which has least [energetic]{"entity": "sort.feature", "value": "individual.energy"}
     - Of these which has least [energy]{"entity": "sort.feature", "value": "individual.energy"}
-    - Of these which has least [good with children]{"entity": "sort.feature", "value": "individual.good_with_children"}
-    - Of these which has least [how good they are with children]{"entity": "sort.feature", "value": "individual.good_with_children"}
     - Of these which has least [how much energy they have]{"entity": "sort.feature", "value": "individual.energy"}
+    - Of these which has least [how much they shed]{"entity": "sort.feature", "value": "individual.shedding"}
     - Of these which has least [how protective they are]{"entity": "sort.feature", "value": "individual.protectiveness"}
-    - Of these which has least [how trainable they are]{"entity": "sort.feature", "value": "individual.trainability"}
     - Of these which has least [protective]{"entity": "sort.feature", "value": "individual.protectiveness"}
     - Of these which has least [protectiveness]{"entity": "sort.feature", "value": "individual.protectiveness"}
-    - Of these which has least [trainability]{"entity": "sort.feature", "value": "individual.trainability"}
-    - Which of these [barking]{"entity": "sort.feature", "value": "individual.barking"} least
-    - Which of these [barks]{"entity": "sort.feature", "value": "individual.barking"} least
-    - Which of these [how much they bark]{"entity": "sort.feature", "value": "individual.barking"} least
+    - Of these which has least [shed]{"entity": "sort.feature", "value": "individual.shedding"}
+    - Of these which has least [shedding]{"entity": "sort.feature", "value": "individual.shedding"}
+    - Of these which has least [sheds]{"entity": "sort.feature", "value": "individual.shedding"}
+    - Which of these [how much they shed]{"entity": "sort.feature", "value": "individual.shedding"} least
+    - Which of these [how protective they are]{"entity": "sort.feature", "value": "individual.protectiveness"} least
     - Which of these [how trainable they are]{"entity": "sort.feature", "value": "individual.trainability"} least
+    - Which of these [protective]{"entity": "sort.feature", "value": "individual.protectiveness"} least
+    - Which of these [protectiveness]{"entity": "sort.feature", "value": "individual.protectiveness"} least
     - Which of these [shedding]{"entity": "sort.feature", "value": "individual.shedding"} least
     - Which of these [to train]{"entity": "sort.feature", "value": "individual.trainability"} least
     - Which of these [train]{"entity": "sort.feature", "value": "individual.trainability"} least
     - Which of these [trainability]{"entity": "sort.feature", "value": "individual.trainability"} least
     - Which of these [trainable]{"entity": "sort.feature", "value": "individual.trainability"} least
-    - Which of these [woof]{"entity": "sort.feature", "value": "individual.barking"} least
     - Which of these is the least [energetic]{"entity": "sort.feature", "value": "individual.energy"}
     - Which of these is the least [energy]{"entity": "sort.feature", "value": "individual.energy"}
-    - Which of these is the least [good with children]{"entity": "sort.feature", "value": "individual.good_with_children"}
-    - Which of these is the least [how good they are with children]{"entity": "sort.feature", "value": "individual.good_with_children"}
     - Which of these is the least [how much energy they have]{"entity": "sort.feature", "value": "individual.energy"}
     - Which of these is the least [how much they shed]{"entity": "sort.feature", "value": "individual.shedding"}
+    - Which of these is the least [how trainable they are]{"entity": "sort.feature", "value": "individual.trainability"}
     - Which of these is the least [shed]{"entity": "sort.feature", "value": "individual.shedding"}
     - Which of these is the least [shedding]{"entity": "sort.feature", "value": "individual.shedding"}
     - Which of these is the least [sheds]{"entity": "sort.feature", "value": "individual.shedding"}
+    - Which of these is the least [to train]{"entity": "sort.feature", "value": "individual.trainability"}
     - Which of these is the least [trainability]{"entity": "sort.feature", "value": "individual.trainability"}
-    - Which of these has least [barking]{"entity": "sort.feature", "value": "individual.barking"}
-    - Which of these has least [barks]{"entity": "sort.feature", "value": "individual.barking"}
-    - Which of these has least [good with children]{"entity": "sort.feature", "value": "individual.good_with_children"}
-    - Which of these has least [how good they are with children]{"entity": "sort.feature", "value": "individual.good_with_children"}
-    - Which of these has least [how much they bark]{"entity": "sort.feature", "value": "individual.barking"}
     - Which of these has least [how much they shed]{"entity": "sort.feature", "value": "individual.shedding"}
-    - Which of these has least [shed]{"entity": "sort.feature", "value": "individual.shedding"}
+    - Which of these has least [how protective they are]{"entity": "sort.feature", "value": "individual.protectiveness"}
+    - Which of these has least [how trainable they are]{"entity": "sort.feature", "value": "individual.trainability"}
+    - Which of these has least [protective]{"entity": "sort.feature", "value": "individual.protectiveness"}
+    - Which of these has least [protectiveness]{"entity": "sort.feature", "value": "individual.protectiveness"}
     - Which of these has least [shedding]{"entity": "sort.feature", "value": "individual.shedding"}
-    - Which of these has least [sheds]{"entity": "sort.feature", "value": "individual.shedding"}
-    - Which of these has least [woof]{"entity": "sort.feature", "value": "individual.barking"}
+    - Which of these has least [to train]{"entity": "sort.feature", "value": "individual.trainability"}
+    - Which of these has least [train]{"entity": "sort.feature", "value": "individual.trainability"}
+    - Which of these has least [trainability]{"entity": "sort.feature", "value": "individual.trainability"}
+    - Which of these has least [trainable]{"entity": "sort.feature", "value": "individual.trainability"}
+    - Which [bark]{"entity": "sort.feature", "value": "individual.barking"} least
+    - Which [barking]{"entity": "sort.feature", "value": "individual.barking"} least
+    - Which [barks]{"entity": "sort.feature", "value": "individual.barking"} least
     - Which [energetic]{"entity": "sort.feature", "value": "individual.energy"} least
     - Which [energy]{"entity": "sort.feature", "value": "individual.energy"} least
+    - Which [good with children]{"entity": "sort.feature", "value": "individual.good_with_children"} least
+    - Which [how good they are with children]{"entity": "sort.feature", "value": "individual.good_with_children"} least
     - Which [how much energy they have]{"entity": "sort.feature", "value": "individual.energy"} least
-    - Which [how much they shed]{"entity": "sort.feature", "value": "individual.shedding"} least
-    - Which [how protective they are]{"entity": "sort.feature", "value": "individual.protectiveness"} least
-    - Which [protective]{"entity": "sort.feature", "value": "individual.protectiveness"} least
-    - Which [protectiveness]{"entity": "sort.feature", "value": "individual.protectiveness"} least
-    - Which [shed]{"entity": "sort.feature", "value": "individual.shedding"} least
-    - Which [shedding]{"entity": "sort.feature", "value": "individual.shedding"} least
-    - Which [sheds]{"entity": "sort.feature", "value": "individual.shedding"} least
+    - Which [how much they bark]{"entity": "sort.feature", "value": "individual.barking"} least
+    - Which [woof]{"entity": "sort.feature", "value": "individual.barking"} least
     - get least
 
 - intent: answer
   examples: |
-    - [Irish Red and White Setter](sort.dog)
-    - [Portuguese Water Dog](sort.dog)
-    - [Icelandic Sheepdog](sort.dog)
-    - [Maremmano-Abruzzese Sheepdog](sort.dog)
-    - [Andalusian Hound](sort.dog)
-    - [Hamiltonstövare](sort.dog)
-    - [Border Collie](sort.dog)
-    - [Continental bulldog](sort.dog)
-    - [Cretan Hound](sort.dog)
-    - [Jämthund](sort.dog)
-    - [Great! I will ask you a couple of questions to figure out what dog that might fit your preferences. Please answer from a scale from minus three to plus three, but not zero. First question]{"entity": "sort.explanation", "value": "individual.procedure"}
+    - [single](sort.string)
+    - [double word](sort.string)
+    - [three in one](sort.string)
+    - [hey make it four](sort.string)
+    - [the more the merrier five](sort.string)
+    - [calm down and count to six](sort.string)
+    - [bring them through to the jolly seven](sort.string)
+    - [noone counts toes like an eight toed guy](sort.string)
+    - [it matters to make sense for nine of us](sort.string)
+    - [would you bring ten or none to a desert island](sort.string)
+    - [Dalmatian](sort.dog)
+    - [Azawakh](sort.dog)
+    - [Grand Basset Griffon Vendéen](sort.dog)
+    - [Mountain Feist](sort.dog)
+    - [Lupo Italiano](sort.dog)
+    - [Lancashire Heeler](sort.dog)
+    - [Istrian Coarse-haired Hound](sort.dog)
+    - [Serbian Hound](sort.dog)
+    - [American Cocker Spaniel](sort.dog)
+    - [Lithuanian Hound](sort.dog)
+    - [I would be happy to help you! I will ask you a couple of questions to figure out what dog that might fit your preferences. Please answer from a scale from minus three to plus three, but not zero. First question]{"entity": "sort.explanation", "value": "individual.procedure"}
     - [Unfortunately there is no dog matching that profile. Let us start from the beginning]{"entity": "sort.explanation", "value": "individual.no_hits"}
     - [Oops! There are too many dogs matching that profile. Let us start from the beginning]{"entity": "sort.explanation", "value": "individual.too_many_hits"}
     - [trainability]{"entity": "sort.feature", "value": "individual.trainability"}
@@ -248,6 +268,7 @@ nlu:
     - [barking]{"entity": "sort.feature", "value": "individual.barking"}
     - [how much they bark]{"entity": "sort.feature", "value": "individual.barking"}
     - [barks]{"entity": "sort.feature", "value": "individual.barking"}
+    - [bark]{"entity": "sort.feature", "value": "individual.barking"}
     - [woof]{"entity": "sort.feature", "value": "individual.barking"}
     - [protectiveness]{"entity": "sort.feature", "value": "individual.protectiveness"}
     - [how protective they are]{"entity": "sort.feature", "value": "individual.protectiveness"}
@@ -296,144 +317,146 @@ nlu:
     - [plus 3]{"entity": "sort.p_score", "value": "individual.five"}
     - [three on the positive side]{"entity": "sort.p_score", "value": "individual.five"}
     - [3 on the positive side]{"entity": "sort.p_score", "value": "individual.five"}
-    - Then [Bichon Frisé](sort.dog)
-    - Then [Boston Terrier](sort.dog)
-    - Then [Caucasian Shepherd Dog](sort.dog)
-    - Then [English Shepherd](sort.dog)
-    - Then [Georgian Shepherd](sort.dog)
-    - Then [Kerry Beagle](sort.dog)
-    - Then [Koyun dog](sort.dog)
-    - Then [Pampas Deerhound](sort.dog)
-    - Then [Slovak Cuvac](sort.dog)
-    - Then [West Country Harrier](sort.dog)
-    - [Affenpinscher](sort.dog) then
-    - [Bouvier des Flandres](sort.dog) then
-    - [Briard](sort.dog) then
-    - [Cesky Terrier](sort.dog) then
-    - [Danish-Swedish Farmdog](sort.dog) then
-    - [Istrian Coarse-haired Hound](sort.dog) then
-    - [Leonberger](sort.dog) then
-    - [Manchester Terrier](sort.dog) then
-    - [Norwegian Buhund](sort.dog) then
-    - [Sapsali](sort.dog) then
-    - It will be a [Alpine Dachsbracke](sort.dog) for me
-    - It will be a [Cão de Castro Laboreiro](sort.dog) for me
-    - It will be a [Estonian Hound](sort.dog) for me
-    - It will be a [German Pinscher](sort.dog) for me
-    - It will be a [Giant Schnauzer](sort.dog) for me
-    - It will be a [Great Dane](sort.dog) for me
-    - It will be a [Perro de Presa Canario](sort.dog) for me
-    - It will be a [Vikhan](sort.dog) for me
-    - It will be a [Villano de Las Encartaciones](sort.dog) for me
-    - It will be a [Xiasi Dog](sort.dog) for me
-    - I will get a [Armenian Gampr dog](sort.dog)
-    - I will get a [Caucasian Shepherd Dog](sort.dog)
-    - I will get a [English Foxhound](sort.dog)
-    - I will get a [Karst Shepherd](sort.dog)
-    - I will get a [Kerry Beagle](sort.dog)
-    - I will get a [Mountain Feist](sort.dog)
-    - I will get a [Norwegian Lundehund](sort.dog)
-    - I will get a [Perro Majorero](sort.dog)
-    - I will get a [Tyrolean Hound](sort.dog)
-    - I will get a [White Swiss Shepherd Dog](sort.dog)
-    - I think I will get a [Akita](sort.dog) then
-    - I think I will get a [Barbet](sort.dog) then
-    - I think I will get a [Can de Chira](sort.dog) then
-    - I think I will get a [Dachshund](sort.dog) then
-    - I think I will get a [Harrier](sort.dog) then
-    - I think I will get a [Istrian Shorthaired Hound](sort.dog) then
-    - I think I will get a [King Charles Spaniel](sort.dog) then
-    - I think I will get a [Liangshan Dog](sort.dog) then
-    - I think I will get a [Mahratta Greyhound](sort.dog) then
-    - I think I will get a [Wire Fox Terrier](sort.dog) then
-    - [Australian Terrier]{"entity": "sort.dog", "role": "predicate.None"} with [Segugio Italiano]{"entity": "sort.dog", "role": "predicate.None"}
-    - [Berger Picard]{"entity": "sort.dog", "role": "predicate.None"} with [Kooikerhondje]{"entity": "sort.dog", "role": "predicate.None"}
-    - [Bolognese dog]{"entity": "sort.dog", "role": "predicate.None"} with [Staffordshire Bull Terrier]{"entity": "sort.dog", "role": "predicate.None"}
-    - [Grand Basset Griffon Vendéen]{"entity": "sort.dog", "role": "predicate.None"} with [Trigg Hound]{"entity": "sort.dog", "role": "predicate.None"}
-    - [Guatemalan Dogo]{"entity": "sort.dog", "role": "predicate.None"} with [Boston Terrier]{"entity": "sort.dog", "role": "predicate.None"}
-    - [Mexican Hairless Dog]{"entity": "sort.dog", "role": "predicate.None"} with [Tibetan Terrier]{"entity": "sort.dog", "role": "predicate.None"}
-    - [Plummer Terrier]{"entity": "sort.dog", "role": "predicate.None"} with [White Swiss Shepherd Dog]{"entity": "sort.dog", "role": "predicate.None"}
-    - [Ratonero Bodeguero Andaluz]{"entity": "sort.dog", "role": "predicate.None"} with [Basset Artésien Normand]{"entity": "sort.dog", "role": "predicate.None"}
-    - [Ryukyu Inu]{"entity": "sort.dog", "role": "predicate.None"} with [Bouvier des Ardennes]{"entity": "sort.dog", "role": "predicate.None"}
-    - [Treeing Cur]{"entity": "sort.dog", "role": "predicate.None"} with [Braque du Bourbonnais]{"entity": "sort.dog", "role": "predicate.None"}
-    - [Alapaha Blue Blood Bulldog]{"entity": "sort.dog", "role": "predicate.None"} and [Slovenský kopov]{"entity": "sort.dog", "role": "predicate.None"}
-    - [American Eskimo Dog]{"entity": "sort.dog", "role": "predicate.None"} and [Toy Fox Terrier]{"entity": "sort.dog", "role": "predicate.None"}
-    - [American Water Spaniel]{"entity": "sort.dog", "role": "predicate.None"} and [Papillon]{"entity": "sort.dog", "role": "predicate.None"}
-    - [Ariege Pointer]{"entity": "sort.dog", "role": "predicate.None"} and [South Russian Ovcharka]{"entity": "sort.dog", "role": "predicate.None"}
-    - [Braque du Bourbonnais]{"entity": "sort.dog", "role": "predicate.None"} and [English Toy Terrier (Black &amp; Tan)]{"entity": "sort.dog", "role": "predicate.None"}
-    - [Cardigan Welsh Corgi]{"entity": "sort.dog", "role": "predicate.None"} and [Ca de Bou]{"entity": "sort.dog", "role": "predicate.None"}
-    - [Karakachan dog]{"entity": "sort.dog", "role": "predicate.None"} and [Plummer Terrier]{"entity": "sort.dog", "role": "predicate.None"}
-    - [Lakeland Terrier]{"entity": "sort.dog", "role": "predicate.None"} and [Denmark Feist]{"entity": "sort.dog", "role": "predicate.None"}
-    - [Northern Inuit Dog]{"entity": "sort.dog", "role": "predicate.None"} and [American Bulldog]{"entity": "sort.dog", "role": "predicate.None"}
-    - [Pharaoh Hound]{"entity": "sort.dog", "role": "predicate.None"} and [Can de Chira]{"entity": "sort.dog", "role": "predicate.None"}
-    - [Chesapeake Bay Retriever]{"entity": "sort.dog", "role": "predicate.None"} with [Jonangi]{"entity": "sort.dog", "role": "predicate.None"} with regard to [how good they are with children]{"entity": "sort.feature", "value": "individual.good_with_children"}
-    - [Dogo Argentino]{"entity": "sort.dog", "role": "predicate.None"} with [Pastore della Lessinia e del Lagorai]{"entity": "sort.dog", "role": "predicate.None"} with regard to [trainability]{"entity": "sort.feature", "value": "individual.trainability"}
-    - [Halden Hound]{"entity": "sort.dog", "role": "predicate.None"} with [Garafian Shepherd]{"entity": "sort.dog", "role": "predicate.None"} with regard to [energy]{"entity": "sort.feature", "value": "individual.energy"}
-    - [Hygen Hound]{"entity": "sort.dog", "role": "predicate.None"} with [Chien Français Tricolore]{"entity": "sort.dog", "role": "predicate.None"} with regard to [shedding]{"entity": "sort.feature", "value": "individual.shedding"}
-    - [Lithuanian Hound]{"entity": "sort.dog", "role": "predicate.None"} with [Peruvian Hairless Dog]{"entity": "sort.dog", "role": "predicate.None"} with regard to [barking]{"entity": "sort.feature", "value": "individual.barking"}
-    - [Maneto]{"entity": "sort.dog", "role": "predicate.None"} with [Lhasa Apso]{"entity": "sort.dog", "role": "predicate.None"} with regard to [shedding]{"entity": "sort.feature", "value": "individual.shedding"}
-    - [Miniature Fox Terrier]{"entity": "sort.dog", "role": "predicate.None"} with [Rafeiro do Alentejo]{"entity": "sort.dog", "role": "predicate.None"} with regard to [trainability]{"entity": "sort.feature", "value": "individual.trainability"}
-    - [Mudhol Hound]{"entity": "sort.dog", "role": "predicate.None"} with [Telomian]{"entity": "sort.dog", "role": "predicate.None"} with regard to [shedding]{"entity": "sort.feature", "value": "individual.shedding"}
-    - [New Zealand Heading Dog]{"entity": "sort.dog", "role": "predicate.None"} with [Havanese dog]{"entity": "sort.dog", "role": "predicate.None"} with regard to [energy]{"entity": "sort.feature", "value": "individual.energy"}
-    - [Norwegian Buhund]{"entity": "sort.dog", "role": "predicate.None"} with [Hällefors Elkhound]{"entity": "sort.dog", "role": "predicate.None"} with regard to [energy]{"entity": "sort.feature", "value": "individual.energy"}
-    - [Andalusian Hound]{"entity": "sort.dog", "role": "predicate.None"} and [Serbian Hound]{"entity": "sort.dog", "role": "predicate.None"} with regard to [shedding]{"entity": "sort.feature", "value": "individual.shedding"}
-    - [Beagle-Harrier]{"entity": "sort.dog", "role": "predicate.None"} and [Cane Corso]{"entity": "sort.dog", "role": "predicate.None"} with regard to [how good they are with children]{"entity": "sort.feature", "value": "individual.good_with_children"}
-    - [Burgos Pointer]{"entity": "sort.dog", "role": "predicate.None"} and [Old Danish Pointer]{"entity": "sort.dog", "role": "predicate.None"} with regard to [trainability]{"entity": "sort.feature", "value": "individual.trainability"}
-    - [Ca Rater Mallorquí]{"entity": "sort.dog", "role": "predicate.None"} and [Grand Griffon Vendéen]{"entity": "sort.dog", "role": "predicate.None"} with regard to [barking]{"entity": "sort.feature", "value": "individual.barking"}
-    - [Cão Fila de São Miguel]{"entity": "sort.dog", "role": "predicate.None"} and [Cretan Hound]{"entity": "sort.dog", "role": "predicate.None"} with regard to [how good they are with children]{"entity": "sort.feature", "value": "individual.good_with_children"}
-    - [Finnish Hound]{"entity": "sort.dog", "role": "predicate.None"} and [St. Hubert Jura Hound]{"entity": "sort.dog", "role": "predicate.None"} with regard to [shedding]{"entity": "sort.feature", "value": "individual.shedding"}
-    - [Kangal Shepherd Dog]{"entity": "sort.dog", "role": "predicate.None"} and [Labrador Retriever]{"entity": "sort.dog", "role": "predicate.None"} with regard to [energy]{"entity": "sort.feature", "value": "individual.energy"}
-    - [Landseer]{"entity": "sort.dog", "role": "predicate.None"} and [Irish Water Spaniel]{"entity": "sort.dog", "role": "predicate.None"} with regard to [energy]{"entity": "sort.feature", "value": "individual.energy"}
-    - [Pyrenean Mastiff]{"entity": "sort.dog", "role": "predicate.None"} and [Plott Hound]{"entity": "sort.dog", "role": "predicate.None"} with regard to [protectiveness]{"entity": "sort.feature", "value": "individual.protectiveness"}
-    - [Segugio Maremmano]{"entity": "sort.dog", "role": "predicate.None"} and [Estonian Hound]{"entity": "sort.dog", "role": "predicate.None"} with regard to [trainability]{"entity": "sort.feature", "value": "individual.trainability"}
-    - yes [Irish Red and White Setter](sort.dog)
-    - yes [Great! I will ask you a couple of questions to figure out what dog that might fit your preferences. Please answer from a scale from minus three to plus three, but not zero. First question]{"entity": "sort.explanation", "value": "individual.procedure"}
+    - Then [Armenian Gampr dog](sort.dog)
+    - Then [Croatian Sheepdog](sort.dog)
+    - Then [Entlebucher Mountain Dog](sort.dog)
+    - Then [Jack Russell Terrier](sort.dog)
+    - Then [Japanese Spitz](sort.dog)
+    - Then [Kintamani](sort.dog)
+    - Then [Maltese](sort.dog)
+    - Then [Mountain Cur](sort.dog)
+    - Then [Thai Bangkaew Dog](sort.dog)
+    - Then [Tibetan Terrier](sort.dog)
+    - [Black Mouth Cur](sort.dog) then
+    - [Brazilian Terrier](sort.dog) then
+    - [Cane Corso](sort.dog) then
+    - [Finnish Lapphund](sort.dog) then
+    - [Huntaway](sort.dog) then
+    - [Liangshan Dog](sort.dog) then
+    - [List of Italian dog breeds](sort.dog) then
+    - [Lobito Herreño](sort.dog) then
+    - [Nova Scotia Duck Tolling Retriever](sort.dog) then
+    - [Parson Russell Terrier](sort.dog) then
+    - It will be a [Anglo-Français de Petite Vénerie](sort.dog) for me
+    - It will be a [Bernese Mountain Dog](sort.dog) for me
+    - It will be a [Bohemian Shepherd](sort.dog) for me
+    - It will be a [Braque du Bourbonnais](sort.dog) for me
+    - It will be a [German Shepherd](sort.dog) for me
+    - It will be a [Jack Russell Terrier](sort.dog) for me
+    - It will be a [Japanese Spitz](sort.dog) for me
+    - It will be a [Perro Majorero](sort.dog) for me
+    - It will be a [Schapendoes](sort.dog) for me
+    - It will be a [Taiwan Dog](sort.dog) for me
+    - I will get a [Africanis](sort.dog)
+    - I will get a [American Pit Bull Terrier](sort.dog)
+    - I will get a [Bearded Collie](sort.dog)
+    - I will get a [Cirneco dell'Etna](sort.dog)
+    - I will get a [English Shepherd](sort.dog)
+    - I will get a [Hanover Hound](sort.dog)
+    - I will get a [Irish Setter](sort.dog)
+    - I will get a [Karakachan dog](sort.dog)
+    - I will get a [Podenco Valenciano](sort.dog)
+    - I will get a [Serbian Hound](sort.dog)
+    - I think I will get a [Barbado da Terceira](sort.dog) then
+    - I think I will get a [Bloodhound](sort.dog) then
+    - I think I will get a [Border Terrier](sort.dog) then
+    - I think I will get a [Chongqing dog](sort.dog) then
+    - I think I will get a [Clumber Spaniel](sort.dog) then
+    - I think I will get a [English Setter](sort.dog) then
+    - I think I will get a [Istrian Coarse-haired Hound](sort.dog) then
+    - I think I will get a [Norwegian Lundehund](sort.dog) then
+    - I think I will get a [Sabueso Español](sort.dog) then
+    - I think I will get a [Smooth Collie](sort.dog) then
+    - [Akbash]{"entity": "sort.dog", "role": "predicate.target_dog"} with [German Hound]{"entity": "sort.dog", "role": "predicate.compare_with"}
+    - [Bichon Frisé]{"entity": "sort.dog", "role": "predicate.target_dog"} with [Tornjak]{"entity": "sort.dog", "role": "predicate.compare_with"}
+    - [Cavalier King Charles Spaniel]{"entity": "sort.dog", "role": "predicate.target_dog"} with [Rat Terrier]{"entity": "sort.dog", "role": "predicate.compare_with"}
+    - [Flat-coated Retriever]{"entity": "sort.dog", "role": "predicate.target_dog"} with [Kromfohrländer]{"entity": "sort.dog", "role": "predicate.compare_with"}
+    - [German Hound]{"entity": "sort.dog", "role": "predicate.target_dog"} with [Australian Shepherd]{"entity": "sort.dog", "role": "predicate.compare_with"}
+    - [Lithuanian Hound]{"entity": "sort.dog", "role": "predicate.target_dog"} with [Australian Cattle Dog]{"entity": "sort.dog", "role": "predicate.compare_with"}
+    - [Norwegian Buhund]{"entity": "sort.dog", "role": "predicate.target_dog"} with [Norwegian Lundehund]{"entity": "sort.dog", "role": "predicate.compare_with"}
+    - [Poodle]{"entity": "sort.dog", "role": "predicate.target_dog"} with [Boykin Spaniel]{"entity": "sort.dog", "role": "predicate.compare_with"}
+    - [Smaland Hound]{"entity": "sort.dog", "role": "predicate.target_dog"} with [Patterdale Terrier]{"entity": "sort.dog", "role": "predicate.compare_with"}
+    - [Trigg Hound]{"entity": "sort.dog", "role": "predicate.target_dog"} with [Plummer Terrier]{"entity": "sort.dog", "role": "predicate.compare_with"}
+    - [Boston Terrier]{"entity": "sort.dog", "role": "predicate.target_dog"} and [Poodle]{"entity": "sort.dog", "role": "predicate.compare_with"}
+    - [Braque Francais]{"entity": "sort.dog", "role": "predicate.target_dog"} and [Keeshond]{"entity": "sort.dog", "role": "predicate.compare_with"}
+    - [Braque Saint-Germain]{"entity": "sort.dog", "role": "predicate.target_dog"} and [Standard Schnauzer]{"entity": "sort.dog", "role": "predicate.compare_with"}
+    - [Chow Chow]{"entity": "sort.dog", "role": "predicate.target_dog"} and [Molossus of Epirus]{"entity": "sort.dog", "role": "predicate.compare_with"}
+    - [Clumber Spaniel]{"entity": "sort.dog", "role": "predicate.target_dog"} and [Slovenský kopov]{"entity": "sort.dog", "role": "predicate.compare_with"}
+    - [Field Spaniel]{"entity": "sort.dog", "role": "predicate.target_dog"} and [Scottish Deerhound]{"entity": "sort.dog", "role": "predicate.compare_with"}
+    - [Great Dane]{"entity": "sort.dog", "role": "predicate.target_dog"} and [Treeing Cur]{"entity": "sort.dog", "role": "predicate.compare_with"}
+    - [Mahratta Greyhound]{"entity": "sort.dog", "role": "predicate.target_dog"} and [Posavac Hound]{"entity": "sort.dog", "role": "predicate.compare_with"}
+    - [Montenegrin Mountain Hound]{"entity": "sort.dog", "role": "predicate.target_dog"} and [Samoyed]{"entity": "sort.dog", "role": "predicate.compare_with"}
+    - [Polish Greyhound]{"entity": "sort.dog", "role": "predicate.target_dog"} and [Andalusian Hound]{"entity": "sort.dog", "role": "predicate.compare_with"}
+    - [Beagle]{"entity": "sort.dog", "role": "predicate.target_dog"} with [Petit Basset Griffon Vendéen]{"entity": "sort.dog", "role": "predicate.compare_with"} with regard to [trainability]{"entity": "sort.feature", "value": "individual.trainability"}
+    - [Ca Rater Mallorquí]{"entity": "sort.dog", "role": "predicate.target_dog"} with [Hovawart]{"entity": "sort.dog", "role": "predicate.compare_with"} with regard to [how good they are with children]{"entity": "sort.feature", "value": "individual.good_with_children"}
+    - [Chesapeake Bay Retriever]{"entity": "sort.dog", "role": "predicate.target_dog"} with [Standard Schnauzer]{"entity": "sort.dog", "role": "predicate.compare_with"} with regard to [trainability]{"entity": "sort.feature", "value": "individual.trainability"}
+    - [Dutch Smoushond]{"entity": "sort.dog", "role": "predicate.target_dog"} with [Papillon]{"entity": "sort.dog", "role": "predicate.compare_with"} with regard to [how good they are with children]{"entity": "sort.feature", "value": "individual.good_with_children"}
+    - [Estrela Mountain Dog]{"entity": "sort.dog", "role": "predicate.target_dog"} with [Shetland Sheepdog]{"entity": "sort.dog", "role": "predicate.compare_with"} with regard to [trainability]{"entity": "sort.feature", "value": "individual.trainability"}
+    - [Kokoni]{"entity": "sort.dog", "role": "predicate.target_dog"} with [Cão de Gado Transmontano]{"entity": "sort.dog", "role": "predicate.compare_with"} with regard to [trainability]{"entity": "sort.feature", "value": "individual.trainability"}
+    - [Koyun dog]{"entity": "sort.dog", "role": "predicate.target_dog"} with [American Staffordshire Terrier]{"entity": "sort.dog", "role": "predicate.compare_with"} with regard to [trainability]{"entity": "sort.feature", "value": "individual.trainability"}
+    - [Kuchi dog]{"entity": "sort.dog", "role": "predicate.target_dog"} with [Gull Terrier]{"entity": "sort.dog", "role": "predicate.compare_with"} with regard to [trainability]{"entity": "sort.feature", "value": "individual.trainability"}
+    - [Skye Terrier]{"entity": "sort.dog", "role": "predicate.target_dog"} with [Bracco Italiano]{"entity": "sort.dog", "role": "predicate.compare_with"} with regard to [energy]{"entity": "sort.feature", "value": "individual.energy"}
+    - [Staffordshire Bull Terrier]{"entity": "sort.dog", "role": "predicate.target_dog"} with [Wetterhoun]{"entity": "sort.dog", "role": "predicate.compare_with"} with regard to [barking]{"entity": "sort.feature", "value": "individual.barking"}
+    - [American Water Spaniel]{"entity": "sort.dog", "role": "predicate.target_dog"} and [Stephens Stock]{"entity": "sort.dog", "role": "predicate.compare_with"} with regard to [protectiveness]{"entity": "sort.feature", "value": "individual.protectiveness"}
+    - [Buryat-Mongolian Wolfhound]{"entity": "sort.dog", "role": "predicate.target_dog"} and [Austrian Black and Tan Hound]{"entity": "sort.dog", "role": "predicate.compare_with"} with regard to [protectiveness]{"entity": "sort.feature", "value": "individual.protectiveness"}
+    - [Curly Coated Retriever]{"entity": "sort.dog", "role": "predicate.target_dog"} and [American Hairless Terrier]{"entity": "sort.dog", "role": "predicate.compare_with"} with regard to [trainability]{"entity": "sort.feature", "value": "individual.trainability"}
+    - [Kishu]{"entity": "sort.dog", "role": "predicate.target_dog"} and [American Cocker Spaniel]{"entity": "sort.dog", "role": "predicate.compare_with"} with regard to [protectiveness]{"entity": "sort.feature", "value": "individual.protectiveness"}
+    - [Miniature American Shepherd]{"entity": "sort.dog", "role": "predicate.target_dog"} and [Segugio Italiano]{"entity": "sort.dog", "role": "predicate.compare_with"} with regard to [energy]{"entity": "sort.feature", "value": "individual.energy"}
+    - [Pražský Krysařík]{"entity": "sort.dog", "role": "predicate.target_dog"} and [Old English Terrier]{"entity": "sort.dog", "role": "predicate.compare_with"} with regard to [barking]{"entity": "sort.feature", "value": "individual.barking"}
+    - [Tazy]{"entity": "sort.dog", "role": "predicate.target_dog"} and [Beauceron]{"entity": "sort.dog", "role": "predicate.compare_with"} with regard to [trainability]{"entity": "sort.feature", "value": "individual.trainability"}
+    - [Treeing Walker Coonhound]{"entity": "sort.dog", "role": "predicate.target_dog"} and [Boxer]{"entity": "sort.dog", "role": "predicate.compare_with"} with regard to [shedding]{"entity": "sort.feature", "value": "individual.shedding"}
+    - [West Country Harrier]{"entity": "sort.dog", "role": "predicate.target_dog"} and [Portuguese Podengo]{"entity": "sort.dog", "role": "predicate.compare_with"} with regard to [barking]{"entity": "sort.feature", "value": "individual.barking"}
+    - [White Shepherd]{"entity": "sort.dog", "role": "predicate.target_dog"} and [Bloodhound]{"entity": "sort.dog", "role": "predicate.compare_with"} with regard to [energy]{"entity": "sort.feature", "value": "individual.energy"}
+    - yes [single](sort.string)
+    - yes [Dalmatian](sort.dog)
+    - yes [I would be happy to help you! I will ask you a couple of questions to figure out what dog that might fit your preferences. Please answer from a scale from minus three to plus three, but not zero. First question]{"entity": "sort.explanation", "value": "individual.procedure"}
     - yes [sheds]{"entity": "sort.feature", "value": "individual.shedding"}
-    - yes [how protective they are]{"entity": "sort.feature", "value": "individual.protectiveness"}
-    - yes [to a very low degree]{"entity": "sort.p_score", "value": "individual.one"}
-    - yes [1 on the negative side]{"entity": "sort.p_score", "value": "individual.two"}
-    - yes [high degree]{"entity": "sort.p_score", "value": "individual.four"}
-    - yes [plus three]{"entity": "sort.p_score", "value": "individual.five"}
-    - yes Then [Georgian Shepherd](sort.dog)
-    - yes [Danish-Swedish Farmdog](sort.dog) then
-    - yes It will be a [Giant Schnauzer](sort.dog) for me
-    - yes I will get a [Kerry Beagle](sort.dog)
-    - yes I think I will get a [Harrier](sort.dog) then
-    - yes [Guatemalan Dogo]{"entity": "sort.dog", "role": "predicate.None"} with [Boston Terrier]{"entity": "sort.dog", "role": "predicate.None"}
-    - yes [Braque du Bourbonnais]{"entity": "sort.dog", "role": "predicate.None"} and [English Toy Terrier (Black &amp; Tan)]{"entity": "sort.dog", "role": "predicate.None"}
-    - yes [Lithuanian Hound]{"entity": "sort.dog", "role": "predicate.None"} with [Peruvian Hairless Dog]{"entity": "sort.dog", "role": "predicate.None"} with regard to [barking]{"entity": "sort.feature", "value": "individual.barking"}
-    - yes [Cão Fila de São Miguel]{"entity": "sort.dog", "role": "predicate.None"} and [Cretan Hound]{"entity": "sort.dog", "role": "predicate.None"} with regard to [how good they are with children]{"entity": "sort.feature", "value": "individual.good_with_children"}
-    - no [Portuguese Water Dog](sort.dog)
+    - yes [protectiveness]{"entity": "sort.feature", "value": "individual.protectiveness"}
+    - yes [3 on the negative side]{"entity": "sort.p_score", "value": "individual.zero"}
+    - yes [one on the negative side]{"entity": "sort.p_score", "value": "individual.two"}
+    - yes [to a high degree]{"entity": "sort.p_score", "value": "individual.four"}
+    - yes [three]{"entity": "sort.p_score", "value": "individual.five"}
+    - yes Then [Jack Russell Terrier](sort.dog)
+    - yes [Finnish Lapphund](sort.dog) then
+    - yes It will be a [Braque du Bourbonnais](sort.dog) for me
+    - yes I will get a [Cirneco dell'Etna](sort.dog)
+    - yes I think I will get a [Chongqing dog](sort.dog) then
+    - yes [Flat-coated Retriever]{"entity": "sort.dog", "role": "predicate.None"} with [Kromfohrländer]{"entity": "sort.dog", "role": "predicate.None"}
+    - yes [Chow Chow]{"entity": "sort.dog", "role": "predicate.None"} and [Molossus of Epirus]{"entity": "sort.dog", "role": "predicate.None"}
+    - yes [Dutch Smoushond]{"entity": "sort.dog", "role": "predicate.None"} with [Papillon]{"entity": "sort.dog", "role": "predicate.None"} with regard to [how good they are with children]{"entity": "sort.feature", "value": "individual.good_with_children"}
+    - yes [Kishu]{"entity": "sort.dog", "role": "predicate.None"} and [American Cocker Spaniel]{"entity": "sort.dog", "role": "predicate.None"} with regard to [protectiveness]{"entity": "sort.feature", "value": "individual.protectiveness"}
+    - no [double word](sort.string)
+    - no [Azawakh](sort.dog)
     - no [Unfortunately there is no dog matching that profile. Let us start from the beginning]{"entity": "sort.explanation", "value": "individual.no_hits"}
     - no [shed]{"entity": "sort.feature", "value": "individual.shedding"}
-    - no [protective]{"entity": "sort.feature", "value": "individual.protectiveness"}
-    - no [minus two]{"entity": "sort.p_score", "value": "individual.one"}
-    - no [to some degree]{"entity": "sort.p_score", "value": "individual.three"}
-    - no [two]{"entity": "sort.p_score", "value": "individual.four"}
-    - no [the highest value]{"entity": "sort.p_score", "value": "individual.five"}
-    - no Then [Kerry Beagle](sort.dog)
-    - no [Istrian Coarse-haired Hound](sort.dog) then
-    - no It will be a [Great Dane](sort.dog) for me
-    - no I will get a [Mountain Feist](sort.dog)
-    - no I think I will get a [Istrian Shorthaired Hound](sort.dog) then
-    - no [Mexican Hairless Dog]{"entity": "sort.dog", "role": "predicate.None"} with [Tibetan Terrier]{"entity": "sort.dog", "role": "predicate.None"}
-    - no [Cardigan Welsh Corgi]{"entity": "sort.dog", "role": "predicate.None"} and [Ca de Bou]{"entity": "sort.dog", "role": "predicate.None"}
-    - no [Maneto]{"entity": "sort.dog", "role": "predicate.None"} with [Lhasa Apso]{"entity": "sort.dog", "role": "predicate.None"} with regard to [shedding]{"entity": "sort.feature", "value": "individual.shedding"}
-    - no [Finnish Hound]{"entity": "sort.dog", "role": "predicate.None"} and [St. Hubert Jura Hound]{"entity": "sort.dog", "role": "predicate.None"} with regard to [shedding]{"entity": "sort.feature", "value": "individual.shedding"}
+    - no [how protective they are]{"entity": "sort.feature", "value": "individual.protectiveness"}
+    - no [to a very low degree]{"entity": "sort.p_score", "value": "individual.one"}
+    - no [1 on the negative side]{"entity": "sort.p_score", "value": "individual.two"}
+    - no [high degree]{"entity": "sort.p_score", "value": "individual.four"}
+    - no [plus three]{"entity": "sort.p_score", "value": "individual.five"}
+    - no Then [Japanese Spitz](sort.dog)
+    - no [Huntaway](sort.dog) then
+    - no It will be a [German Shepherd](sort.dog) for me
+    - no I will get a [English Shepherd](sort.dog)
+    - no I think I will get a [Clumber Spaniel](sort.dog) then
+    - no [German Hound]{"entity": "sort.dog", "role": "predicate.None"} with [Australian Shepherd]{"entity": "sort.dog", "role": "predicate.None"}
+    - no [Clumber Spaniel]{"entity": "sort.dog", "role": "predicate.None"} and [Slovenský kopov]{"entity": "sort.dog", "role": "predicate.None"}
+    - no [Estrela Mountain Dog]{"entity": "sort.dog", "role": "predicate.None"} with [Shetland Sheepdog]{"entity": "sort.dog", "role": "predicate.None"} with regard to [trainability]{"entity": "sort.feature", "value": "individual.trainability"}
+    - no [Miniature American Shepherd]{"entity": "sort.dog", "role": "predicate.None"} and [Segugio Italiano]{"entity": "sort.dog", "role": "predicate.None"} with regard to [energy]{"entity": "sort.feature", "value": "individual.energy"}
 
 - intent: answer_negation
   examples: |
-    - not [Magyar agár](sort.dog)
-    - not [Pudelpointer](sort.dog)
-    - not [Segugio Italiano](sort.dog)
-    - not [Lapponian Herder](sort.dog)
-    - not [Aksaray Malaklisi](sort.dog)
-    - not [Maremmano-Abruzzese Sheepdog](sort.dog)
-    - not [Greyhound](sort.dog)
-    - not [Ariege Pointer](sort.dog)
-    - not [Chilean Terrier](sort.dog)
-    - not [Kuvasz](sort.dog)
-    - not [Great! I will ask you a couple of questions to figure out what dog that might fit your preferences. Please answer from a scale from minus three to plus three, but not zero. First question]{"entity": "sort.explanation", "value": "individual.procedure"}
+    - not [Bouvier des Flandres](sort.dog)
+    - not [Field Spaniel](sort.dog)
+    - not [Pug](sort.dog)
+    - not [Braque du Bourbonnais](sort.dog)
+    - not [Kooikerhondje](sort.dog)
+    - not [Standard Schnauzer](sort.dog)
+    - not [Tang Dog](sort.dog)
+    - not [Spinone Italiano](sort.dog)
+    - not [Schweizerischer Niederlaufhund](sort.dog)
+    - not [Majorca Shepherd Dog](sort.dog)
+    - not [I would be happy to help you! I will ask you a couple of questions to figure out what dog that might fit your preferences. Please answer from a scale from minus three to plus three, but not zero. First question]{"entity": "sort.explanation", "value": "individual.procedure"}
     - not [Unfortunately there is no dog matching that profile. Let us start from the beginning]{"entity": "sort.explanation", "value": "individual.no_hits"}
     - not [Oops! There are too many dogs matching that profile. Let us start from the beginning]{"entity": "sort.explanation", "value": "individual.too_many_hits"}
     - not [trainability]{"entity": "sort.feature", "value": "individual.trainability"}
@@ -451,6 +474,7 @@ nlu:
     - not [barking]{"entity": "sort.feature", "value": "individual.barking"}
     - not [how much they bark]{"entity": "sort.feature", "value": "individual.barking"}
     - not [barks]{"entity": "sort.feature", "value": "individual.barking"}
+    - not [bark]{"entity": "sort.feature", "value": "individual.barking"}
     - not [woof]{"entity": "sort.feature", "value": "individual.barking"}
     - not [protectiveness]{"entity": "sort.feature", "value": "individual.protectiveness"}
     - not [how protective they are]{"entity": "sort.feature", "value": "individual.protectiveness"}

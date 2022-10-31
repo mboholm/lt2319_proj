@@ -6,9 +6,5 @@
     {
         "match": "another(semantic_expression_of_a_move)",
         "utterance": "another utterance"
-    },
-    {
-        "match": "icm:acc*pos",
-        "utterance": "okay"        
     }
 ]
